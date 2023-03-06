@@ -5,6 +5,7 @@ import AppButton from "../../shared/components/app-button/AppButton";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import { useNavigate } from 'react-router-dom';
 
+
 const LoginPage = () => {
   const classes = useStyles();
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const LoginPage = () => {
           onSubmit={async (values, { setSubmitting }) => {
             console.log(values);
             setSubmitting(false);
-            navigate('/dashboard');
+            navigate('/classMain');
           }}
         >
           {({

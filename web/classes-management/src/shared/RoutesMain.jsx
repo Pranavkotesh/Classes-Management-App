@@ -1,8 +1,10 @@
 import { makeStyles } from "@mui/styles";
 import { Routes, Route, Navigate } from "react-router-dom";
-import DashboardPage from "../features/dashboard/DashboardPage";
+//import DashboardPage from "../features/dashboard/DashboardPage";
+//import _class from "../features/classMain/class";
 import LoginPage from "../features/login/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
+import ClassN from "../features/classMain/Class";
 const RoutesMain = () => {
   const classes = useStyles();
   const checkSessionExists = () => {
@@ -16,17 +18,17 @@ const RoutesMain = () => {
           path=""
           element={
             checkSessionExists() ? (
-              <Navigate to={"dashboard"} replace />
+              <Navigate to={"classMain"} replace />
             ) : (
               <LoginPage />
             )
           }
         />
         <Route
-          path="dashboard"
+          path="classMain"
           element={
             <PrivateRoute>
-              <DashboardPage />
+              <ClassN/>
             </PrivateRoute>
           }
         />
@@ -37,6 +39,7 @@ const RoutesMain = () => {
 const useStyles = makeStyles((theme) => ({
   main: {
     width: "100%",
+    marginTop:2
   },
 }));
 export default RoutesMain;
