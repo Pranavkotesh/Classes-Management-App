@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft:10
   }
 }));
-let drawerWidth =65;
-let appWidth=`calc(100% - ${drawerWidth}px)`;
+let drawerWidth =90;
+let appWidth=1518;
 
 
 const schools=['abc','def','ghi'];
@@ -146,7 +146,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 );
-let marginLval=-120;
+let marginLval=-110;
 const MiniDrawer=() =>{
   const editing=useStyles();
   const theme = useTheme();
@@ -162,10 +162,10 @@ const MiniDrawer=() =>{
 
   const handleDrawerClose = () => {
     setOpen(false);
-    drawerWidth=100;
-    appWidth=1358;
+    drawerWidth=200;
+    appWidth=1518;
     marginVal=11;
-    marginLval=-120;
+    marginLval=-100;
   };
 
   return (
@@ -181,13 +181,13 @@ const MiniDrawer=() =>{
             sx={{
               color:'#3333cc',
               marginRight:'5px',
-              marginLeft:8,
+              marginLeft:6,
               ...(open && { display: 'none' }),
             }}
           >
             <SortIcon />
           </IconButton>
-          <Typography sx={{color:'black',marginRight:66,paddingRight:12,fontWeight:'bold'}} variant="h6" noWrap>
+          <Typography sx={{color:'black',marginRight:68,paddingRight:12,fontWeight:'bold'}} variant="h6" noWrap>
             Classes
           </Typography>
           <Grid container spacing={2}>
@@ -268,7 +268,7 @@ const MiniDrawer=() =>{
           ))}
         </List>
         <Divider />
-        <List sx={{marginTop:32,color:'white'}}>
+        <List sx={{marginTop:40,color:'white'}}>
           {itemsList2.map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display:'block' }}>
               <ListItemButton
