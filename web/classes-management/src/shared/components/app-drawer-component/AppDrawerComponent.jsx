@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft:10
   }
 }));
-let drawerWidth =90;
-let appWidth=1518;
+let drawerWidth =200;
+let appWidth=`cal(100%-${drawerWidth}px)`;
 
 
 const schools=['abc','def','ghi'];
@@ -163,7 +163,7 @@ const MiniDrawer=() =>{
   const handleDrawerClose = () => {
     setOpen(false);
     drawerWidth=200;
-    appWidth=1518;
+    appWidth=`cal(100%-${drawerWidth}px)`;
     marginVal=10;
     marginLval=-110;
   };
@@ -171,7 +171,7 @@ const MiniDrawer=() =>{
   return (
     <>
     <Box sx={{ display: 'flex' }}>
-      <AppBar sx={{backgroundColor:'#e6e6e6',boxShadow:0,marginLeft:0,width:appWidth,paddingBottom:3}}position="fixed" open={open}>
+      <AppBar sx={{backgroundColor:'#e6e6e6',boxShadow:0,marginLeft:`(${drawerWidth})px`,width:appWidth,paddingBottom:3,zIndex:'1'}}position="fixed" open={open}>
         <Toolbar>
           <IconButton
             color="white"
@@ -224,7 +224,7 @@ const MiniDrawer=() =>{
             </Box>
         
       </AppBar>
-      <Drawer PaperProps={{
+      <Drawer  sx={{zIndex:'2'}}PaperProps={{
     sx: {
       backgroundColor: "#3333cc"
     }
