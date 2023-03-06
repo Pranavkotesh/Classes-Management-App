@@ -20,7 +20,7 @@ export default function GridComponent() {
         <Box sx={{ flexGrow: 1 }}> */}
         
         
-      <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3,paddingBottom:18}} container spacing={2} columns={16}>
+      <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3,paddingBottom:'50%'}} container spacing={2} columns={16}>
         <div sx={{boxShadow:6}}></div>
         <Grid className='classList' item xs={4}>
           <Item sx={{width:240 ,height:80, paddingTop:0,marginLeft:20,borderRadius:2,paddingRight:3}}>

@@ -4,8 +4,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import EventIcon from '@mui/icons-material/Event';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { IconButton } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import { Grid } from '@mui/material';
@@ -43,7 +41,8 @@ export default function BasicSelect({
             height:30,
             color:'white',
           fontSize:14,backgroundColor:{background},
-          marginRight:{marginR},marginLeft:-1
+          marginRight:{marginR},marginLeft:-1,
+          textAlign:'center'
         }}
           
         >
