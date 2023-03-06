@@ -18,7 +18,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import GroupIcon from '@mui/icons-material/Group';
 import SortIcon from '@mui/icons-material/Sort';
-import { Grid, TextField } from '@mui/material';
+import { Grid } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import EventIcon from '@mui/icons-material/Event';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft:10
   }
 }));
-
-let appWidth=1358;
+let drawerWidth =65;
+let appWidth=`calc(100% - ${drawerWidth}px)`;
 
 
 const schools=['abc','def','ghi'];
@@ -55,7 +55,7 @@ const schools=['abc','def','ghi'];
 
 const years = ['2015','2016','2017','2018'];
 
-let drawerWidth =140;
+
 const itemsList =[
   {
   text:"Main",
@@ -146,7 +146,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 );
-
+let marginLval=-120;
 const MiniDrawer=() =>{
   const editing=useStyles();
   const theme = useTheme();
@@ -156,15 +156,16 @@ const MiniDrawer=() =>{
     setOpen(true);
     drawerWidth=160;
     appWidth=`cal(100%-${drawerWidth}px)`;
-    marginVal=1
-    
+    marginVal=1;
+    marginLval=-100
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
     drawerWidth=100;
     appWidth=1358;
-    marginVal=11
+    marginVal=11;
+    marginLval=-120;
   };
 
   return (
@@ -186,23 +187,25 @@ const MiniDrawer=() =>{
           >
             <SortIcon />
           </IconButton>
-          <Typography sx={{color:'black',marginRight:49,paddingRight:12,fontWeight:'bold'}} variant="h6" noWrap>
+          <Typography sx={{color:'black',marginRight:66,paddingRight:12,fontWeight:'bold'}} variant="h6" noWrap>
             Classes
           </Typography>
           <Grid container spacing={2}>
             <Grid item >
             <BasicSelect label='Select Year'
               background='#1aa3ff'
+              icon='EventIcon'
               arr={years}
              />
             </Grid>
             <Grid item>
             <BasicSelect label='Select School'
             background='#33ff99'
+            icon='SchoolIcon'
             arr={schools}/>
             </Grid>
           </Grid>
-          <IconButton sx={{marginLeft:-100,color:'#ffcc00',fontSize:18,fontWeight:'bold'}}>
+          <IconButton sx={{marginLeft:marginLval,color:'#ffcc00',fontSize:18,fontWeight:'bold'}}>
           <LightModeIcon/>
           </IconButton>
           <IconButton sx={{marginLeft:1,marginRight:-5}}>
