@@ -146,7 +146,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 );
-let marginLval=-110;
+let marginLval=-120;
 const MiniDrawer=() =>{
   const editing=useStyles();
   const theme = useTheme();
@@ -165,7 +165,7 @@ const MiniDrawer=() =>{
     drawerWidth=200;
     appWidth=`cal(100%-${drawerWidth}px)`;
     marginVal=19;
-    marginLval=-110;
+    marginLval=-120;
   };
 
   return (
