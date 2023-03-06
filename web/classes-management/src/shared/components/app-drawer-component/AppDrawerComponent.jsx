@@ -31,7 +31,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // import IconButton from '@mui/material/IconButton';
 //import { Icon } from '@mui/material';
 
-let marginVal=11;
+let marginVal=10;
 
 const useStyles = makeStyles((theme) => ({
   textField1: {
@@ -164,8 +164,8 @@ const MiniDrawer=() =>{
     setOpen(false);
     drawerWidth=200;
     appWidth=1518;
-    marginVal=11;
-    marginLval=-100;
+    marginVal=10;
+    marginLval=-110;
   };
 
   return (
