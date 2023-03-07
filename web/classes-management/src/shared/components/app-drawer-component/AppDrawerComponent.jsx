@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 let drawerWidth =240;
-let appWidth=`cal(100%-${drawerWidth}px)`;
+let appWidth='100%';
 
 
 const schools=['abc','def','ghi'];
@@ -146,6 +146,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 );
+let left=0;
+let colorVal='#3333cc';
 let marginLval=-120;
 const MiniDrawer=() =>{
   const editing=useStyles();
@@ -155,23 +157,23 @@ const MiniDrawer=() =>{
   const handleDrawerOpen = () => {
     setOpen(true);
     drawerWidth=160;
-    appWidth=`cal(100%-${drawerWidth}px)`;
-    marginVal=1;
-    marginLval=-100
+    colorVal='e6e6e6';
+    left=17
+    
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
     drawerWidth=200;
-    appWidth=`cal(100%-${drawerWidth}px)`;
-    marginVal=19;
-    marginLval=-120;
+    colorVal='#3333cc';
+    left=0;
+    
   };
 
   return (
     <>
     <Box sx={{ display: 'flex' }}>
-      <AppBar sx={{backgroundColor:'#e6e6e6',boxShadow:0,marginLeft:`(${drawerWidth})px`,width:appWidth,paddingBottom:3,zIndex:'1'}}position="fixed" open={open}>
+      <AppBar sx={{backgroundColor:'#e6e6e6',boxShadow:0,width:appWidth,paddingBottom:3,zIndex:'1'}}position="fixed" open={open}>
         <Toolbar>
           <IconButton
             color="white"
@@ -179,7 +181,7 @@ const MiniDrawer=() =>{
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
-              color:'#3333cc',
+              color:colorVal,
               marginRight:'5px',
               marginLeft:16,
               ...(open && { display: 'none' }),
@@ -187,7 +189,7 @@ const MiniDrawer=() =>{
           >
             <SortIcon />
           </IconButton>
-          <Typography sx={{color:'black',marginRight:68,paddingRight:12,fontWeight:'bold'}} variant="h6" noWrap>
+          <Typography sx={{color:'black',marginRight:68,paddingRight:12,fontWeight:'bold',marginLeft:left}} variant="h6" noWrap>
             Classes
           </Typography>
           <Grid container spacing={2}>
