@@ -3,9 +3,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Settings from '@mui/icons-material/Settings';
@@ -17,21 +15,13 @@ import DvrIcon from '@mui/icons-material/Dvr';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import GroupIcon from '@mui/icons-material/Group';
-import SortIcon from '@mui/icons-material/Sort';
-import { Grid } from '@mui/material';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import EventIcon from '@mui/icons-material/Event';
-import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
-import SchoolIcon from '@mui/icons-material/School';
 import PersonIcon from '@mui/icons-material/Person';
 import { makeStyles } from "@mui/styles";
-import HomeIcon from '@mui/icons-material/Home';
-import BasicSelect from '../app-select-box/AppSelectInput';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-// import IconButton from '@mui/material/IconButton';
-//import { Icon } from '@mui/material';
+import MainAppBar from '../app-main-bar/AppMainBar';
 
-let marginVal=19;
+
+
 
 const useStyles = makeStyles((theme) => ({
   textField1: {
@@ -46,14 +36,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 let drawerWidth =240;
-let appWidth='100%';
-
-
-const schools=['abc','def','ghi'];
-
-
-
-const years = ['2015','2016','2017','2018'];
 
 
 const itemsList =[
@@ -157,9 +139,8 @@ const MiniDrawer=() =>{
   const handleDrawerOpen = () => {
     setOpen(true);
     drawerWidth=160;
-    colorVal='e6e6e6';
+    colorVal='#e6e6e6';
     left=19
-    
   };
 
   const handleDrawerClose = () => {
@@ -167,65 +148,13 @@ const MiniDrawer=() =>{
     drawerWidth=200;
     colorVal='#3333cc';
     left=0;
-    
   };
 
   return (
     <>
     <Box sx={{ display: 'flex' }}>
-      <AppBar sx={{backgroundColor:'#e6e6e6',boxShadow:0,width:appWidth,paddingBottom:3,zIndex:'1'}}position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="white"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              color:colorVal,
-              marginRight:'5px',
-              marginLeft:16,
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <SortIcon />
-          </IconButton>
-          <Typography sx={{color:'black',marginRight:93,paddingRight:12,fontWeight:'bold',marginLeft:left}} variant="h6" noWrap>
-            Classes
-          </Typography>
-          <Grid container spacing={2} sx={{marginRight:-30}}>
-            <Grid item >
-            <BasicSelect label='Select Year'
-              background='#1aa3ff'
-              icon='EventIcon'
-              arr={years}
-             />
-            </Grid>
-            <Grid item>
-            <BasicSelect label='Select School'
-            background='#33ff99'
-            icon='SchoolIcon'
-            arr={schools}/>
-            </Grid>
-          </Grid>
-          <IconButton sx={{marginLeft:marginLval,color:'#ffcc00',fontSize:18,fontWeight:'bold'}}>
-          <LightModeIcon/>
-          </IconButton>
-          <IconButton sx={{marginLeft:1,marginRight:-5}}>
-          <ExitToAppOutlinedIcon sx={{color:'#1aa3ff',fontSize:18,fontWeight:'bold',marginRight:-1}}/>
-          </IconButton>
-
-        </Toolbar>
-        <Box sx={{backgroundColor:'#e6e6e6',marginLeft:marginVal,marginTop:'-34px' }}>
-            <IconButton>
-                <HomeIcon sx={{backgroundColor:'#a6a6a6',borderRadius:'50%',padding:'1px',color:'white',fontSize:18}}/>
-            </IconButton>
-            <Typography display='inline'sx={{fontSize:33,marginLeft:0,marginRight:1,color:'#a6a6a6'}}>.</Typography>
-            <Typography display='inline'sx={{fontSize:12,color:'#a6a6a6'}}>Management</Typography>
-            <Typography display='inline'sx={{fontSize:33,marginLeft:1,marginRight:1,color:'#a6a6a6'}}>.</Typography>
-            <Typography display='inline'sx={{fontSize:12,color:'#a6a6a6'}}>Classes</Typography>
-            </Box>
-        
-      </AppBar>
+      <MainAppBar title='Classes'
+        onClick={handleDrawerOpen} />
       <Drawer  sx={{zIndex:'2'}}PaperProps={{
     sx: {
       backgroundColor: "#3333cc"

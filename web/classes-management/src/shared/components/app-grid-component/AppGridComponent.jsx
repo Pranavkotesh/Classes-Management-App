@@ -2,24 +2,31 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-
-
+import HomeIcon from '@mui/icons-material/Home';
+import Box from '@mui/material/Box';
 import { OutlinedInput } from '@mui/material';
 
 
 
-
+let marginVal=19;
 
 export default function GridComponent() {
   return (
     <section>
-      
+    <Box sx={{backgroundColor:'#e6e6e6',height:'93vh',marginTop:-9}}>
         
-        
-      <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3,paddingBottom:'12%'}} container spacing={2} columns={16}>
-        <div sx={{boxShadow:6}}></div>
+      <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3}} container spacing={2} columns={16}>
+        <Box sx={{backgroundColor:'#e6e6e6',marginLeft:21,width:'100%' }}>
+            <IconButton>
+                <HomeIcon sx={{backgroundColor:'#a6a6a6',borderRadius:'50%',padding:'1px',color:'white',fontSize:18}}/>
+            </IconButton>
+            <Typography display='inline'sx={{fontSize:33,marginLeft:0,marginRight:1,color:'#a6a6a6'}}>.</Typography>
+            <Typography display='inline'sx={{fontSize:12,color:'#a6a6a6'}}>Management</Typography>
+            <Typography display='inline'sx={{fontSize:33,marginLeft:1,marginRight:1,color:'#a6a6a6'}}>.</Typography>
+            <Typography display='inline'sx={{fontSize:12,color:'#a6a6a6'}}>Classes</Typography>
+            </Box>
         <Grid className='classList' item xs={4}>
           <Item sx={{width:280 ,height:90, paddingTop:0,marginLeft:20,borderRadius:2,paddingRight:3}}>
             <Typography sx={{textAlign:'left',paddingLeft:1,paddingTop:2,fontWeight:900,fontSize:9,color:'black'}}>
@@ -57,6 +64,7 @@ export default function GridComponent() {
             <Typography sx={{marginLeft:2,textAlign:'left',fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>CLASS TEACHERS</Typography></Item>
         </Grid>
       </Grid>
+      </Box>
     </section>
   );
 }
