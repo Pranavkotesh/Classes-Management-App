@@ -58,12 +58,12 @@ export default function GridComponent() {
             xs:200,
             md:500,
             lg:800,
-            xl:1100
+            xl:1150
           },height:{
             xs:185,
             md:200,
             lg:215,
-            xl:230
+            xl:240
           },borderRadius:2,marginRight:1}}>
             <Typography sx={{fontWeight: 900,fontSize:9,textAlign:'left',marginLeft:2,paddingTop:2,paddingBottom:1,color:'black'}}>
                 ABOUT</Typography>
@@ -98,8 +98,8 @@ export default function GridComponent() {
             xs:200,
             md:500,
             lg:800,
-            xl:1100
-          },height:110,borderRadius:2}}>
+            xl:1150
+          },height:120,borderRadius:2}}>
             <Typography sx={{marginLeft:2,textAlign:'left',
             fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>
             CLASS INFO</Typography></Item1>
@@ -110,8 +110,8 @@ export default function GridComponent() {
             xs:200,
             md:500,
             lg:800,
-            xl:1100
-          },height:90,borderRadius:2}}>
+            xl:1150
+          },height:100,borderRadius:2}}>
             <Typography sx={{marginLeft:2,textAlign:'left',
             fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>
             CLASS TEACHERS</Typography></Item1>
