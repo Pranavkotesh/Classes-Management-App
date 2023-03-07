@@ -158,7 +158,7 @@ const MiniDrawer=() =>{
     setOpen(true);
     drawerWidth=160;
     colorVal='e6e6e6';
-    left=17
+    left=19
     
   };
 
@@ -189,10 +189,10 @@ const MiniDrawer=() =>{
           >
             <SortIcon />
           </IconButton>
-          <Typography sx={{color:'black',marginRight:68,paddingRight:12,fontWeight:'bold',marginLeft:left}} variant="h6" noWrap>
+          <Typography sx={{color:'black',marginRight:93,paddingRight:12,fontWeight:'bold',marginLeft:left}} variant="h6" noWrap>
             Classes
           </Typography>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} sx={{marginRight:-30}}>
             <Grid item >
             <BasicSelect label='Select Year'
               background='#1aa3ff'
