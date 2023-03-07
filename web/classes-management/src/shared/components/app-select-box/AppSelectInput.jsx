@@ -14,7 +14,6 @@ import { Grid } from '@mui/material';
 
 export default function BasicSelect({
   background,
-  marginL,
   marginR,
   icon,
   label,
