@@ -23,8 +23,8 @@ let marginVal=19;
 export default function GridComponent() {
   return (
     <section>
-    <Box sx={{flexGrow:1,backgroundColor:'#e6e6e6',height:{sm:'150vh',md:'116vh',xl:'95vh'}
-    ,marginTop:-9,width:{sm:'300vh',md:'250vh',lg:'221vh',xl:'221vh'}
+    <Box sx={{flexGrow:1,backgroundColor:'#e6e6e6',height:{sm:'150vh',md:'116vh',xl:'94vh'}
+    ,marginTop:-9,width:{sm:'300vh',md:'250vh',lg:'221vh',xl:'100%'}
     }}>
         
       <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3}} container spacing={2} columns={16}>
@@ -61,7 +61,7 @@ export default function GridComponent() {
             sm:700,
             md:850,
             lg:900,
-            xl:1070
+            xl:'125vh'
           },height:{
             sm:225,
             md:230,
@@ -101,7 +101,7 @@ export default function GridComponent() {
             sm:700,
             md:850,
             lg:900,
-            xl:1070
+            xl:'125vh'
           },height:{
             sm:110,
             md:120,
@@ -118,7 +118,7 @@ export default function GridComponent() {
             sm:700,
             md:850,
             lg:900,
-            xl:1070
+            xl:'125vh'
           },height:{
             sm:90,
             md:100,
