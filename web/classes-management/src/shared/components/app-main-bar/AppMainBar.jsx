@@ -16,7 +16,7 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 const schools=['abc','def','ghi'];
 const years = ['2015','2016','2017','2018'];
 
-//const drawerWidth = 240;
+const appBarWidth = '100%';
 
 
 
@@ -26,7 +26,7 @@ function MainAppBar({props,onClick,title}) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav" sx={{backgroundColor:'#e6e6e6',boxShadow:0,zIndex:'1'}} >
+      <AppBar component="nav" sx={{backgroundColor:'#e6e6e6',boxShadow:0,zIndex:'1',width:appBarWidth}} >
         <Toolbar sx={{marginTop:1}}>
         <IconButton
             aria-label="open drawer"
@@ -44,7 +44,12 @@ function MainAppBar({props,onClick,title}) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ fontWeight:'bold',color:'#000000',maxWidth:908,flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+            sx={{ fontWeight:'bold',color:'#000000',maxWidth:{
+              sm:'43%',
+              md:'46%',
+              lg:'54%',
+              xl:'62%'
+              },flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
             {title}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>

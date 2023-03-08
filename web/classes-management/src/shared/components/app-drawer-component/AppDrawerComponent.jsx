@@ -128,9 +128,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 );
-let left=0;
-let colorVal='#3333cc';
-let marginLval=-120;
+
 const MiniDrawer=() =>{
   const editing=useStyles();
   const theme = useTheme();
@@ -138,16 +136,12 @@ const MiniDrawer=() =>{
 
   const handleDrawerOpen = () => {
     setOpen(true);
-    drawerWidth=160;
-    colorVal='#e6e6e6';
-    left=19
+    drawerWidth=160
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
-    drawerWidth=200;
-    colorVal='#3333cc';
-    left=0;
+    drawerWidth=200
   };
 
   return (
@@ -199,7 +193,12 @@ const MiniDrawer=() =>{
           ))}
         </List>
         <Divider />
-        <List sx={{marginTop:40,color:'white'}}>
+        <List sx={{marginTop:{
+          sm:33,
+          md:34,
+          lg:40,
+          xl:47
+        },color:'white'}}>
           {itemsList2.map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display:'block' }}>
               <ListItemButton
