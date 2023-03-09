@@ -4,7 +4,7 @@ import GridComponent from "../../shared/components/app-grid-component/AppGridCom
 const ClassN = () => {
   return (
     <main sx={{ width: "100%" }}>
-      <MiniDrawer name="Classes" />
+      {/* <MiniDrawer name="Classes" /> */}
       <GridComponent />
     </main>
   );

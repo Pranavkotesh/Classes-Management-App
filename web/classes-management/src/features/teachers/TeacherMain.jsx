@@ -38,9 +38,7 @@ const TeacherMain = () => {
   };
 
   return (
-    <section
-      style={{ marginLeft: 200, width: `calc(100% - 200px)`, padding: 16 }}
-    >
+    <section style={{ padding: 16 }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <AppCard padding="0 32px 16px 32px">

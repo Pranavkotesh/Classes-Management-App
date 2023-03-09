@@ -6,7 +6,7 @@ import LoginPage from "../features/login/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ClassN from "../features/classMain/Class";
 import TeacherMain from "../features/teachers/TeacherMain";
-import MiniDrawer from "./components/app-drawer-component/AppDrawerComponent";
+import AppMainBar from "../shared/components/app-main-bar/AppMainBar";
 const RoutesMain = () => {
   const classes = useStyles();
   const checkSessionExists = () => {
@@ -14,43 +14,48 @@ const RoutesMain = () => {
     return false;
   };
   return (
-    <div className={classes.main}>
-      <MiniDrawer />
-      <Routes>
-        <Route
-          path=""
-          element={
-            checkSessionExists() ? (
-              <Navigate to={"classMain"} replace />
-            ) : (
-              <LoginPage />
-            )
-          }
-        />
-        <Route
-          path="classMain"
-          element={
-            <PrivateRoute>
-              <ClassN />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="teachers"
-          element={
-            <PrivateRoute>
-              <TeacherMain />
-            </PrivateRoute>
-          }
-        />
-      </Routes>
+    <div style={{ display: "flex" }}>
+      <AppMainBar />
+      <div className={`${classes.main} `}>
+        <Routes>
+          <Route
+            path=""
+            element={
+              checkSessionExists() ? (
+                <Navigate to={"classes"} replace />
+              ) : (
+                <LoginPage />
+              )
+            }
+          />
+          <Route
+            path="classes"
+            element={
+              <PrivateRoute>
+                <ClassN />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="teachers"
+            element={
+              <PrivateRoute>
+                <TeacherMain />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </div>
     </div>
   );
 };
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   main: {
-    width: "100%",
-    marginTop: 2,
+    flexGrow: 1,
+    height: "100vh",
+    overflow: "auto",
+    backgroundColor: "#f5f5f5",
+    paddingTop: 64,
   },
 }));
 export default RoutesMain;
