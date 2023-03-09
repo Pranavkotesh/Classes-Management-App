@@ -5,6 +5,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "../features/login/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ClassN from "../features/classMain/Class";
+import TeacherMain from "../features/teachers/TeacherMain";
+import MiniDrawer from "./components/app-drawer-component/AppDrawerComponent";
 const RoutesMain = () => {
   const classes = useStyles();
   const checkSessionExists = () => {
@@ -13,6 +15,7 @@ const RoutesMain = () => {
   };
   return (
     <div className={classes.main}>
+      <MiniDrawer />
       <Routes>
         <Route
           path=""
@@ -28,7 +31,15 @@ const RoutesMain = () => {
           path="classMain"
           element={
             <PrivateRoute>
-              <ClassN/>
+              <ClassN />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="teachers"
+          element={
+            <PrivateRoute>
+              <TeacherMain />
             </PrivateRoute>
           }
         />
@@ -39,7 +50,7 @@ const RoutesMain = () => {
 const useStyles = makeStyles((theme) => ({
   main: {
     width: "100%",
-    marginTop:2
+    marginTop: 2,
   },
 }));
 export default RoutesMain;
