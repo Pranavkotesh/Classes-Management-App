@@ -5,7 +5,7 @@ import GridComponent from "../../shared/components/app-grid-component/AppGridCom
 
 const ClassN= ()=>{
   return(
-    <main>
+    <main sx={{width:'100%'}}>
       <MiniDrawer/>
       <GridComponent/>
       {/* <SummaryGrid/> */}
