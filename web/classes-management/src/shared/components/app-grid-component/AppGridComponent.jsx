@@ -31,7 +31,7 @@ export default function GridComponent() {
     }}>
         
       <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3}} container spacing={2} columns={16}>
-        <Box sx={{backgroundColor:'#e6e6e6',marginLeft:{xs:10,sm:21,md:21,lg:21,xl:21},width:'100%' }}>
+        <Box sx={{backgroundColor:'#e6e6e6',marginLeft:{xs:15,sm:21,md:21,lg:21,xl:21},width:'100%',marginBottom:{xs:2,sm:0,md:0} }}>
             <IconButton>
                 <HomeIcon sx={{backgroundColor:'#a6a6a6',borderRadius:'50%',padding:'1px',color:'white',fontSize:18}}/>
             </IconButton>
@@ -50,12 +50,12 @@ export default function GridComponent() {
             lg:280,
             xl:280
           },height:{
-            xs:50,
+            xs:60,
             sm:50,
             md:65,
             lg:100,
             xl:110
-          },marginLeft:{xs:10,sm:0},
+          },marginLeft:{xs:8,sm:0},
             paddingTop:0,borderRadius:2}}>
             <Typography sx={{textAlign:'left',paddingLeft:1,paddingTop:2,fontWeight:900,fontSize:9,color:'black'}}>
             CLASS LIST
@@ -68,7 +68,7 @@ export default function GridComponent() {
             md:850,
             lg:900,
             xl:'125vh'
-          },marginTop:{xs:8,sm:0,md:0,lg:0,xl:0}}}>
+          },marginTop:{xs:10,sm:0,md:0,lg:0,xl:0},marginLeft:{xs:-2,sm:0,md:0}}}>
             <Typography sx={{fontWeight:900,fontSize:9,textAlign:'left',marginLeft:2,paddingTop:2,paddingBottom:1,color:'black'}}>
                 ABOUT</Typography>
                 <Box sx={{display:{xs:'none',sm:'none',md:'block',lg:'block',xl:'block'}}}>
@@ -107,12 +107,12 @@ export default function GridComponent() {
             lg:900,
             xl:'125vh'
           },height:{
-            xs:100,
+            xs:130,
             sm:110,
             md:120,
             lg:150,
             xl:190
-          },borderRadius:2}}>
+          },borderRadius:2,marginLeft:{xs:-2,sm:0,md:0}}}>
             <Typography sx={{marginLeft:2,textAlign:'left',
             fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>
             CLASS INFO</Typography></Item1>
@@ -126,12 +126,12 @@ export default function GridComponent() {
             lg:900,
             xl:'125vh'
           },height:{
-            xs:90,
+            xs:110,
             sm:90,
             md:100,
             lg:130,
             xl:170
-          },borderRadius:2}}>
+          },borderRadius:2,marginLeft:{xs:-2,sm:0,md:0}}}>
             <Typography sx={{marginLeft:2,textAlign:'left',
             fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>
             CLASS TEACHERS</Typography></Item1>

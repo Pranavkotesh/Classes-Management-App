@@ -123,7 +123,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const MiniDrawer=() =>{
+const MiniDrawer=({name}) =>{
   const editing=useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -141,7 +141,7 @@ const MiniDrawer=() =>{
   return (
     <>
     <Box sx={{ display: 'flex' }}>
-      <MainAppBar title='Classes'
+      <MainAppBar title={name}
         onClick={handleDrawerOpen} />
       <Drawer  sx={{zIndex:'2'}}PaperProps={{
     sx: {
@@ -187,13 +187,7 @@ const MiniDrawer=() =>{
           ))}
         </List>
         <Divider />
-        <List sx={{marginTop:{
-          xs:30,
-          sm:33,
-          md:34,
-          lg:40,
-          xl:'50vh'
-        },color:'white'}}>
+        <List sx={{marginTop:'50vh',color:'white'}}>
           {itemsList2.map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display:'block' }}>
               <ListItemButton
