@@ -24,14 +24,13 @@ const ClassMain = () => {
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
-      <main style={{ padding: 16, backgroundColor: "#e6e6e6" }}>
+      <main style={{  backgroundColor: "#e6e6e6" }}>
 
 <Grid
   container
   spacing={2}
   sx={{
-    backgroundColor: "#e6e6e6",
-    marginBottom: { xs: 0, sm: 0, md: "10vh", lg: "10vh", xl: "12%"},
+    backgroundColor: "#e6e6e6"
   }}
 >
   <Box

@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppMainBar from "../app-main-bar/AppMainBar";
+import { makeStyles } from "@mui/styles";
 
+
+const useStyles= makeStyles(({
+  section:{padding: 16, width: "100%",minHeight: "calc(100vh - 64px)",
+  overflow: "auto",background: "#e6e6e6"}
+}))
 const AppLayout = ({
   title,
   selectedSchool,
@@ -10,6 +16,7 @@ const AppLayout = ({
   onSchoolChange,
   children,
 }) => {
+  const editing=useStyles();
   return (
     <div style={{ display: "flex" }}>
       <AppMainBar
@@ -19,7 +26,7 @@ const AppLayout = ({
         selectedSchool={selectedSchool}
         selectedYear={selectedYear}
       />
-      <section style={{ padding: 16, width: "100%" }}>{children}</section>
+      <section className={editing.section}>{children}</section>
     </div>
   );
 };

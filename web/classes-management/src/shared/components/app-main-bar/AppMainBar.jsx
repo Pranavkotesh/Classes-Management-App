@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SortIcon from "@mui/icons-material/Sort";
-import { Drawer, Grid, useMediaQuery } from "@mui/material";
+import { Drawer, useMediaQuery } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import BasicSelect from "../app-select-box/AppSelectInput";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
