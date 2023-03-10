@@ -36,7 +36,7 @@ const LoginPage = () => {
           onSubmit={async (values, { setSubmitting }) => {
             console.log(values);
             setSubmitting(false);
-            navigate("/classes");
+            navigate("/dashboard");
           }}
         >
           {({

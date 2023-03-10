@@ -14,9 +14,7 @@ const ClassMain = () => {
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
-      <section style={{ padding: 16 }}>
-        <GridComponent />
-      </section>
+      <GridComponent />
     </AppLayout>
   );
 };

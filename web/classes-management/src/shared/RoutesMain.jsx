@@ -4,6 +4,7 @@ import LoginPage from "../features/login/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ClassMain from "../features/classes/ClassMain";
 import TeacherMain from "../features/teachers/TeacherMain";
+import DashboardPage from "../features/dashboard/DashboardPage";
 
 const RoutesMain = () => {
   const classes = useStyles();
@@ -20,10 +21,18 @@ const RoutesMain = () => {
           path=""
           element={
             checkSessionExists() ? (
-              <Navigate to={"classes"} replace />
+              <Navigate to={"dashboard"} replace />
             ) : (
               <LoginPage />
             )
+          }
+        />
+        <Route
+          path="dashboard"
+          element={
+            <PrivateRoute>
+              <DashboardPage />
+            </PrivateRoute>
           }
         />
         <Route

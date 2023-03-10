@@ -1,24 +1,13 @@
-import { Paper, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import React from "react";
+import { Typography } from "@mui/material";
+import AppLayout from "../../shared/components/app-layout/AppLayout";
 
 const DashboardPage = () => {
-  const classes = useStyles();
   return (
-    <main className={classes.main}>
-      <Paper className={classes.dashboardSection}>
-        <Typography variant="h5">Dashboard</Typography>
-      </Paper>
-    </main>
+    <AppLayout title="Dashboard">
+      <Typography variant="h6">Dashboard Page</Typography>
+    </AppLayout>
   );
 };
-
-const useStyles = makeStyles((theme) => ({
-  main: {
-    padding: 16,
-  },
-  dashboardSection: {
-    padding: 16,
-  },
-}));
 
 export default DashboardPage;
