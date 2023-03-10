@@ -21,9 +21,10 @@ function MainAppBar({props,onClick,title}) {
 //   const { window } = props;
   // const container = window !== undefined ? () => window().document.body : undefined;
 
+
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav" sx={{backgroundColor:'#e6e6e6',boxShadow:0,zIndex:'1',width:'100%'}} >
+      <AppBar component="nav" sx={{backgroundColor:'#e6e6e6',boxShadow:0,zIndex:'1'}} >
         <Toolbar sx={{marginTop:1}}>
         <IconButton
             aria-label="open drawer"
@@ -42,8 +43,8 @@ function MainAppBar({props,onClick,title}) {
             variant="h6"
             component="div"
             sx={{ fontWeight:'bold',color:'#000000',maxWidth:{
-              xs:'17%',
-              sm:'43%',
+              xs:'38%',
+              sm:'38%',
               md:'46%',
               lg:'54%',
               xl:'62%'

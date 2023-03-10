@@ -23,13 +23,15 @@ import MainAppBar from '../app-main-bar/AppMainBar';
 
 
 const useStyles = makeStyles((theme) => ({
-  
+  drawer:{
+    height:'10vh'
+  },
   img:{
     marginRight:8,
     marginLeft:10
   }
 }));
-let drawerWidth =240;
+let drawerWidth =200;
 
 
 const itemsList =[
@@ -143,7 +145,7 @@ const MiniDrawer=({name}) =>{
     <Box sx={{ display: 'flex' }}>
       <MainAppBar title={name}
         onClick={handleDrawerOpen} />
-      <Drawer  sx={{zIndex:'2'}}PaperProps={{
+      <Drawer className={editing.drawer} sx={{zIndex:'2'}}PaperProps={{
     sx: {
       backgroundColor: "#3333cc"
     }
@@ -187,7 +189,7 @@ const MiniDrawer=({name}) =>{
           ))}
         </List>
         <Divider />
-        <List sx={{marginTop:'50vh',color:'white'}}>
+        <List sx={{marginTop:'45vh',color:'white'}}>
           {itemsList2.map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display:'block' }}>
               <ListItemButton
