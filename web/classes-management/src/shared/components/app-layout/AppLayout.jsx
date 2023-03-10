@@ -19,7 +19,7 @@ const AppLayout = ({
         selectedSchool={selectedSchool}
         selectedYear={selectedYear}
       />
-      <section style={{ padding: 16 }}>{children}</section>
+      <section style={{ padding: 16, width: "100%" }}>{children}</section>
     </div>
   );
 };
