@@ -43,7 +43,7 @@ function MainAppBar({props,onClick,title}) {
             variant="h6"
             component="div"
             sx={{ fontWeight:'bold',color:'#000000',maxWidth:{
-              xs:'38%',
+              xs:'33%',
               sm:'38%',
               md:'46%',
               lg:'54%',
@@ -82,10 +82,7 @@ function MainAppBar({props,onClick,title}) {
 }
 
 MainAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+  
   window: PropTypes.func,
 };
 

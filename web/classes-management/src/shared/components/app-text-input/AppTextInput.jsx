@@ -1,5 +1,5 @@
-import { FormControl, TextField } from "@mui/material";
 import React from "react";
+import { FormControl, TextField, Typography } from "@mui/material";
 
 function AppTextInput({
   type,
@@ -7,7 +7,7 @@ function AppTextInput({
   onChange,
   onBlur,
   value,
-  placeholderText,
+  placeholder,
   className,
   label,
   error,
@@ -15,12 +15,13 @@ function AppTextInput({
   ...rest
 }) {
   return (
-    <FormControl margin="normal" required fullWidth>
+    <FormControl fullWidth margin="normal">
+      {label && <Typography style={{ color: "grey" }}>{label}</Typography>}
       <TextField
         size="small"
         name={name}
-        type={type}
-        label={label}
+        type={type || "text"}
+        placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}
         error={errorText ? true : false}
