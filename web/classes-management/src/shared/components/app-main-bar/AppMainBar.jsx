@@ -83,6 +83,7 @@ function AppMainBar() {
             color="default"
             position="fixed"
             className={`${classes.commonAppBarClass} ${getAppBarClassName()}`}
+            sx={{backgroundColor:'#e6e6e6'}}
           >
             <Toolbar
               disableGutters={!open}
@@ -96,6 +97,7 @@ function AppMainBar() {
                 className={`${classes.menuButton} ${
                   open && classes.menuButtonHidden
                 }`}
+                sx={{color:'#3333cc'}}
               >
                 <SortIcon />
               </IconButton>
@@ -105,6 +107,7 @@ function AppMainBar() {
                 color="inherit"
                 noWrap
                 className={`${classes.title}`}
+                sx={{fontWeight:'bolder'}}
               >
                 {getTitle()}
               </Typography>
@@ -271,6 +274,7 @@ const styles = makeStyles((theme) =>
       transition: `${theme.transitions.create(["width", "margin"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
+
       })} !important`,
     },
     appBarShift: {
