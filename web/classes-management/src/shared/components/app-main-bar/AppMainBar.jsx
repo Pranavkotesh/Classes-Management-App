@@ -13,32 +13,42 @@ import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import MiniDrawer from "../app-drawer-component/AppDrawerComponent";
 // import { useTheme } from "@emotion/react";
 import { useTheme, makeStyles, createStyles } from "@mui/styles";
+import { THEME } from "../../../styles";
+import { useLocation } from "react-router-dom";
 
 const schools = ["abc", "def", "ghi"];
 const years = ["2015", "2016", "2017", "2018"];
 const openDrawerWidth = 240;
-const closeDrawerWidth = 80;
+const closeDrawerWidth = 72;
+const TITLE_DICT = {
+  "/main": "Main",
+  "/teachers": "Teachers",
+  "/classes": "Classes",
+};
 
-// function useWidth() {
-//   const theme = useTheme();
-//   const keys = [...theme.breakpoints.keys].reverse();
-//   return (
-//     keys.reduce((output, key) => {
-//       // eslint-disable-next-line react-hooks/rules-of-hooks
-//       const matches = useMediaQuery(theme.breakpoints.up(key));
-//       return !output && matches ? key : output;
-//     }, null) || "md"
-//   );
-// }
+function useWidth() {
+  const theme = useTheme();
+  const keys = [...theme.breakpoints.keys].reverse();
+  return (
+    keys.reduce((output, key) => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const matches = useMediaQuery(theme.breakpoints.up(key));
+      return !output && matches ? key : output;
+    }, null) || "md"
+  );
+}
 
 function AppMainBar() {
   // custom hooks
-  const width = "md";
-  // const width = useWidth();
-  // console.log("width", width);
+  const width = useWidth();
+  console.log("width", width);
 
-  const [open, setOpen] = React.useState(false);
-  const [title, setTitle] = React.useState("Classes");
+  const [open, setOpen] = React.useState(
+    width === "xs" || width === "sm" ? false : true
+  );
+
+  const location = useLocation();
+
   const isTokenExpired = () => {
     return false;
   };
@@ -51,6 +61,20 @@ function AppMainBar() {
 
   const classes = styles();
 
+  const getAppBarClassName = () => {
+    let className = classes.appBar;
+    if (open) {
+      className = classes.appBarShift;
+    } else {
+      if (["sm", "xs"].includes(width)) className = classes.appBarShiftSmXs;
+    }
+    return className;
+  };
+
+  const getTitle = () => {
+    return TITLE_DICT[location.pathname];
+  };
+
   return (
     <>
       {!isTokenExpired() ? (
@@ -58,7 +82,7 @@ function AppMainBar() {
           <AppBar
             color="default"
             position="fixed"
-            className={`${classes.appBar} ${open && classes.appBarShift}`}
+            className={`${getAppBarClassName()}`}
           >
             <Toolbar
               disableGutters={!open}
@@ -82,13 +106,13 @@ function AppMainBar() {
                 noWrap
                 className={`${classes.title}`}
               >
-                {title}
+                {getTitle()}
               </Typography>
               <Grid
                 container
                 alignItems="center"
                 justifyContent="end"
-                spacing={1}
+                spacing={2}
                 style={{ width: "auto" }}
               >
                 <Grid item>
@@ -112,10 +136,7 @@ function AppMainBar() {
                 <Grid item>
                   <IconButton
                     sx={{
-                      marginLeft: 2,
                       color: "#ffcc00",
-                      fontSize: 18,
-                      fontWeight: "bold",
                     }}
                   >
                     <LightModeIcon />
@@ -125,10 +146,7 @@ function AppMainBar() {
                   <IconButton>
                     <ExitToAppOutlinedIcon
                       sx={{
-                        color: "#1aa3ff",
-                        fontSize: 18,
-                        fontWeight: "bold",
-                        marginRight: -1,
+                        color: THEME.palette.primary.main,
                       }}
                     />
                   </IconButton>
@@ -241,7 +259,8 @@ const styles = makeStyles((theme) =>
       display: "flex",
     },
     toolbar: {
-      paddingRight: 24, // keep right padding when drawer closed
+      paddingRight: 16, // keep right padding when drawer closed
+      paddingLeft: 16,
     },
     toolbarIcon: {
       ...theme.mixins.toolbar,
@@ -270,6 +289,14 @@ const styles = makeStyles((theme) =>
         duration: theme.transitions.duration.enteringScreen,
       })} !important`,
     },
+    appBarShiftSmXs: {
+      marginLeft: 0,
+      width: `100% !important`,
+      transition: `${theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      })} !important`,
+    },
     menuButton: {
       marginLeft: 12,
       marginRight: 36,
@@ -295,6 +322,7 @@ const styles = makeStyles((theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       })} !important`,
+      border: "none !important",
     },
     drawerPaperClose: {
       width: closeDrawerWidth,
