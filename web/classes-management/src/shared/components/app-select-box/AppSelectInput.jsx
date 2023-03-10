@@ -17,14 +17,15 @@ export default function BasicSelect({
   value,
 }) {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} style={{ paddingTop: 4 }}>
       <Grid item>
         <IconButton
-          sx={{
-            marginRight: -10,
+          style={{
+            marginRight: -80,
             fontSize: 14,
             color: "whitesmoke",
             zIndex: "1",
+            marginTop: -5,
           }}
         >
           <SchoolIcon />
@@ -35,11 +36,11 @@ export default function BasicSelect({
           <FormControl fullWidth>
             <InputLabel
               id="demo-simple-select-label"
-              sx={{
+              style={{
                 color: "whitesmoke",
                 fontSize: 14,
-                marginTop: -1,
-                marginLeft: 1,
+                marginTop: -12,
+                marginLeft: 12,
               }}
             >
               {label}
