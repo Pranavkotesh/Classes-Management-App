@@ -4,6 +4,7 @@ import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import AppSelect from "../../shared/components/app-select/AppSelect";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
+import AppButton from "../../shared/components/app-button/AppButton";
 
 const CLASS_ARRAY = [
   { value: 1, label: "I" },
@@ -18,6 +19,14 @@ const CLASS_ARRAY = [
   { value: 10, label: "X" },
 ];
 
+const Heading = ({ heading }) => {
+  return (
+    <Typography variant="subtitle2" color="lightgrey">
+      {heading}
+    </Typography>
+  );
+};
+
 const TeacherMain = () => {
   const [searchObj, setSearchObj] = useState({
     class: "",
@@ -25,6 +34,7 @@ const TeacherMain = () => {
   });
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
+  const [notes, setNotes] = useState("");
 
   const handleSearchObjChange = (event) => {
     const { name, value } = event.target;
@@ -61,15 +71,13 @@ const TeacherMain = () => {
                 </div>
               </Grid>
               <Grid item xs={12} sm={5} md={5} lg={5}>
-                <FormControl margin="normal" fullWidth>
-                  <AppTextInput
-                    name="search"
-                    label="Search a Teacher"
-                    placeholder="e.g. First Name / Last Name"
-                    onChange={handleSearchObjChange}
-                    value={searchObj.search}
-                  />
-                </FormControl>
+                <AppTextInput
+                  name="search"
+                  label="Search a Teacher"
+                  placeholder="e.g. First Name / Last Name"
+                  onChange={handleSearchObjChange}
+                  value={searchObj.search}
+                />
               </Grid>
             </Grid>
           </AppCard>
@@ -83,14 +91,51 @@ const TeacherMain = () => {
               <Grid container spacing={3}>
                 <Grid item xs={12}>
                   <AppCard title="About">
-                    <Typography>About details need to show here</Typography>
+                    <Grid container spacing={1} style={{ paddingTop: 16 }}>
+                      <Grid item xs={3}>
+                        <Heading heading="NAME" />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Heading heading="DOB" />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Heading heading="RESIDENCE" />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Heading heading="STATUS" />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <AppTextInput
+                          name="notes"
+                          label=""
+                          onChange={(event) => setNotes(event.target.value)}
+                          value={notes}
+                          multiline
+                          minRows={3}
+                        />
+                      </Grid>
+                      <Grid item xs={1}>
+                        <AppButton btnText="Notes:" />
+                      </Grid>
+                    </Grid>
                   </AppCard>
                 </Grid>
                 <Grid item xs={12}>
                   <AppCard title="Classes Assigned">
-                    <Typography>
-                      Classes Assigned details need to show here
-                    </Typography>
+                    <Grid container spacing={1} style={{ paddingTop: 16 }}>
+                      <Grid item xs={3}>
+                        <Heading heading="CLASS" />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Heading heading="SCHEDULE" />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Heading heading="ROLL" />
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Heading heading="CLASS STATUS" />
+                      </Grid>
+                    </Grid>
                   </AppCard>
                 </Grid>
               </Grid>
