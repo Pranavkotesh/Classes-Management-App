@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SortIcon from "@mui/icons-material/Sort";
-import { Drawer, Grid, useMediaQuery } from "@mui/material";
+import { Drawer, useMediaQuery } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import BasicSelect from "../app-select-box/AppSelectInput";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
@@ -76,6 +76,7 @@ function AppMainBar({
             color="default"
             position="fixed"
             className={`${classes.commonAppBarClass} ${getAppBarClassName()}`}
+            sx={{backgroundColor:'#e6e6e6'}}
           >
             <Toolbar
               disableGutters={!open}
@@ -89,6 +90,7 @@ function AppMainBar({
                 className={`${classes.menuButton} ${
                   open && classes.menuButtonHidden
                 }`}
+                sx={{color:'#3333cc'}}
               >
                 <SortIcon />
               </IconButton>
@@ -98,6 +100,7 @@ function AppMainBar({
                 color="inherit"
                 noWrap
                 className={`${classes.title}`}
+                sx={{fontWeight:'bolder'}}
               >
                 {title}
               </Typography>
@@ -196,6 +199,7 @@ const styles = makeStyles((theme) =>
       transition: `${theme.transitions.create(["width", "margin"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
+
       })} !important`,
     },
     appBarShift: {
