@@ -21,17 +21,17 @@ const Item1 = styled(Paper)(({ theme }) => ({
 export default function GridComponent() {
   return (
     <section>
-    <Box sx={{flexGrow:1,backgroundColor:'#e6e6e6',height:{xs:'100vh',sm:'150vh',md:'116vh',xl:'94vh'}
+    <Box sx={{flexGrow:1,backgroundColor:'#e6e6e6',height:{xs:'95vh',sm:'120vh',md:'116vh',xl:'94vh'}
     ,marginTop:-9,width:{
-      xs:'106%',sm:'263vh',
-      md:'120%',
+      xs:'100%',sm:'140vh',
+      md:'180vh',
       lg:'110%',
       xl:'100%'
-    }
+    },overflow:'hidden',boxSizing:'border-box'
     }}>
         
       <Grid sx={{backgroundColor:'#e6e6e6',paddingTop:3}} container spacing={2} columns={16}>
-        <Box sx={{backgroundColor:'#e6e6e6',marginLeft:{xs:15,sm:21,md:21,lg:21,xl:21},width:'100%',marginBottom:{xs:2,sm:0,md:0} }}>
+        <Box sx={{backgroundColor:'#e6e6e6',marginLeft:{xs:10,sm:21,md:21,lg:21,xl:21},width:'100%',marginBottom:{xs:2,sm:0,md:0} }}>
             <IconButton>
                 <HomeIcon sx={{backgroundColor:'#a6a6a6',borderRadius:'50%',padding:'1px',color:'white',fontSize:18}}/>
             </IconButton>
@@ -44,7 +44,7 @@ export default function GridComponent() {
             <Grid item xs={2}></Grid>
         <Grid className='classList' item xs={3}>
           <Item1 sx={{width:{
-            xs:'36vh',
+            xs:'34vh',
             sm:140,
             md:200,
             lg:280,
@@ -55,7 +55,7 @@ export default function GridComponent() {
             md:65,
             lg:100,
             xl:110
-          },marginLeft:{xs:'15px',sm:0},
+          },marginLeft:{xs:'67%',sm:'17%',md:0},
             paddingTop:0,borderRadius:2}}>
             <Typography sx={{textAlign:'left',paddingLeft:1,paddingTop:2,fontWeight:900,fontSize:9,color:'black'}}>
             CLASS LIST
@@ -63,12 +63,12 @@ export default function GridComponent() {
         </Grid>
         <Grid className='About'item xs={10}>
           <Item1 sx={{borderRadius:2,marginRight:1,width:{
-            xs:'36vh',
-            sm:700,
+            xs:'34vh',
+            sm:'93vh',
             md:850,
             lg:900,
             xl:'125vh'
-          },marginTop:{xs:10,sm:0,md:0,lg:0,xl:0},marginLeft:{xs:'-8vh',sm:0,md:0}}}>
+          },marginTop:{xs:10,sm:0,md:0,lg:0,xl:0},marginLeft:{xs:'-5vh',sm:0,md:0}}}>
             <Typography sx={{fontWeight:900,fontSize:9,textAlign:'left',marginLeft:2,paddingTop:2,paddingBottom:1,color:'black'}}>
                 ABOUT</Typography>
                 <Box sx={{display:{xs:'none',sm:'none',md:'block',lg:'block',xl:'block'}}}>
@@ -102,8 +102,8 @@ export default function GridComponent() {
         <Grid item xs={5}></Grid>
         <Grid className='classInfo' item xs={11}>
           <Item1 sx={{width:{
-            xs:'36vh',
-            sm:700,
+            xs:'34vh',
+            sm:'93vh',
             md:850,
             lg:900,
             xl:'125vh'
@@ -113,7 +113,7 @@ export default function GridComponent() {
             md:120,
             lg:150,
             xl:190
-          },borderRadius:2,marginLeft:{xs:'-8vh',sm:0,md:0}}}>
+          },borderRadius:2,marginLeft:{xs:'-5vh',sm:0,md:0}}}>
             <Typography sx={{marginLeft:2,textAlign:'left',
             fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>
             CLASS INFO</Typography></Item1>
@@ -121,8 +121,8 @@ export default function GridComponent() {
         <Grid item xs={5}></Grid>
         <Grid className='classTeachers' item xs={11}>
           <Item1 sx={{width:{
-            xs:'36vh',
-            sm:700,
+            xs:'34vh',
+            sm:'93vh',
             md:850,
             lg:900,
             xl:'125vh'
@@ -132,7 +132,7 @@ export default function GridComponent() {
             md:100,
             lg:130,
             xl:170
-          },borderRadius:2,marginLeft:{xs:'-8vh',sm:0,md:0}}}>
+          },borderRadius:2,marginLeft:{xs:'-5vh',sm:0,md:0}}}>
             <Typography sx={{marginLeft:2,textAlign:'left',
             fontWeight:900,fontSize:9,paddingTop:2,color:'black'}}>
             CLASS TEACHERS</Typography></Item1>
