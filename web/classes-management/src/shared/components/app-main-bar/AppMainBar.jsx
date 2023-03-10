@@ -82,7 +82,7 @@ function AppMainBar() {
           <AppBar
             color="default"
             position="fixed"
-            className={`${getAppBarClassName()}`}
+            className={`${classes.commonAppBarClass} ${getAppBarClassName()}`}
           >
             <Toolbar
               disableGutters={!open}
@@ -108,50 +108,39 @@ function AppMainBar() {
               >
                 {getTitle()}
               </Typography>
-              <Grid
-                container
-                alignItems="center"
-                justifyContent="end"
-                spacing={2}
-                style={{ width: "auto" }}
-              >
-                <Grid item>
-                  <BasicSelect
-                    label="Select Year"
-                    background="#1aa3ff"
-                    icon="EventIcon"
-                    arr={years}
-                    value=""
-                  />
-                </Grid>
-                <Grid item>
-                  <BasicSelect
-                    label="Select School"
-                    background="#33ff99"
-                    icon="SchoolIcon"
-                    arr={schools}
-                    value=""
-                  />
-                </Grid>
-                <Grid item>
-                  <IconButton
+              <Box sx={{ flexGrow: 1 }} />
+              <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+                <BasicSelect
+                  label="Select Year"
+                  background="#1aa3ff"
+                  icon="EventIcon"
+                  arr={years}
+                  value=""
+                />
+                <BasicSelect
+                  label="Select School"
+                  background="#33ff99"
+                  icon="SchoolIcon"
+                  arr={schools}
+                  value=""
+                />
+              </Box>
+              <Box sx={{ paddingLeft: 2 }}>
+                <IconButton
+                  sx={{
+                    color: "#ffcc00",
+                  }}
+                >
+                  <LightModeIcon />
+                </IconButton>
+                <IconButton>
+                  <ExitToAppOutlinedIcon
                     sx={{
-                      color: "#ffcc00",
+                      color: THEME.palette.primary.main,
                     }}
-                  >
-                    <LightModeIcon />
-                  </IconButton>
-                </Grid>
-                <Grid item>
-                  <IconButton>
-                    <ExitToAppOutlinedIcon
-                      sx={{
-                        color: THEME.palette.primary.main,
-                      }}
-                    />
-                  </IconButton>
-                </Grid>
-              </Grid>
+                  />
+                </IconButton>
+              </Box>
             </Toolbar>
           </AppBar>
           <Drawer
@@ -162,6 +151,7 @@ function AppMainBar() {
                   : "permanent"
                 : "permanent"
             }
+            className={open ? classes.drawerPaper : classes.drawerPaperClose}
             classes={{
               paper: `${classes.drawerPaper} ${
                 !open && `${classes.drawerPaperClose} menu-collapsed`
@@ -270,6 +260,10 @@ const styles = makeStyles((theme) =>
       padding: "0 8px",
       minHeight: "48px !important",
     },
+    commonAppBarClass: {
+      boxShadow: "none !important",
+      border: "1px solid #ddd",
+    },
     appBar: {
       marginLeft: closeDrawerWidth,
       width: `calc(100% - ${closeDrawerWidth}px) !important`,
@@ -278,8 +272,6 @@ const styles = makeStyles((theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       })} !important`,
-      boxShadow: "none !important",
-      border: "1px solid #ddd",
     },
     appBarShift: {
       marginLeft: openDrawerWidth,
