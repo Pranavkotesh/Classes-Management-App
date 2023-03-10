@@ -137,7 +137,7 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
           ))}
         </List>
         {/* <Divider /> */}
-        <List sx={{ position: "absolute", bottom: 0 }}>
+        <List sx={{ position: "absolute", bottom: 0, width: "100%" }}>
           {itemsList2.map((item, index) => (
             <ListItem
               key={item.text}
