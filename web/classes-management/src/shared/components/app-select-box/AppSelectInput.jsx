@@ -23,7 +23,6 @@ export default function BasicSelect({
   return (
     <FormControl
       fullWidth
-      margin="normal"
       style={{ position: "relative" }}
       className="custom-select"
     >
