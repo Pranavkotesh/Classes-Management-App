@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  FormControl,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { FormControl, Grid, Typography } from "@mui/material";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import AppSelect from "../../shared/components/app-select/AppSelect";
 import AppCard from "../../shared/components/app-card/AppCard";
+import AppLayout from "../../shared/components/app-layout/AppLayout";
 
 const CLASS_ARRAY = [
   { value: 1, label: "I" },
@@ -28,6 +23,8 @@ const TeacherMain = () => {
     class: "",
     search: "",
   });
+  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedSchool, setSelectedSchool] = useState("");
 
   const handleSearchObjChange = (event) => {
     const { name, value } = event.target;
@@ -38,7 +35,13 @@ const TeacherMain = () => {
   };
 
   return (
-    <section style={{ padding: 16 }}>
+    <AppLayout
+      title="Teachers"
+      selectedSchool={selectedSchool}
+      selectedYear={selectedYear}
+      onSchoolChange={(event) => setSelectedSchool(event.target.value)}
+      onYearChange={(event) => setSelectedYear(event.target.value)}
+    >
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <AppCard padding="0 32px 16px 32px">
@@ -95,7 +98,7 @@ const TeacherMain = () => {
           </Grid>
         </Grid>
       </Grid>
-    </section>
+    </AppLayout>
   );
 };
 

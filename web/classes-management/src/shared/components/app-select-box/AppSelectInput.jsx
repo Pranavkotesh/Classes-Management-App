@@ -15,6 +15,7 @@ export default function BasicSelect({
   label,
   arr,
   value,
+  onChange,
 }) {
   return (
     <Grid container spacing={2} style={{ paddingTop: 4 }}>
@@ -61,6 +62,7 @@ export default function BasicSelect({
                 marginLeft: -1,
                 textAlign: "center",
               }}
+              onChange={onChange}
             >
               {arr.map((option) => (
                 <MenuItem key={option} value={option}>

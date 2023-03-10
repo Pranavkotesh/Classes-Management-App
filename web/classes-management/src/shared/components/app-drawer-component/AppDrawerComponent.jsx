@@ -18,9 +18,9 @@ import { useNavigate } from "react-router-dom";
 
 const itemsList = [
   {
-    text: "Main",
+    text: "Dashboard",
     icon: <DvrIcon />,
-    route: "main",
+    route: "dashboard",
   },
   {
     text: "Teachers",
@@ -50,10 +50,10 @@ const itemsList2 = [
 
 const MiniDrawer = ({ open, handleDrawerClose }) => {
   const navigate = useNavigate();
-  const [selectedTab, setSelectedTab] = React.useState("main");
+  const [selectedTab, setSelectedTab] = React.useState("dashboard");
 
   React.useEffect(() => {
-    let selectedTab = "main";
+    let selectedTab = "dashboard";
     let pathName = window.location.pathname;
 
     itemsList.forEach((item) => {

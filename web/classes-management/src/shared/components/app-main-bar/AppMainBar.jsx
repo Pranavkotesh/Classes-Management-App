@@ -11,20 +11,13 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import BasicSelect from "../app-select-box/AppSelectInput";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import MiniDrawer from "../app-drawer-component/AppDrawerComponent";
-// import { useTheme } from "@emotion/react";
 import { useTheme, makeStyles, createStyles } from "@mui/styles";
 import { THEME } from "../../../styles";
-import { useLocation } from "react-router-dom";
 
 const schools = ["abc", "def", "ghi"];
 const years = ["2015", "2016", "2017", "2018"];
 const openDrawerWidth = 240;
 const closeDrawerWidth = 72;
-const TITLE_DICT = {
-  "/main": "Main",
-  "/teachers": "Teachers",
-  "/classes": "Classes",
-};
 
 function useWidth() {
   const theme = useTheme();
@@ -38,16 +31,19 @@ function useWidth() {
   );
 }
 
-function AppMainBar() {
+function AppMainBar({
+  title,
+  onSchoolChange,
+  onYearChange,
+  selectedYear,
+  selectedSchool,
+}) {
   // custom hooks
   const width = useWidth();
-  console.log("width", width);
 
   const [open, setOpen] = React.useState(
     width === "xs" || width === "sm" ? false : true
   );
-
-  const location = useLocation();
 
   const isTokenExpired = () => {
     return false;
@@ -69,10 +65,6 @@ function AppMainBar() {
       if (["sm", "xs"].includes(width)) className = classes.appBarShiftSmXs;
     }
     return className;
-  };
-
-  const getTitle = () => {
-    return TITLE_DICT[location.pathname];
   };
 
   return (
@@ -109,7 +101,7 @@ function AppMainBar() {
                 className={`${classes.title}`}
                 sx={{fontWeight:'bolder'}}
               >
-                {getTitle()}
+                {title}
               </Typography>
               <Box sx={{ flexGrow: 1 }} />
               <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
@@ -118,14 +110,16 @@ function AppMainBar() {
                   background="#1aa3ff"
                   icon="EventIcon"
                   arr={years}
-                  value=""
+                  value={selectedYear}
+                  onChange={onYearChange}
                 />
                 <BasicSelect
                   label="Select School"
                   background="#33ff99"
                   icon="SchoolIcon"
                   arr={schools}
-                  value=""
+                  value={selectedSchool}
+                  onChange={onSchoolChange}
                 />
               </Box>
               <Box sx={{ paddingLeft: 2 }}>
@@ -162,12 +156,6 @@ function AppMainBar() {
             }}
             open={open}
           >
-            {/* <div className={`${classes.toolbarIcon}`}>
-              <IconButton onClick={handleDrawerClose}>
-                <ChevronLeft />
-              </IconButton>
-            </div> */}
-            {/* <Divider /> */}
             <MiniDrawer open={open} handleDrawerClose={handleDrawerClose} />
           </Drawer>
         </>
@@ -175,74 +163,6 @@ function AppMainBar() {
         <React.Fragment></React.Fragment>
       )}
     </>
-    // <Box sx={{ display: "flex" }}>
-    //   <AppBar
-    //     component="nav"
-    //     sx={{
-    //       backgroundColor: "#e6e6e6",
-    //       boxShadow: 0,
-    //       zIndex: "1",
-    //       width: "100%",
-    //     }}
-    //   >
-    //     <Toolbar sx={{ marginTop: 1 }}>
-    //       <IconButton
-    //         aria-label="open drawer"
-    //         onClick={onClick}
-    //         edge="start"
-    //         sx={{
-    //           color: "#3333cc",
-    //           marginRight: "5px",
-    //           marginLeft: { xs: 5, sm: 16, md: 16, lg: 16, xl: 16 },
-    //           //   ...(open && { display: 'none' }),
-    //         }}
-    //       >
-    //         <SortIcon />
-    //       </IconButton>
-    //       <Typography
-    //         variant="h6"
-    //         component="div"
-    //         sx={{
-    //           fontWeight: "bold",
-    //           color: "#000000",
-    //           maxWidth: {
-    //             xs: "17%",
-    //             sm: "43%",
-    //             md: "46%",
-    //             lg: "54%",
-    //             xl: "62%",
-    //           },
-    //           flexGrow: 1,
-    //           display: { xs: "flex", sm: "block" },
-    //         }}
-    //       >
-    //         {title}
-    //       </Typography>
-    //       <Box sx={{ display: { xs: "none", sm: "block" } }}>
-    //         <Grid container spacing={2}>
-    //           <Grid item>
-    //             <BasicSelect
-    //               label="Select Year"
-    //               background="#1aa3ff"
-    //               icon="EventIcon"
-    //               arr={years}
-    //             />
-    //           </Grid>
-    //           <Grid item>
-    //             <BasicSelect
-    //               label="Select School"
-    //               background="#33ff99"
-    //               icon="SchoolIcon"
-    //               arr={schools}
-    //             />
-    //           </Grid>
-    //         </Grid>
-    //       </Box>
-    //
-    //
-    //     </Toolbar>
-    //   </AppBar>
-    // </Box>
   );
 }
 
@@ -353,6 +273,12 @@ const styles = makeStyles((theme) =>
   })
 );
 
-AppMainBar.propTypes = {};
+AppMainBar.propTypes = {
+  title: PropTypes.string.isRequired,
+  selectedYear: PropTypes.string,
+  selectedSchool: PropTypes.string,
+  onSchoolChange: PropTypes.func,
+  onYearChange: PropTypes.func,
+};
 
 export default AppMainBar;
