@@ -79,7 +79,7 @@ const DashboardPage = () => {
             <Grid item xs={12} sx={{ marginTop: { xs: 0, sm: 4 } }}>
               <AppCard title="Classes" minHeight={270}>
                 <Grid item={10}>
-                  <TableContainer component={Paper} sx={{boxShadow:0,border: "1px solid rgba(166,166,166)",mt:2,mb:4}}>
+                  <TableContainer component={Paper} sx={{boxShadow:0,border: "2px solid rgba(217,217,217)",mt:2,mb:4}}>
                     <Table >
                       <TableHead >
                         <TableRow>
