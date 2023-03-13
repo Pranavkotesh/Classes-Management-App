@@ -5,6 +5,7 @@ import AppSelect from "../../shared/components/app-select/AppSelect";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppButton from "../../shared/components/app-button/AppButton";
+import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 
 const CLASS_ARRAY = [
   { value: 1, label: "I" },
@@ -53,6 +54,8 @@ const TeacherMain = () => {
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
       <Grid container spacing={2}>
+        <BoxElement elementOne='Management'
+          elementTwo='Teachers'/>
         <Grid item xs={12}>
           <AppCard padding="0 32px 16px 32px">
             <Grid container spacing={4} alignItems="center">
