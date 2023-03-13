@@ -1,6 +1,6 @@
 import HomeIcon from "@mui/icons-material/Home";
 import Box from "@mui/material/Box";
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
 
 function BoxElement({ elementOne, elementTwo }) {
@@ -33,9 +33,7 @@ function BoxElement({ elementOne, elementTwo }) {
       >
         .
       </Typography>
-      <Typography display="inline" sx={{ fontSize: 12, color: "#a6a6a6" }}>
-        {elementOne}
-      </Typography>
+      <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementOne}</Button>
       <Typography
         display="inline"
         sx={{
@@ -47,9 +45,7 @@ function BoxElement({ elementOne, elementTwo }) {
       >
         .
       </Typography>
-      <Typography display="inline" sx={{ fontSize: 12, color: "#a6a6a6" }}>
-        {elementTwo}
-      </Typography>
+      <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementTwo}</Button>
     </Box>
   );
 }
