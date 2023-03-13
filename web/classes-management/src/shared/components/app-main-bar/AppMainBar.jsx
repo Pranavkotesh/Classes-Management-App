@@ -13,6 +13,7 @@ import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import MiniDrawer from "../app-drawer-component/AppDrawerComponent";
 import { useTheme, makeStyles, createStyles } from "@mui/styles";
 import { THEME } from "../../../styles";
+import { Event, School } from "@mui/icons-material";
 
 const schools = ["abc", "def", "ghi"];
 const years = ["2015", "2016", "2017", "2018"];
@@ -107,19 +108,23 @@ function AppMainBar({
               <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
                 <BasicSelect
                   label="Select Year"
-                  background="#1aa3ff"
-                  icon="EventIcon"
-                  arr={years}
+                  bgColor="#1aa3ff"
+                  icon={<Event />}
+                  menuItems={years}
                   value={selectedYear}
                   onChange={onYearChange}
+                  width={180}
+                  height={35}
                 />
                 <BasicSelect
                   label="Select School"
-                  background="#33ff99"
-                  icon="SchoolIcon"
-                  arr={schools}
+                  bgColor="#33ff99"
+                  icon={<School />}
+                  menuItems={schools}
                   value={selectedSchool}
                   onChange={onSchoolChange}
+                  width={180}
+                  height={35}
                 />
               </Box>
               <Box sx={{ paddingLeft: 2 }}>

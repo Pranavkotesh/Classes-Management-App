@@ -9,70 +9,55 @@ import SchoolIcon from "@mui/icons-material/School";
 import { Grid } from "@mui/material";
 
 export default function BasicSelect({
-  background,
-  marginR,
+  bgColor,
+  width,
+  height,
   icon,
+  name,
+  placeholder,
   label,
-  arr,
   value,
   onChange,
+  menuItems,
 }) {
   return (
-    <Grid container spacing={2} style={{ paddingTop: 4 }}>
-      <Grid item>
-        <IconButton
-          style={{
-            marginRight: -80,
-            fontSize: 14,
-            color: "whitesmoke",
-            zIndex: "1",
-            marginTop: -5,
-          }}
-        >
-          <SchoolIcon />
-        </IconButton>
-      </Grid>
-      <Grid item>
-        <Box>
-          <FormControl fullWidth>
-            <InputLabel
-              id="demo-simple-select-label"
-              style={{
-                color: "whitesmoke",
-                fontSize: 14,
-                marginTop: -12,
-                marginLeft: 12,
-              }}
-            >
-              {label}
-            </InputLabel>
-            <Select
-              display="inline"
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label={label}
-              value={value}
-              sx={{
-                width: 150,
-                height: 30,
-                color: "white",
-                fontSize: 14,
-                backgroundColor: { background },
-                marginRight: { marginR },
-                marginLeft: -1,
-                textAlign: "center",
-              }}
-              onChange={onChange}
-            >
-              {arr.map((option) => (
-                <MenuItem key={option} value={option}>
-                  {option}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Box>
-      </Grid>
-    </Grid>
+    <FormControl
+      fullWidth
+      style={{ position: "relative" }}
+      className="custom-select"
+    >
+      <InputLabel className="input-select-label">{label}</InputLabel>
+      <Select
+        name={name}
+        placeholder={placeholder}
+        // label={label}
+        value={value}
+        onChange={onChange}
+        size="small"
+        sx={{
+          width: width || "auto",
+          height: height || "auto",
+          // color: "white",
+          // fontSize: 14,
+          backgroundColor: bgColor || "",
+          paddingLeft: icon ? "24px" : "",
+          // border: bgColor ? `1px solid ${bgColor}` : "",
+          // // marginRight: { marginR },
+          // marginLeft: -1,
+          // textAlign: "center",
+        }}
+      >
+        {menuItems.map((item) => (
+          <MenuItem key={item} value={item}>
+            {item}
+          </MenuItem>
+        ))}
+      </Select>
+      {icon && (
+        <div style={{ position: "absolute", color: "#fff", left: 6, top: 5 }}>
+          {icon}
+        </div>
+      )}
+    </FormControl>
   );
 }
