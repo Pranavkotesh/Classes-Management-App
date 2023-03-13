@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 const itemsList = [
   {
-    text: "Dashboard",
+    text: "Classes Summary",
     icon: <DvrIcon />,
     route: "dashboard",
   },
