@@ -25,7 +25,8 @@ const DashboardPage = () => {
                     xs={1}
                     sx={{
                       display: { xs: "none", sm: "flex" },
-                      marginTop: { sm: 4, md: 0 },
+                      marginTop: { sm: 4, md: 1,lg:0 },
+                      marginRight:{xs:0,sm:1,md:2,lg:0}
                     }}
                   >
                     <img
@@ -64,7 +65,7 @@ const DashboardPage = () => {
                     sx={{
                       borderWidth: 1,
                       marginRight: "5vh",
-                      marginLeft: { xs: 6, sm: 6, md: 0 },
+                      marginLeft: { xs: 6, sm: 6, md: 2,lg:0 },
                     }}
                   />
 
