@@ -10,7 +10,6 @@ import DefineSchedule from "../features/schedule/ScheduleMain";
 
 const RoutesMain = () => {
   const classes = useStyles();
-
   const checkSessionExists = () => {
     //add logic to check the session. adding false for now
     return false;
