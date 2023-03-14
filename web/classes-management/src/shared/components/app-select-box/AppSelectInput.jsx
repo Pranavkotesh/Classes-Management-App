@@ -1,12 +1,12 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { IconButton } from "@mui/material";
-import SchoolIcon from "@mui/icons-material/School";
-import { Grid } from "@mui/material";
+// import { IconButton } from "@mui/material";
+// import SchoolIcon from "@mui/icons-material/School";
+// import { Grid } from "@mui/material";
 
 export default function BasicSelect({
   bgColor,
@@ -19,6 +19,7 @@ export default function BasicSelect({
   value,
   onChange,
   menuItems,
+  color
 }) {
   return (
     <FormControl
@@ -54,7 +55,7 @@ export default function BasicSelect({
         ))}
       </Select>
       {icon && (
-        <div style={{ position: "absolute", color: "#fff", left: 6, top: 5 }}>
+        <div style={{ position: "absolute", color: color ||"#fff", left: 6, top: 5 }}>
           {icon}
         </div>
       )}

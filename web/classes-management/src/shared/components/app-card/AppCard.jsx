@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 
-function AppCard({ title, padding, minHeight, children}) {
+function AppCard({ title, padding, minHeight, children,boxShadow}) {
   return (
     <Card
       style={{
@@ -9,7 +9,7 @@ function AppCard({ title, padding, minHeight, children}) {
         minHeight: minHeight || "auto",
         fontWeight:'bolder',
       }}
-      sx={{borderRadius:2}}
+      sx={{borderRadius:2,boxShadow: boxShadow ||1}}
     >
       <CardContent style={{ padding: 0 }}>
         {title && <Typography variant="button">{title}</Typography>}

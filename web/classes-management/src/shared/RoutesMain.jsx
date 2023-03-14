@@ -6,6 +6,7 @@ import ClassMain from "../features/classes/ClassMain";
 import TeacherMain from "../features/teachers/TeacherMain";
 import DashboardPage from "../features/dashboard/DashboardPage";
 import App404Page from "./components/app-404-page/App404Page";
+import DefineSchedule from "../features/schedule/ScheduleMain";
 
 const RoutesMain = () => {
   const classes = useStyles();
@@ -49,6 +50,14 @@ const RoutesMain = () => {
           element={
             <PrivateRoute>
               <TeacherMain />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="schedule"
+          element={
+            <PrivateRoute>
+              <DefineSchedule />
             </PrivateRoute>
           }
         />

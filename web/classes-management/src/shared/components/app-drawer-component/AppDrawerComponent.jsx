@@ -15,6 +15,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { AccountCircle } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 const itemsList = [
   {
@@ -32,6 +33,11 @@ const itemsList = [
     icon: <LibraryBooksIcon />,
     route: "classes",
   },
+  {
+    text: "Schedule",
+    icon: <ScheduleIcon />,
+    route: "schedule",
+  }
 ];
 const itemsList2 = [
   {
