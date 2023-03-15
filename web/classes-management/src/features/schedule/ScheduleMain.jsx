@@ -44,6 +44,7 @@ const DefineSchedule = () => {
   const [startIcon,setStartIcon]=React.useState(<></>)
   const [endIcon,setEndIcon]=React.useState(<></>)
   const [excludeIcon,setExcludeIcon]=React.useState(<></>)
+  
   const handleChange0=(event)=>{
     setDate(event.target.value)
   }
@@ -111,7 +112,7 @@ const DefineSchedule = () => {
                 xs={12}
                 md={5}
                 sx={{
-                  marginLeft: { xs: 0, sm: 0, md: 4 },
+                  marginLeft:'4%',
                   marginBottom: { xs: 1, sm: 1, md: 0 },
                 }}
               >
@@ -143,7 +144,7 @@ const DefineSchedule = () => {
                 sx={{
                   borderWidth: 1,
                   color: "black",
-                  mx: { md: 1, lg: 4, xl: 6 },
+                  mx:{md:'1.5%',lg:'2%',xl:'2.5%'},
                   display: { xs: "none", sm: "none", md: "flex" },
                 }}
               >
@@ -176,7 +177,7 @@ const DefineSchedule = () => {
                 xs={12}
                 md={5}
                 sx={{
-                  marginLeft: { xs: 0, sm: 0, md: 4 },
+                  marginLeft: '4%',
                   marginBottom: { xs: 1, sm: 1, md: 0 },
                 }}
               >
@@ -206,6 +207,8 @@ const DefineSchedule = () => {
                       )
                     }}
                       onChange={(e)=> setName(e.target.value)}
+                      onBlur={(e)=>setName(e.target.value)}
+                      value={name}
                       label="Name"
                       sx={{height:35}}
                       error={nameError}
@@ -217,8 +220,9 @@ const DefineSchedule = () => {
                       label="Start Date"
                       icon={<EventIcon />}
                       menuItems={schedule}
-                      value={sDate}
                       onChange={handleChange}
+                      onBlur={(e)=>setSdate(e.target.value)}
+                      value={sDate}
                       height={35}
                       color="#e6e6e6"
                       sx={{ width: "50%" }}
@@ -232,8 +236,9 @@ const DefineSchedule = () => {
                     label="End Date"
                     icon={<EventIcon />}
                     menuItems={schedule}
-                    value={eDate}
                     onChange={handleChange1}
+                    onBlur={(e)=>setEdate(e.target.value)}
+                    value={eDate}
                     height={35}
                     color="#e6e6e6"
                     sx={{ width: "50%" }}
@@ -251,7 +256,7 @@ const DefineSchedule = () => {
                 sx={{
                   borderWidth: 1,
                   color: "black",
-                  mx: { md: 4, lg: 7, xl: 9 },
+                  mx:'4%',
                   display: { xs: "none", sm: "none", md: "flex" },
                 }}
               ></Divider>
@@ -265,6 +270,8 @@ const DefineSchedule = () => {
                     error={excludedError}
                     helperText={excludeText}
                     onChange={handleChange2}
+                    onBlur={(e)=>setExcluded(e.target.value)}
+                    value={excluded}
                     multiline
                     rows={4}
                     sx={{marginTop:4}}
