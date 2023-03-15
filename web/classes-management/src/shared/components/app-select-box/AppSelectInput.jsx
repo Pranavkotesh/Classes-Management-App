@@ -4,6 +4,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { FormHelperText } from "@mui/material";
 // import { IconButton } from "@mui/material";
 // import SchoolIcon from "@mui/icons-material/School";
 // import { Grid } from "@mui/material";
@@ -13,10 +14,13 @@ export default function BasicSelect({
   width,
   height,
   icon,
+  iconEnd,
   name,
   placeholder,
   label,
   value,
+  error,
+  helperText,
   onChange,
   menuItems,
   color
@@ -35,6 +39,7 @@ export default function BasicSelect({
         value={value}
         onChange={onChange}
         size="small"
+        error={error}
         sx={{
           width: width || "auto",
           height: height || "auto",
@@ -54,9 +59,15 @@ export default function BasicSelect({
           </MenuItem>
         ))}
       </Select>
+      <FormHelperText sx={{color:'#cc0000'}}>{helperText}</FormHelperText>
       {icon && (
         <div style={{ position: "absolute", color: color ||"#fff", left: 6, top: 5 }}>
           {icon}
+        </div>
+      )}
+      {icon && (
+        <div style={{ position: "absolute", color:"#e60000", right:10, top: 5 }}>
+          {iconEnd}
         </div>
       )}
     </FormControl>

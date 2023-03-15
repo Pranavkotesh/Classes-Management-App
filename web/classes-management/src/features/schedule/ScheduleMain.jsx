@@ -7,8 +7,9 @@ import {
   IconButton,
   Typography,
   Button,
-  FormControl,
+  TextField
 } from "@mui/material";
+
 import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
 import * as React from "react";
@@ -16,24 +17,93 @@ import EventIcon from "@mui/icons-material/Event";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import AbcIcon from '@mui/icons-material/Abc';
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
+
 import InputAdornment from "@mui/material/InputAdornment";
+import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
+import ErrorIcon from '@mui/icons-material/Error';
 
 const schedule = [1, 2, 3, 4];
 
+
+
 const DefineSchedule = () => {
   const [date, setDate] = React.useState("");
-
+  const [name,setName]= React.useState('');
+  const [sDate,setSdate]= React.useState('');
+  const [eDate,setEdate]= React.useState('');
+  const [excluded,setExcluded]=React.useState('');
+  const [nameError,setNameError] = React.useState(false);
+  const [sDateError,setSdateError] = React.useState(false);
+  const [eDateError,setEdateError] = React.useState(false);
+  const [excludedError,setExcludedError] = React.useState(false);
+  const [nameText,setNameText] = React.useState('')
+  const [startText,setStartText] = React.useState('')
+  const [endText,setEndText] = React.useState('')
+  const [excludeText,setExcludeText] = React.useState('')
+  const [nameIcon,setNameIcon]=React.useState(<></>)
+  const [startIcon,setStartIcon]=React.useState(<></>)
+  const [endIcon,setEndIcon]=React.useState(<></>)
+  const [excludeIcon,setExcludeIcon]=React.useState(<></>)
+  const handleChange0=(event)=>{
+    setDate(event.target.value)
+  }
   const handleChange = (event) => {
-    setDate(event.target.value);
+    setSdate(event.target.value);
   };
+  const handleChange1 = (event) => {
+    setEdate(event.target.value);
+  };
+  const handleChange2 = (event) => {
+    setExcluded(event.target.value);
+  };
+  const handleSubmit = (e)=>{
+    setNameText('')
+    setEndText('')
+    setStartText('')
+    setExcludeText('')
+    e.preventDefault()
+    setNameError(false)
+    setExcludedError(false)
+    setSdateError(false)
+    setEdateError(false)
+    setNameIcon(<></>)
+    setStartIcon(<></>)
+    setEndIcon(<></>)
+    setExcludeIcon(<></>)
+    
+    if(!name){
+      setNameError(true)
+      setNameText('This field is required')
+      setNameIcon(<ErrorIcon/>)
+    }
+    if(!sDate){
+      setSdateError(true)
+      setStartText('This field is required')
+      setStartIcon(<ErrorIcon/>)
+    }
+    if(!eDate){
+      setEdateError(true)
+      setEndText('This field is required')
+      setEndIcon(<ErrorIcon/>)
+    }
+    if(!excluded){
+      setExcludedError(true)
+      setExcludeText('This field is required')
+      setExcludeIcon(<ErrorIcon/>)
+    }
+
+    if(name){
+      console.log(name)
+    }
+  }
+
+  
   return (
     <AppLayout title="Define Schedule">
       <Grid container spacing={2}>
-        <BoxElement elementOne="Admin" elementTwo="Setup & Maintenance" />
+        <BoxElement elementOne="Admin" elementTwo="Setup & Maintenance" elementThree="Define Schedules" />
         <Grid item xs={12}>
-          <AppCard title="Create / Update Schedule">
+          <AppCard title="Create / Update Schedule" minHeight={640}>
             <Divider orientation="horizontal" sx={{ marginTop: 1 }}></Divider>
             <Grid container spacing={0} sx={{ marginTop: 2 }}>
               <Grid
@@ -90,7 +160,7 @@ const DefineSchedule = () => {
                       icon={<EventIcon />}
                       menuItems={schedule}
                       value={date}
-                      onChange={handleChange}
+                      onChange={handleChange0}
                       height={35}
                       color="#e6e6e6"
                       sx={{ width: "50%"}}
@@ -99,6 +169,7 @@ const DefineSchedule = () => {
                 </AppCard>
               </Grid>
             </Grid>
+            <form onSubmit={handleSubmit}>
             <Grid container spacing={0} sx={{ marginTop: 5 }}>
               <Grid
                 item
@@ -111,11 +182,10 @@ const DefineSchedule = () => {
               >
                 <AppCard minHeight={220} boxShadow='0'>
                     
-                  <FormControl sx={{ width:'100%' }} variant="outlined">
-                    <InputLabel>
-                      Name</InputLabel>
-                    <OutlinedInput
-                      startAdornment={
+                  
+                    <AppTextInput
+                    InputProps={{
+                      startAdornment:(
                         <InputAdornment position="start">
                           <IconButton
                             edge="start"
@@ -123,34 +193,55 @@ const DefineSchedule = () => {
                             <AbcIcon/>
                           </IconButton>
                         </InputAdornment>
-                      }
-                      
-                      label="Enter Schedule Name"
+                      ),
+                      endAdornment:(
+                        <InputAdornment position="end">
+                          <IconButton
+                            edge="end"
+                            sx={{color:'#e60000'}}
+                          >
+                            {nameIcon}
+                          </IconButton>
+                        </InputAdornment>
+                      )
+                    }}
+                      onChange={(e)=> setName(e.target.value)}
+                      label="Name"
                       sx={{height:35}}
+                      error={nameError}
+                      helperText={nameText}
                     />
-                  </FormControl>
-                  <Box sx={{ my: 3 }}>
+                  
+                  <Box sx={{ my: 3 }} textAlign='center'>
                     <BasicSelect
                       label="Start Date"
                       icon={<EventIcon />}
                       menuItems={schedule}
-                      value={date}
+                      value={sDate}
                       onChange={handleChange}
                       height={35}
                       color="#e6e6e6"
                       sx={{ width: "50%" }}
+                      error={sDateError}
+                      helperText={startText}
+                      iconEnd={startIcon}
                     />
                   </Box>
+                  <Box textAlign='center'>
                   <BasicSelect
                     label="End Date"
                     icon={<EventIcon />}
                     menuItems={schedule}
-                    value={date}
-                    onChange={handleChange}
+                    value={eDate}
+                    onChange={handleChange1}
                     height={35}
                     color="#e6e6e6"
                     sx={{ width: "50%" }}
+                    error={eDateError}
+                    helperText={endText}
+                    iconEnd={endIcon}
                   />
+                  </Box>
                 </AppCard>
               </Grid>
               <Divider
@@ -166,9 +257,30 @@ const DefineSchedule = () => {
               ></Divider>
               <Grid item xs={12} md={5}>
                 <AppCard minHeight={220} boxShadow='0'>
-                    <FormControl sx={{width:'100%'}}><InputLabel>Excluded Dates</InputLabel>
-                    <OutlinedInput sx={{height:150}}></OutlinedInput>
-                    </FormControl>
+                    
+
+                    <TextField
+                    label='Excluded dates'
+                    fullWidth
+                    error={excludedError}
+                    helperText={excludeText}
+                    onChange={handleChange2}
+                    multiline
+                    rows={4}
+                    sx={{marginTop:4}}
+                    InputProps={{
+                      endAdornment:(
+                        <InputAdornment position="end">
+                          <IconButton
+                            edge="end"
+                            sx={{color:'#e60000'}}
+                          >
+                            {excludeIcon}
+                          </IconButton>
+                        </InputAdornment>
+                      )}}
+                    />
+
                 </AppCard>
               </Grid>
             </Grid>
@@ -180,11 +292,14 @@ const DefineSchedule = () => {
                   color: "white",
                   fontSize: 12,
                   padding: 1,
+                  ":hover": { bgcolor: "black", color: "white" },
                 }}
+                type='Submit'
               >
                 Create
               </Button>
             </Box>
+            </form>
           </AppCard>
         </Grid>
       </Grid>
@@ -192,3 +307,7 @@ const DefineSchedule = () => {
   );
 };
 export default DefineSchedule;
+
+
+
+

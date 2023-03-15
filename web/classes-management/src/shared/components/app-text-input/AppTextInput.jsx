@@ -12,6 +12,7 @@ function AppTextInput({
   label,
   error,
   errorText,
+  helperText,
   ...rest
 }) {
   return (
@@ -24,8 +25,8 @@ function AppTextInput({
         placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}
-        error={errorText ? true : false}
-        helperText={errorText}
+        error={error||errorText ? true : false}
+        helperText={errorText||helperText}
         value={value}
         disabled={rest.disabled}
         {...rest}

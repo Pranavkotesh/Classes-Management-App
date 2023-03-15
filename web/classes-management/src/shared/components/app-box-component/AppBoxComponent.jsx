@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { Button, IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
 
-function BoxElement({ elementOne, elementTwo }) {
+function BoxElement({ elementOne, elementTwo,elementThree}) {
   return (
     <Box
       sx={{
@@ -46,6 +46,18 @@ function BoxElement({ elementOne, elementTwo }) {
         .
       </Typography>
       <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementTwo}</Button>
+      <Typography
+        display="inline"
+        sx={{
+          fontSize: 33,
+          marginLeft: 1,
+          marginRight: 1,
+          color: "#a6a6a6",
+        }}
+      >
+        .
+      </Typography>
+      <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementThree}</Button>
     </Box>
   );
 }
