@@ -2,7 +2,6 @@ import { Button, Divider, Grid, TextField, Typography } from "@mui/material";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppCard from "../../shared/components/app-card/AppCard";
 import { Formik } from "formik";
-import AppButton from "../../shared/components/app-button/AppButton";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import { Box } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
@@ -17,7 +16,7 @@ import AccessibilityIcon from '@mui/icons-material/Accessibility';
 import HomeIcon from '@mui/icons-material/Home';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import WcIcon from '@mui/icons-material/Wc';
-import { makeStyles } from "@mui/styles";
+
 
 
 
@@ -31,7 +30,6 @@ const date =[1,2,3,4,5,6,7,8,9];
 const MainPage = () => {
 const [teachers,setTeachers]= React.useState('');
 const handleChange=(e)=>{setTeachers(e.target.value)};
-const classes = useStyles();
   return (
     <AppLayout title='Teacher create'>
       <Grid container spacing={0}>
@@ -323,10 +321,3 @@ const classes = useStyles();
   );
 };
 export default MainPage;
-
-const useStyles = makeStyles((theme) => ({
-submit: {
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(1),
-  },
-}));
