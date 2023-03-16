@@ -16,8 +16,14 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { AccountCircle } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import FirstPageIcon from '@mui/icons-material/FirstPage';
 
 const itemsList = [
+  {
+    text: "Main Page",
+    icon: <FirstPageIcon />,
+    route: "mainpage",
+  },
   {
     text: "Classes Summary",
     icon: <DvrIcon />,
@@ -38,6 +44,7 @@ const itemsList = [
     icon: <ScheduleIcon />,
     route: "schedule",
   }
+  
 ];
 const itemsList2 = [
   {

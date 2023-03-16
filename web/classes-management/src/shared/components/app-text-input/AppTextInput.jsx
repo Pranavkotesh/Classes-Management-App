@@ -1,5 +1,6 @@
 import React from "react";
 import { FormControl, TextField, Typography } from "@mui/material";
+import InputAdornment from "@mui/material/InputAdornment";
 
 function AppTextInput({
   type,
@@ -7,10 +8,13 @@ function AppTextInput({
   onChange,
   onBlur,
   value,
+  rows,
   placeholder,
   className,
   label,
   error,
+  icon,
+  endIcon,
   errorText,
   helperText,
   ...rest
@@ -29,7 +33,27 @@ function AppTextInput({
         helperText={errorText||helperText}
         value={value}
         disabled={rest.disabled}
+        multiline
+        rows={rows||1}
         {...rest}
+        InputProps={{
+          startAdornment:(
+            <InputAdornment position="start">
+    
+               
+              
+                {icon}
+              
+            </InputAdornment>
+          ),
+          endAdornment:(
+            <InputAdornment position="end" sx={{color:'#e60000'}}>
+              
+               
+                {endIcon}
+              
+            </InputAdornment>
+          )}}
       />
     </FormControl>
   );

@@ -6,8 +6,7 @@ import {
   Grid,
   IconButton,
   Typography,
-  Button,
-  TextField
+  Button
 } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
@@ -21,6 +20,7 @@ import AbcIcon from '@mui/icons-material/Abc';
 import InputAdornment from "@mui/material/InputAdornment";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import ErrorIcon from '@mui/icons-material/Error';
+import { Formik } from "formik";
 
 const schedule = [1, 2, 3, 4];
 
@@ -28,18 +28,7 @@ const schedule = [1, 2, 3, 4];
 
 const DefineSchedule = () => {
   const [date, setDate] = React.useState("");
-  const [name,setName]= React.useState('');
-  const [sDate,setSdate]= React.useState('');
-  const [eDate,setEdate]= React.useState('');
-  const [excluded,setExcluded]=React.useState('');
-  const [nameError,setNameError] = React.useState(false);
-  const [sDateError,setSdateError] = React.useState(false);
-  const [eDateError,setEdateError] = React.useState(false);
-  const [excludedError,setExcludedError] = React.useState(false);
-  const [nameText,setNameText] = React.useState('')
-  const [startText,setStartText] = React.useState('')
-  const [endText,setEndText] = React.useState('')
-  const [excludeText,setExcludeText] = React.useState('')
+
   const [nameIcon,setNameIcon]=React.useState(<></>)
   const [startIcon,setStartIcon]=React.useState(<></>)
   const [endIcon,setEndIcon]=React.useState(<></>)
@@ -48,55 +37,7 @@ const DefineSchedule = () => {
   const handleChange0=(event)=>{
     setDate(event.target.value)
   }
-  const handleChange = (event) => {
-    setSdate(event.target.value);
-  };
-  const handleChange1 = (event) => {
-    setEdate(event.target.value);
-  };
-  const handleChange2 = (event) => {
-    setExcluded(event.target.value);
-  };
-  const handleSubmit = (e)=>{
-    setNameText('')
-    setEndText('')
-    setStartText('')
-    setExcludeText('')
-    e.preventDefault()
-    setNameError(false)
-    setExcludedError(false)
-    setSdateError(false)
-    setEdateError(false)
-    setNameIcon(<></>)
-    setStartIcon(<></>)
-    setEndIcon(<></>)
-    setExcludeIcon(<></>)
-    
-    if(!name){
-      setNameError(true)
-      setNameText('This field is required')
-      setNameIcon(<ErrorIcon/>)
-    }
-    if(!sDate){
-      setSdateError(true)
-      setStartText('This field is required')
-      setStartIcon(<ErrorIcon/>)
-    }
-    if(!eDate){
-      setEdateError(true)
-      setEndText('This field is required')
-      setEndIcon(<ErrorIcon/>)
-    }
-    if(!excluded){
-      setExcludedError(true)
-      setExcludeText('This field is required')
-      setExcludeIcon(<ErrorIcon/>)
-    }
 
-    if(name){
-      console.log(name)
-    }
-  }
 
   
   return (
@@ -170,49 +111,70 @@ const DefineSchedule = () => {
                 </AppCard>
               </Grid>
             </Grid>
+
+            <Formik
+            initialValues={{name:"",sDate:"",eDate:"",exclude:""}}
+            validate={(values)=>{
+            let errors={}
+            
+              if(!values.name){
+                errors.name='This field is required';
+                setNameIcon(<ErrorIcon/>)
+              }
+              if(!values.sDate){
+                errors.sDate='This field is required';
+                setStartIcon(<ErrorIcon/>)
+              }
+              if(!values.eDate){
+                errors.eDate='This field is required';
+                setEndIcon(<ErrorIcon/>)
+              }
+              if(!values.exclude){
+                errors.exclude='This field is required';
+                setExcludeIcon(<ErrorIcon/>)
+              }
+              return errors;
+            }}
+            onSubmit={async(values)=>{
+              console.log(values);
+              setNameIcon(<></>)
+            }}>
+               {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit
+          }) => (
             <form onSubmit={handleSubmit}>
-            <Grid container spacing={0} sx={{ marginTop: 5 }}>
+            <Grid container spacing={0} sx={{ marginTop: 5 ,
+                  backgroundColor:' #f2f2f2' }}>
               <Grid
                 item
                 xs={12}
                 md={5}
                 sx={{
                   marginLeft: '4%',
-                  marginBottom: { xs: 1, sm: 1, md: 0 },
+                  marginBottom: { xs: 1, sm: 1, md: 0 }
                 }}
               >
-                <AppCard minHeight={220} boxShadow='0'>
+                <AppCard minHeight={220} boxShadow='0' color=' #f2f2f2'>
                     
                   
                     <AppTextInput
-                    InputProps={{
-                      startAdornment:(
-                        <InputAdornment position="start">
-                          <IconButton
-                            edge="start"
-                          >
-                            <AbcIcon/>
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                      endAdornment:(
-                        <InputAdornment position="end">
-                          <IconButton
-                            edge="end"
-                            sx={{color:'#e60000'}}
-                          >
-                            {nameIcon}
-                          </IconButton>
-                        </InputAdornment>
-                      )
-                    }}
-                      onChange={(e)=> setName(e.target.value)}
-                      onBlur={(e)=>setName(e.target.value)}
-                      value={name}
+                    
+                      icon={<AbcIcon/>}
+                      endIcon={nameIcon}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.name}
+                      name="name"
                       label="Name"
-                      sx={{height:35}}
-                      error={nameError}
-                      helperText={nameText}
+                      sx={{height:35,marginBottom:2}}
+                      // error={nameError}
+                      // helperText={nameText}
+                      errorText={errors.name&& touched.name&& errors.name}
                     />
                   
                   <Box sx={{ my: 3 }} textAlign='center'>
@@ -220,14 +182,15 @@ const DefineSchedule = () => {
                       label="Start Date"
                       icon={<EventIcon />}
                       menuItems={schedule}
+                      name='sDate'
                       onChange={handleChange}
-                      onBlur={(e)=>setSdate(e.target.value)}
-                      value={sDate}
+                      onBlur={handleBlur}
+                      value={values.sDate}
                       height={35}
                       color="#e6e6e6"
                       sx={{ width: "50%" }}
-                      error={sDateError}
-                      helperText={startText}
+                     
+                    errorText={errors.sDate && touched.sDate&&errors.sDate}
                       iconEnd={startIcon}
                     />
                   </Box>
@@ -236,14 +199,14 @@ const DefineSchedule = () => {
                     label="End Date"
                     icon={<EventIcon />}
                     menuItems={schedule}
-                    onChange={handleChange1}
-                    onBlur={(e)=>setEdate(e.target.value)}
-                    value={eDate}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.eDate}
+                    name='eDate'
                     height={35}
                     color="#e6e6e6"
                     sx={{ width: "50%" }}
-                    error={eDateError}
-                    helperText={endText}
+                    errorText={errors.eDate&&touched.eDate&&errors.eDate}
                     iconEnd={endIcon}
                   />
                   </Box>
@@ -261,29 +224,26 @@ const DefineSchedule = () => {
                 }}
               ></Divider>
               <Grid item xs={12} md={5}>
-                <AppCard minHeight={220} boxShadow='0'>
+                <AppCard minHeight={220} boxShadow='0' color='#f2f2f2'>
                     
-
-                    <TextField
+                    <AppTextInput 
                     label='Excluded dates'
                     fullWidth
-                    error={excludedError}
-                    helperText={excludeText}
-                    onChange={handleChange2}
-                    onBlur={(e)=>setExcluded(e.target.value)}
-                    value={excluded}
-                    multiline
-                    rows={4}
-                    sx={{marginTop:4}}
+                    // error={errors.exclude}
+                    // helperText={excludeText}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.exclude}
+                    name='exclude'
+                    errorText={errors.exclude&&touched.exclude&&errors.exclude}
+                    rows='5'
+                    
                     InputProps={{
                       endAdornment:(
-                        <InputAdornment position="end">
-                          <IconButton
-                            edge="end"
-                            sx={{color:'#e60000'}}
-                          >
+                        <InputAdornment position="end" sx={{color:'#e60000'}}>
+                          
                             {excludeIcon}
-                          </IconButton>
+                          
                         </InputAdornment>
                       )}}
                     />
@@ -307,6 +267,8 @@ const DefineSchedule = () => {
               </Button>
             </Box>
             </form>
+          )}
+            </Formik>
           </AppCard>
         </Grid>
       </Grid>

@@ -20,9 +20,11 @@ export default function BasicSelect({
   label,
   value,
   error,
-  helperText,
+  errorText,
   onChange,
   menuItems,
+  marginTop,
+  marginY,
   color
 }) {
   return (
@@ -30,6 +32,7 @@ export default function BasicSelect({
       fullWidth
       style={{ position: "relative" }}
       className="custom-select"
+      sx={{my:marginY||"",marginTop:marginTop||""}}
     >
       <InputLabel className="input-select-label">{label}</InputLabel>
       <Select
@@ -39,7 +42,7 @@ export default function BasicSelect({
         value={value}
         onChange={onChange}
         size="small"
-        error={error}
+        error={error||errorText ? true : false}
         sx={{
           width: width || "auto",
           height: height || "auto",
@@ -47,6 +50,7 @@ export default function BasicSelect({
           // fontSize: 14,
           backgroundColor: bgColor || "",
           paddingLeft: icon ? "24px" : "",
+          
           // border: bgColor ? `1px solid ${bgColor}` : "",
           // // marginRight: { marginR },
           // marginLeft: -1,
@@ -59,9 +63,9 @@ export default function BasicSelect({
           </MenuItem>
         ))}
       </Select>
-      <FormHelperText sx={{color:'#cc0000'}}>{helperText}</FormHelperText>
+      <FormHelperText sx={{color:'#cc0000'}}>{errorText}</FormHelperText>
       {icon && (
-        <div style={{ position: "absolute", color: color ||"#fff", left: 6, top: 5 }}>
+        <div style={{ position: "absolute", color: color ||"#fff", left: 13, top: 5 }}>
           {icon}
         </div>
       )}

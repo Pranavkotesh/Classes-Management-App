@@ -7,6 +7,7 @@ import TeacherMain from "../features/teachers/TeacherMain";
 import DashboardPage from "../features/dashboard/DashboardPage";
 import App404Page from "./components/app-404-page/App404Page";
 import DefineSchedule from "../features/schedule/ScheduleMain";
+import MainPage from "../features/mainpage/MainPage";
 
 const RoutesMain = () => {
   const classes = useStyles();
@@ -26,6 +27,14 @@ const RoutesMain = () => {
             ) : (
               <LoginPage />
             )
+          }
+        />
+        <Route
+          path="mainpage"
+          element={
+            <PrivateRoute>
+              <MainPage />
+            </PrivateRoute>
           }
         />
         <Route
