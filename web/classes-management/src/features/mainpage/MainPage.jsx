@@ -31,7 +31,7 @@ const MainPage = () => {
 const [teachers,setTeachers]= React.useState('');
 const handleChange=(e)=>{setTeachers(e.target.value)};
   return (
-    <AppLayout title='Teacher create'>
+    <AppLayout title='Create Teachers'>
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <AppCard minHeight={690}>
