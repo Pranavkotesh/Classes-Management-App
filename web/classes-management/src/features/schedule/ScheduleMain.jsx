@@ -16,8 +16,6 @@ import EventIcon from "@mui/icons-material/Event";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import AbcIcon from '@mui/icons-material/Abc';
-
-import InputAdornment from "@mui/material/InputAdornment";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import ErrorIcon from '@mui/icons-material/Error';
 import { Formik } from "formik";
@@ -237,15 +235,7 @@ const DefineSchedule = () => {
                     name='exclude'
                     errorText={errors.exclude&&touched.exclude&&errors.exclude}
                     rows='5'
-                    
-                    InputProps={{
-                      endAdornment:(
-                        <InputAdornment position="end" sx={{color:'#e60000'}}>
-                          
-                            {excludeIcon}
-                          
-                        </InputAdornment>
-                      )}}
+                    endIcon={excludeIcon}
                     />
 
                 </AppCard>
@@ -257,6 +247,7 @@ const DefineSchedule = () => {
                 sx={{
                   backgroundColor: "#0000b3",
                   color: "white",
+                  marginRight:{xs:0,sm:0,md:3},
                   fontSize: 12,
                   padding: 1,
                   ":hover": { bgcolor: "black", color: "white" },

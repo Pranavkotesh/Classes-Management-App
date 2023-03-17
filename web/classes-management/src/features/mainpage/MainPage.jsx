@@ -21,6 +21,7 @@ import WcIcon from '@mui/icons-material/Wc';
 
 
 
+
 const teacher = ['teacher1','teacher2','teacher3','teacher4'];
 const gender =['Male','Female','Other'];
 const state =['Telangana','Andra Pradesh','Tamil Nadu','Kerala','karnataka'];
@@ -79,7 +80,7 @@ const handleChange=(e)=>{setTeachers(e.target.value)};
                 orientation="vertical"
                 variant="middle"
                 flexItem
-                sx={{ borderWidth: 1, color: "#black",mx:{md:'4.5%',lg:'5.2%',xl:'6%'},display:{xs:'none',sm:'none',md:'flex'}}}
+                sx={{ borderWidth: 1, color: "#black",mx:{md:'4.5%',lg:'5.6%',xl:'6.5%'},display:{xs:'none',sm:'none',md:'flex'}}}
               >
                 OR
               </Divider>
@@ -306,7 +307,20 @@ const handleChange=(e)=>{setTeachers(e.target.value)};
                     
                     <Grid item xs={12}>
                    <Box textAlign='center'>
-                  <Button sx={{backgroundColor:'#0000b3',color:'white',marginRight:{xs:0,sm:0,md:2}}}>Create</Button>
+                   <Button
+               
+                sx={{
+                  backgroundColor: "#0000b3",
+                  color: "white",
+                  fontSize: 12,
+                  marginRight:{xs:0,sm:0,md:3},
+                  padding: 1,
+                  ":hover": { bgcolor: "black", color: "white" },
+                }}
+                type='Submit'
+              >
+                Create
+              </Button>
                   </Box>
                     </Grid>
                     

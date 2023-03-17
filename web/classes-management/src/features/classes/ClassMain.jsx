@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Grid, Typography } from "@mui/material";
 import AppCard from "../../shared/components/app-card/AppCard";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import Button from "@mui/material/Button";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
+import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -38,14 +38,14 @@ const ClassMain = () => {
                     <AppCard title="ABOUT" minHeight={170}>
                       <Grid
                         container
-                        spacing={5}
+                        spacing={0}
                         sx={{ display: { xs: "none", sm: "flex" } }}
                       >
                         <Grid item xs={2}>
                           <Typography
                             sx={{
                               fontSize: 10,
-                              paddingLeft: 5,
+                              paddingLeft:{xs:0,sm:0,md:5},
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -57,7 +57,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              paddingLeft: 5,
+                             
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -69,7 +69,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              paddingLeft: 5,
+                              
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -81,7 +81,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              paddingLeft: 5,
+                              
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -93,7 +93,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              paddingLeft: 5,
+                            
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -102,16 +102,8 @@ const ClassMain = () => {
                           </Typography>
                         </Grid>
                       </Grid>
-
-                      <OutlinedInput
-                        sx={{
-                          width: "100%",
-
-                          height: { xs: "13vh", sm: "11vh" },
-                          marginTop: 1,
-                          marginLeft: 0,
-                          borderRadius: 2,
-                        }}
+                      <AppTextInput
+                      rows={4}
                       />
                       <Button
                         variant="oulined"
