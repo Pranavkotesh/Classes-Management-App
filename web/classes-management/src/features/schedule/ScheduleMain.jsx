@@ -242,7 +242,7 @@ const DefineSchedule = () => {
                       </AppCard>
                     </Grid>
                   </Grid>
-                  <Box textAlign="center" sx={{ marginTop: 2 }}>
+                  <Box textAlign="center" sx={{ marginTop: 2,marginRight:{lg:2}}}>
                     <Grid container spacing={0} alignItems='center' justifyContent='center'>
                     <Grid item xs={1} >
                     <AppButton

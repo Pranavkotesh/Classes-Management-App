@@ -382,7 +382,7 @@ const CreateTeachersMain = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                      <Box textAlign="center">
+                      <Box textAlign="center" sx={{marginRight:{lg:2}}}>
                       <Grid container spacing={0} alignItems='center' justifyContent='center'>
                     <Grid item xs={1} >
                     <AppButton
