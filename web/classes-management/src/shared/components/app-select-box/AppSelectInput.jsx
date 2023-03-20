@@ -24,6 +24,7 @@ export default function BasicSelect({
   onChange,
   menuItems,
   marginTop,
+  onBlur,
   marginY,
   color
 }) {
@@ -38,6 +39,7 @@ export default function BasicSelect({
       <Select
         name={name}
         placeholder={placeholder}
+        onBlur={onBlur}
         // label={label}
         value={value}
         onChange={onChange}
