@@ -70,10 +70,10 @@ const itemsList2 = [
 
 const MiniDrawer = ({ open, handleDrawerClose }) => {
   const navigate = useNavigate();
-  const [selectedTab, setSelectedTab] = React.useState("dashboard");
+  const [selectedTab, setSelectedTab] = React.useState("classessummary");
 
   React.useEffect(() => {
-    let selectedTab = "dashboard";
+    let selectedTab = "classessummary";
     let pathName = window.location.pathname;
 
     itemsList.forEach((item) => {
@@ -109,7 +109,6 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
             alt=""
             width="40"
             height="40"
-            // className={editing.img}
           />
           {open && (
             <IconButton
