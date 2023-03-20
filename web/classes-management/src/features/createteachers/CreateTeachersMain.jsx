@@ -208,7 +208,7 @@ const CreateTeachersMain = () => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3 }}
+                    sx={{ marginTop: 3,backgroundColor:'#f2f2f2'}}
                   >
                     <Grid item xs={12} sm={5}>
                       <AppTextInput
