@@ -1,7 +1,7 @@
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppCard from "../../shared/components/app-card/AppCard";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
-import { Divider, Grid, IconButton, Typography, Button } from "@mui/material";
+import { Divider, Grid, IconButton, Typography } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
@@ -12,6 +12,7 @@ import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import AbcIcon from "@mui/icons-material/Abc";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import { Formik } from "formik";
+import AppButton from "../../shared/components/app-button/AppButton";
 
 const schedule = [1, 2, 3, 4];
 
@@ -242,20 +243,12 @@ const DefineSchedule = () => {
                     </Grid>
                   </Grid>
                   <Box textAlign="center" sx={{ marginTop: 2 }}>
-                    <Button
-                      startIcon={<ArrowCircleRightOutlinedIcon />}
-                      sx={{
-                        backgroundColor: "#0000b3",
-                        color: "white",
-                        marginRight: { xs: 0, sm: 0, md: 3 },
-                        fontSize: 12,
-                        padding: 1,
-                        ":hover": { bgcolor: "black", color: "white" },
-                      }}
-                      type="Submit"
-                    >
-                      Create
-                    </Button>
+                    <Grid container spacing={0} alignItems='center' justifyContent='center'>
+                    <Grid item xs={1} >
+                    <AppButton
+                    btnText='Create'
+                    startIcon={<ArrowCircleRightOutlinedIcon/>}/></Grid></Grid>
+                    
                   </Box>
                 </form>
               )}

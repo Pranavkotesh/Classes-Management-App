@@ -1,5 +1,5 @@
 import AppLayout from "../../shared/components/app-layout/AppLayout";
-import { Button, Divider, Grid, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import AppCard from "../../shared/components/app-card/AppCard";
 import { Formik } from "formik";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
@@ -14,6 +14,8 @@ import AccessibilityIcon from "@mui/icons-material/Accessibility";
 import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import AppButton from "../../shared/components/app-button/AppButton";
 
 const class1 = ["Class1", "Class2", "Class3", "Class4"];
 const course = ["MPC", "BIPC", "MEC"];
@@ -329,19 +331,11 @@ const CreateClass = () => {
                       
 
                       <Box textAlign="center">
-                        <Button
-                          sx={{
-                            backgroundColor: "#0000b3",
-                            color: "white",
-                            marginRight: { xs: 0, sm: 0, md: 3 },
-                            fontSize: 12,
-                            padding: 1,
-                            ":hover": { bgcolor: "black", color: "white" },
-                          }}
-                          type="Submit"
-                        >
-                          Create
-                        </Button>
+                      <Grid container spacing={0} alignItems='center' justifyContent='center'>
+                    <Grid item xs={1} >
+                    <AppButton
+                    btnText='Create'
+                    startIcon={<ArrowCircleRightOutlinedIcon/>}/></Grid></Grid>
                       </Box>
                     </Grid>
                   </Grid>

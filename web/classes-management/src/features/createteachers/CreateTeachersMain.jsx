@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, TextField, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppCard from "../../shared/components/app-card/AppCard";
 import { Formik } from "formik";
@@ -16,6 +16,8 @@ import AccessibilityIcon from "@mui/icons-material/Accessibility";
 import HomeIcon from "@mui/icons-material/Home";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import WcIcon from "@mui/icons-material/Wc";
+import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import AppButton from "../../shared/components/app-button/AppButton";
 
 const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
 const gender = ["Male", "Female", "Other"];
@@ -73,11 +75,11 @@ const CreateTeachersMain = () => {
                     </Divider>
                     <Grid item xs={12} sm={12} md={5}>
                       <Box textAlign="start">
-                        <TextField
-                          label="Search teachers"
-                          type="search"
-                          fullWidth
-                        />
+                        <AppTextInput
+                          placeholder='e.g. Search by mail id'
+                          type='search'
+                          />
+                        
                       </Box>
                     </Grid>
                   </Grid>
@@ -381,19 +383,11 @@ const CreateTeachersMain = () => {
 
                     <Grid item xs={12}>
                       <Box textAlign="center">
-                        <Button
-                          sx={{
-                            backgroundColor: "#0000b3",
-                            color: "white",
-                            fontSize: 12,
-                            marginRight: { xs: 0, sm: 0, md: 3 },
-                            padding: 1,
-                            ":hover": { bgcolor: "black", color: "white" },
-                          }}
-                          type="Submit"
-                        >
-                          Create
-                        </Button>
+                      <Grid container spacing={0} alignItems='center' justifyContent='center'>
+                    <Grid item xs={1} >
+                    <AppButton
+                    btnText='Create'
+                    startIcon={<ArrowCircleRightOutlinedIcon/>}/></Grid></Grid>
                       </Box>
                     </Grid>
                   </Grid>

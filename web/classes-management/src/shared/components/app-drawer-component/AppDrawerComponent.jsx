@@ -15,13 +15,11 @@ import GroupIcon from "@mui/icons-material/Group";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { AccountCircle } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import CreateIcon from '@mui/icons-material/Create';
-
+import ScheduleIcon from "@mui/icons-material/Schedule";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import CreateIcon from "@mui/icons-material/Create";
 
 const itemsList = [
-  
   {
     text: "Classes Summary",
     icon: <DvrIcon />,
@@ -51,10 +49,10 @@ const itemsList = [
     text: "Create Teachers",
     icon: <CreateIcon />,
     route: "createteachers",
-  }
-  
+  },
 ];
 const itemsList2 = [
+ 
   {
     text: "Settings",
     icon: <Settings />,
@@ -105,12 +103,7 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
             padding: open ? "12px 20px 12px 20px" : "12px 0px 12px 0px",
           }}
         >
-          <img
-            src="/images/now.png"
-            alt=""
-            width="40"
-            height="40"
-          />
+          <img src="/images/now.png" alt="" width="40" height="40" />
           {open && (
             <IconButton
               onClick={handleDrawerClose}
