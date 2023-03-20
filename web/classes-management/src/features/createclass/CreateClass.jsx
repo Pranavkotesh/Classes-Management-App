@@ -184,6 +184,7 @@ const CreateClass = () => {
                           name="schedule"
                           marginY="4%"
                           onChange={handleChange}
+                          placeholder='Select Schedule'
                           icon={<EventIcon />}
                           color="#808080"
                           menuItems={schedule}
@@ -202,6 +203,7 @@ const CreateClass = () => {
                           name="course"
                           marginY="4%"
                           onChange={handleChange}
+                          placeholder='Select Course'
                           onBlur={handleBlur}
                           menuItems={course}
                           icon={<MenuBookIcon />}
@@ -220,6 +222,7 @@ const CreateClass = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.location}
+                          placeholder='Select Location '
                           menuItems={location}
                           icon={<LocationOnIcon />}
                           color="#808080"
@@ -234,6 +237,7 @@ const CreateClass = () => {
                         name="fee"
                         label="Fee/Discounts"
                         onChange={handleChange}
+                        placeholder='Add a Fee/Discount '
                         icon={<LabelIcon />}
                         onBlur={handleBlur}
                         value={values.fee}
@@ -243,6 +247,7 @@ const CreateClass = () => {
                         name="minAge"
                         label="Min Age"
                         icon={<FormatListNumberedIcon />}
+                        placeholder='Enter min age eligibility.. '
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.minAge}
@@ -256,6 +261,7 @@ const CreateClass = () => {
                         name="maxAge"
                         label="Max Age"
                         onChange={handleChange}
+                        placeholder='Enter max age eligibility.. '
                         onBlur={handleBlur}
                         icon={<FormatListNumberedIcon />}
                         value={values.maxAge}
@@ -276,6 +282,7 @@ const CreateClass = () => {
                         name="classCapacity"
                         label="Class Capacity"
                         onChange={handleChange}
+                        placeholder='Enter max allowed enrollemnts.. '
                         onBlur={handleBlur}
                         icon={<FormatListNumberedIcon />}
                         value={values.classCapacity}
@@ -290,6 +297,7 @@ const CreateClass = () => {
                         name="classTimings"
                         label="Address Line 1"
                         onChange={handleChange}
+                        placeholder='use format [{"day":"Monday","startTime":"10AM","endTime":"11AM"}]'
                         onBlur={handleBlur}
                         value={values.classTimings}
                         rows={4}
@@ -305,6 +313,7 @@ const CreateClass = () => {
                         label="Exclude Dates"
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        placeholder='use format [{"date":"1-1-202-","reason":"newyear"}]'
                         value={values.excludeDates}
                         rows={5}
                         errorText={

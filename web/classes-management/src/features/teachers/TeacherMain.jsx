@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import {  Grid, Typography } from "@mui/material";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
-import AppSelect from "../../shared/components/app-select/AppSelect";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppButton from "../../shared/components/app-button/AppButton";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
+import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 
 const CLASS_ARRAY = [
   { value: 1, label: "I" },
@@ -60,12 +61,14 @@ const TeacherMain = () => {
           <AppCard padding="0 32px 16px 32px">
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} sm={5} md={5} lg={5}>
-                <AppSelect
+                <BasicSelect
                   name="class"
                   label="Get Teachers by Class"
                   onChange={handleSearchObjChange}
                   value={searchObj.class}
                   menuItems={CLASS_ARRAY}
+                  icon={<LocalLibraryIcon/>}
+                  color='#808080'
                 />
               </Grid>
               <Grid item xs={12} sm={2} md={2} lg={2}>

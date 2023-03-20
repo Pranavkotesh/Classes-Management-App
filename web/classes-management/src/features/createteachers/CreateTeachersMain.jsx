@@ -215,6 +215,7 @@ const CreateTeachersMain = () => {
                         name="firstName"
                         label="First Name"
                         onChange={handleChange}
+                        placeholder='Enter First name'
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.firstName}
@@ -228,6 +229,7 @@ const CreateTeachersMain = () => {
                         name="lastName"
                         label="Last Name"
                         icon={<AbcRounded />}
+                        placeholder='Enter Last name'
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.lastName}
@@ -243,6 +245,7 @@ const CreateTeachersMain = () => {
                           marginY="4%"
                           onChange={handleChange}
                           onBlur={handleBlur}
+                          placeholder='Select Gender'
                           menuItems={gender}
                           icon={<WcIcon />}
                           color="#808080"
@@ -258,6 +261,7 @@ const CreateTeachersMain = () => {
                           name="dOb"
                           onChange={handleChange}
                           icon={<EventIcon />}
+                          placeholder='Click to Select '
                           color="#808080"
                           menuItems={date}
                           onBlur={handleBlur}
@@ -270,6 +274,7 @@ const CreateTeachersMain = () => {
                         name="email"
                         label="Email"
                         onChange={handleChange}
+                        placeholder='Enter email '
                         onBlur={handleBlur}
                         icon={<EmailIcon />}
                         value={values.email}
@@ -282,6 +287,7 @@ const CreateTeachersMain = () => {
                         name="primaryNo"
                         label="Primary Number"
                         onChange={handleChange}
+                        placeholder='Enter primary ph#'
                         onBlur={handleBlur}
                         icon={<PhoneIcon />}
                         value={values.primaryNo}
@@ -304,6 +310,7 @@ const CreateTeachersMain = () => {
                         name="secondaryNo"
                         label="Secondary number"
                         onChange={handleChange}
+                        placeholder='Enter secondary ph#'
                         icon={<PhoneIcon />}
                         onBlur={handleBlur}
                         value={values.secondaryNo}
@@ -312,6 +319,7 @@ const CreateTeachersMain = () => {
                         name="addressLine"
                         label="Address Line 1"
                         onChange={handleChange}
+                        placeholder='Enter address line 1...'
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.addressLine}
@@ -326,6 +334,7 @@ const CreateTeachersMain = () => {
                         label="Address Line 2"
                         onChange={handleChange}
                         icon={<AbcRounded />}
+                        placeholder='Enter address line 2...'
                         onBlur={handleBlur}
                         value={values.addressLine2}
                       />
@@ -333,6 +342,7 @@ const CreateTeachersMain = () => {
                         name="city"
                         label="City"
                         onChange={handleChange}
+                        placeholder='Enter city...'
                         onBlur={handleBlur}
                         icon={<ApartmentIcon />}
                         value={values.city}
@@ -344,6 +354,7 @@ const CreateTeachersMain = () => {
                         <BasicSelect
                           name="state"
                           onChange={handleChange}
+                          placeholder='Select state...'
                           onBlur={handleBlur}
                           value={values.state}
                           menuItems={state}
@@ -358,6 +369,7 @@ const CreateTeachersMain = () => {
                         name="zipCode"
                         label="Zip Code"
                         onChange={handleChange}
+                        placeholder='Enter Zipcode...'
                         icon={<HomeIcon />}
                         onBlur={handleBlur}
                         value={values.zipCode}

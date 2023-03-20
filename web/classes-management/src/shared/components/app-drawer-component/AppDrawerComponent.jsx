@@ -21,11 +21,7 @@ import CreateIcon from '@mui/icons-material/Create';
 
 
 const itemsList = [
-  {
-    text: "Create Teachers",
-    icon: <CreateIcon />,
-    route: "createteachers",
-  },
+  
   {
     text: "Classes Summary",
     icon: <DvrIcon />,
@@ -50,6 +46,11 @@ const itemsList = [
     text: "Create Class",
     icon: <AddBoxIcon />,
     route: "createclass",
+  },
+  {
+    text: "Create Teachers",
+    icon: <CreateIcon />,
+    route: "createteachers",
   }
   
 ];

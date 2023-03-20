@@ -158,7 +158,7 @@ const DefineSchedule = () => {
                       <AppCard minHeight={220} boxShadow="0" color=" #f2f2f2">
                         <AppTextInput
                           icon={<AbcIcon />}
-                          
+                          placeholder='Enter Schedule name'
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.name}
@@ -178,6 +178,7 @@ const DefineSchedule = () => {
                             menuItems={schedule}
                             name="sDate"
                             onChange={handleChange}
+                            placeholder='Click to select'
                             onBlur={handleBlur}
                             value={values.sDate}
                             height={35}
@@ -196,6 +197,7 @@ const DefineSchedule = () => {
                             menuItems={schedule}
                             onChange={handleChange}
                             onBlur={handleBlur}
+                            placeholder='Click to select'
                             value={values.eDate}
                             name="eDate"
                             height={35}
@@ -228,6 +230,7 @@ const DefineSchedule = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.exclude}
+                          placeholder="use format [{date:'1/1/2021',New Year'}]"
                           name="exclude"
                           errorText={
                             errors.exclude && touched.exclude && errors.exclude
