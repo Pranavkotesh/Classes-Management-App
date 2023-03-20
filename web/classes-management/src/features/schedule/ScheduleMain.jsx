@@ -19,8 +19,6 @@ const schedule = [1, 2, 3, 4];
 const DefineSchedule = () => {
   const [date, setDate] = React.useState("");
 
-
-
   const handleChange0 = (event) => {
     setDate(event.target.value);
   };
@@ -106,8 +104,13 @@ const DefineSchedule = () => {
 
             <Formik
               initialValues={{ name: "", sDate: "", eDate: "", exclude: "" }}
-              initialTouched={{name: false, sDate: false, eDate: false, exclude: false }}
-              validate={(values,touched) => {
+              initialTouched={{
+                name: false,
+                sDate: false,
+                eDate: false,
+                exclude: false,
+              }}
+              validate={(values, touched) => {
                 let errors = {};
 
                 if (!values.name) {
@@ -115,22 +118,17 @@ const DefineSchedule = () => {
                 }
                 if (!values.sDate) {
                   errors.sDate = "This field is required";
-                
                 }
                 if (!values.eDate) {
                   errors.eDate = "This field is required";
-                  
                 }
                 if (!values.exclude) {
                   errors.exclude = "This field is required";
-                  
                 }
                 return errors;
               }}
               onSubmit={async (values) => {
                 console.log(values);
-                
-                
               }}
             >
               {({
@@ -159,7 +157,7 @@ const DefineSchedule = () => {
                       <AppCard minHeight={220} boxShadow="0" color=" #f2f2f2">
                         <AppTextInput
                           icon={<AbcIcon />}
-                          placeholder='Enter Schedule name'
+                          placeholder="Enter Schedule name"
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.name}
@@ -167,9 +165,6 @@ const DefineSchedule = () => {
                           label="Name"
                           sx={{ height: 35, marginBottom: 2 }}
                           errorText={errors.name && touched.name && errors.name}
-                          
-                        
-
                         />
 
                         <Box sx={{ my: 3 }} textAlign="center">
@@ -179,7 +174,7 @@ const DefineSchedule = () => {
                             menuItems={schedule}
                             name="sDate"
                             onChange={handleChange}
-                            placeholder='Click to select'
+                            placeholder="Click to select"
                             onBlur={handleBlur}
                             value={values.sDate}
                             height={35}
@@ -188,7 +183,6 @@ const DefineSchedule = () => {
                             errorText={
                               errors.sDate && touched.sDate && errors.sDate
                             }
-                           
                           />
                         </Box>
                         <Box textAlign="center">
@@ -198,7 +192,7 @@ const DefineSchedule = () => {
                             menuItems={schedule}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            placeholder='Click to select'
+                            placeholder="Click to select"
                             value={values.eDate}
                             name="eDate"
                             height={35}
@@ -207,7 +201,6 @@ const DefineSchedule = () => {
                             errorText={
                               errors.eDate && touched.eDate && errors.eDate
                             }
-                            
                           />
                         </Box>
                       </AppCard>
@@ -237,18 +230,28 @@ const DefineSchedule = () => {
                             errors.exclude && touched.exclude && errors.exclude
                           }
                           rows="5"
-                          
                         />
                       </AppCard>
                     </Grid>
                   </Grid>
-                  <Box textAlign="center" sx={{ marginTop: 2,marginRight:{lg:2}}}>
-                    <Grid container spacing={0} alignItems='center' justifyContent='center'>
-                    <Grid item xs={1} >
-                    <AppButton
-                    btnText='Create'
-                    startIcon={<ArrowCircleRightOutlinedIcon/>}/></Grid></Grid>
-                    
+                  <Box
+                    textAlign="center"
+                    sx={{ marginTop: 2, marginRight: { lg: 2 } }}
+                  >
+                    <Grid
+                      container
+                      spacing={0}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Grid item xs={1}>
+                        <AppButton
+                          btnText="Create"
+                          type='submit'
+                          startIcon={<ArrowCircleRightOutlinedIcon />}
+                        />
+                      </Grid>
+                    </Grid>
                   </Box>
                 </form>
               )}

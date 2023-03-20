@@ -186,7 +186,7 @@ const CreateClass = () => {
                           name="schedule"
                           marginY="4%"
                           onChange={handleChange}
-                          placeholder='Select Schedule'
+                          placeholder="Select Schedule"
                           icon={<EventIcon />}
                           color="#808080"
                           menuItems={schedule}
@@ -205,7 +205,7 @@ const CreateClass = () => {
                           name="course"
                           marginY="4%"
                           onChange={handleChange}
-                          placeholder='Select Course'
+                          placeholder="Select Course"
                           onBlur={handleBlur}
                           menuItems={course}
                           icon={<MenuBookIcon />}
@@ -224,7 +224,7 @@ const CreateClass = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.location}
-                          placeholder='Select Location '
+                          placeholder="Select Location "
                           menuItems={location}
                           icon={<LocationOnIcon />}
                           color="#808080"
@@ -239,7 +239,7 @@ const CreateClass = () => {
                         name="fee"
                         label="Fee/Discounts"
                         onChange={handleChange}
-                        placeholder='Add a Fee/Discount '
+                        placeholder="Add a Fee/Discount "
                         icon={<LabelIcon />}
                         onBlur={handleBlur}
                         value={values.fee}
@@ -249,7 +249,7 @@ const CreateClass = () => {
                         name="minAge"
                         label="Min Age"
                         icon={<FormatListNumberedIcon />}
-                        placeholder='Enter min age eligibility.. '
+                        placeholder="Enter min age eligibility.. "
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.minAge}
@@ -263,7 +263,7 @@ const CreateClass = () => {
                         name="maxAge"
                         label="Max Age"
                         onChange={handleChange}
-                        placeholder='Enter max age eligibility.. '
+                        placeholder="Enter max age eligibility.. "
                         onBlur={handleBlur}
                         icon={<FormatListNumberedIcon />}
                         value={values.maxAge}
@@ -284,7 +284,7 @@ const CreateClass = () => {
                         name="classCapacity"
                         label="Class Capacity"
                         onChange={handleChange}
-                        placeholder='Enter max allowed enrollemnts.. '
+                        placeholder="Enter max allowed enrollemnts.. "
                         onBlur={handleBlur}
                         icon={<FormatListNumberedIcon />}
                         value={values.classCapacity}
@@ -328,14 +328,21 @@ const CreateClass = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                      
-
-                      <Box textAlign="center" sx={{marginRight:{lg:2}}}>
-                      <Grid container spacing={0} alignItems='center' justifyContent='center'>
-                    <Grid item xs={1} >
-                    <AppButton
-                    btnText='Create'
-                    startIcon={<ArrowCircleRightOutlinedIcon/>}/></Grid></Grid>
+                      <Box textAlign="center" sx={{ marginRight: { lg: 2 } }}>
+                        <Grid
+                          container
+                          spacing={0}
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Grid item xs={1}>
+                            <AppButton
+                              btnText="Create"
+                              type='submit'
+                              startIcon={<ArrowCircleRightOutlinedIcon />}
+                            />
+                          </Grid>
+                        </Grid>
                       </Box>
                     </Grid>
                   </Grid>

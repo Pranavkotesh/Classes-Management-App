@@ -67,7 +67,13 @@ const CreateTeachersMain = () => {
                       orientation="vertical"
                       variant="middle"
                       sx={{
-                        mx:{xs:'1%',sm:'1%',md:'1%',lg:'1%',xl:'2%'},
+                        mx: {
+                          xs: "1%",
+                          sm: "1%",
+                          md: "1%",
+                          lg: "1%",
+                          xl: "2%",
+                        },
                         display: { xs: "none", sm: "none", md: "flex" },
                       }}
                     >
@@ -76,10 +82,9 @@ const CreateTeachersMain = () => {
                     <Grid item xs={12} sm={12} md={5}>
                       <Box textAlign="start">
                         <AppTextInput
-                          placeholder='e.g. Search by mail id'
-                          type='search'
-                          />
-                        
+                          placeholder="e.g. Search by mail id"
+                          type="search"
+                        />
                       </Box>
                     </Grid>
                   </Grid>
@@ -210,14 +215,14 @@ const CreateTeachersMain = () => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3,backgroundColor:'#f2f2f2'}}
+                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2" }}
                   >
                     <Grid item xs={12} sm={5}>
                       <AppTextInput
                         name="firstName"
                         label="First Name"
                         onChange={handleChange}
-                        placeholder='Enter First name'
+                        placeholder="Enter First name"
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.firstName}
@@ -231,7 +236,7 @@ const CreateTeachersMain = () => {
                         name="lastName"
                         label="Last Name"
                         icon={<AbcRounded />}
-                        placeholder='Enter Last name'
+                        placeholder="Enter Last name"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.lastName}
@@ -247,7 +252,7 @@ const CreateTeachersMain = () => {
                           marginY="4%"
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          placeholder='Select Gender'
+                          placeholder="Select Gender"
                           menuItems={gender}
                           icon={<WcIcon />}
                           color="#808080"
@@ -263,7 +268,7 @@ const CreateTeachersMain = () => {
                           name="dOb"
                           onChange={handleChange}
                           icon={<EventIcon />}
-                          placeholder='Click to Select '
+                          placeholder="Click to Select "
                           color="#808080"
                           menuItems={date}
                           onBlur={handleBlur}
@@ -276,7 +281,7 @@ const CreateTeachersMain = () => {
                         name="email"
                         label="Email"
                         onChange={handleChange}
-                        placeholder='Enter email '
+                        placeholder="Enter email "
                         onBlur={handleBlur}
                         icon={<EmailIcon />}
                         value={values.email}
@@ -289,7 +294,7 @@ const CreateTeachersMain = () => {
                         name="primaryNo"
                         label="Primary Number"
                         onChange={handleChange}
-                        placeholder='Enter primary ph#'
+                        placeholder="Enter primary ph#"
                         onBlur={handleBlur}
                         icon={<PhoneIcon />}
                         value={values.primaryNo}
@@ -312,7 +317,7 @@ const CreateTeachersMain = () => {
                         name="secondaryNo"
                         label="Secondary number"
                         onChange={handleChange}
-                        placeholder='Enter secondary ph#'
+                        placeholder="Enter secondary ph#"
                         icon={<PhoneIcon />}
                         onBlur={handleBlur}
                         value={values.secondaryNo}
@@ -321,7 +326,7 @@ const CreateTeachersMain = () => {
                         name="addressLine"
                         label="Address Line 1"
                         onChange={handleChange}
-                        placeholder='Enter address line 1...'
+                        placeholder="Enter address line 1..."
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.addressLine}
@@ -336,7 +341,7 @@ const CreateTeachersMain = () => {
                         label="Address Line 2"
                         onChange={handleChange}
                         icon={<AbcRounded />}
-                        placeholder='Enter address line 2...'
+                        placeholder="Enter address line 2..."
                         onBlur={handleBlur}
                         value={values.addressLine2}
                       />
@@ -344,7 +349,7 @@ const CreateTeachersMain = () => {
                         name="city"
                         label="City"
                         onChange={handleChange}
-                        placeholder='Enter city...'
+                        placeholder="Enter city..."
                         onBlur={handleBlur}
                         icon={<ApartmentIcon />}
                         value={values.city}
@@ -356,7 +361,7 @@ const CreateTeachersMain = () => {
                         <BasicSelect
                           name="state"
                           onChange={handleChange}
-                          placeholder='Select state...'
+                          placeholder="Select state..."
                           onBlur={handleBlur}
                           value={values.state}
                           menuItems={state}
@@ -371,7 +376,7 @@ const CreateTeachersMain = () => {
                         name="zipCode"
                         label="Zip Code"
                         onChange={handleChange}
-                        placeholder='Enter Zipcode...'
+                        placeholder="Enter Zipcode..."
                         icon={<HomeIcon />}
                         onBlur={handleBlur}
                         value={values.zipCode}
@@ -382,12 +387,21 @@ const CreateTeachersMain = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                      <Box textAlign="center" sx={{marginRight:{lg:2}}}>
-                      <Grid container spacing={0} alignItems='center' justifyContent='center'>
-                    <Grid item xs={1} >
-                    <AppButton
-                    btnText='Create'
-                    startIcon={<ArrowCircleRightOutlinedIcon/>}/></Grid></Grid>
+                      <Box textAlign="center" sx={{ marginRight: { lg: 2 } }}>
+                        <Grid
+                          container
+                          spacing={0}
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Grid item xs={1}>
+                            <AppButton
+                              btnText="Create"
+                              type='submit'
+                              startIcon={<ArrowCircleRightOutlinedIcon />}
+                            />
+                          </Grid>
+                        </Grid>
                       </Box>
                     </Grid>
                   </Grid>
