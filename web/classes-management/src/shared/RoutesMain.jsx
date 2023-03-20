@@ -4,12 +4,11 @@ import LoginPage from "../features/login/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ClassMain from "../features/classes/ClassMain";
 import TeacherMain from "../features/teachers/TeacherMain";
-import DashboardPage from "../features/dashboard/DashboardPage";
 import App404Page from "./components/app-404-page/App404Page";
 import DefineSchedule from "../features/schedule/ScheduleMain";
-import MainPage from "../features/mainpage/MainPage";
 import CreateClass from "../features/createclass/CreateClass";
-
+import CreateTeachersMain from "../features/createteachers/CreateTeachersMain";
+import ClassesSummary from "../features/classessummary/ClassesSummary";
 const RoutesMain = () => {
   const classes = useStyles();
   const checkSessionExists = () => {
@@ -31,18 +30,18 @@ const RoutesMain = () => {
           }
         />
         <Route
-          path="mainpage"
+          path="createteachers"
           element={
             <PrivateRoute>
-              <MainPage />
+              <CreateTeachersMain />
             </PrivateRoute>
           }
         />
         <Route
-          path="dashboard"
+          path="classessummary"
           element={
             <PrivateRoute>
-              <DashboardPage />
+              <ClassesSummary />
             </PrivateRoute>
           }
         />

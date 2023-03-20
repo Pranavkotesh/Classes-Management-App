@@ -11,7 +11,6 @@ import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOu
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import AbcIcon from "@mui/icons-material/Abc";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
-import ErrorIcon from "@mui/icons-material/Error";
 import { Formik } from "formik";
 
 const schedule = [1, 2, 3, 4];
@@ -19,10 +18,7 @@ const schedule = [1, 2, 3, 4];
 const DefineSchedule = () => {
   const [date, setDate] = React.useState("");
 
-  const [nameIcon, setNameIcon] = React.useState(<></>);
-  const [startIcon, setStartIcon] = React.useState(<></>);
-  const [endIcon, setEndIcon] = React.useState(<></>);
-  const [excludeIcon, setExcludeIcon] = React.useState(<></>);
+
 
   const handleChange0 = (event) => {
     setDate(event.target.value);
@@ -99,7 +95,7 @@ const DefineSchedule = () => {
                       value={date}
                       onChange={handleChange0}
                       height={35}
-                      color="#e6e6e6"
+                      color="#808080"
                       sx={{ width: "50%" }}
                     />
                   </Box>
@@ -109,32 +105,31 @@ const DefineSchedule = () => {
 
             <Formik
               initialValues={{ name: "", sDate: "", eDate: "", exclude: "" }}
-              validate={(values) => {
+              initialTouched={{name: false, sDate: false, eDate: false, exclude: false }}
+              validate={(values,touched) => {
                 let errors = {};
 
                 if (!values.name) {
                   errors.name = "This field is required";
-                  setNameIcon(<ErrorIcon />);
                 }
                 if (!values.sDate) {
                   errors.sDate = "This field is required";
-                  setStartIcon(<ErrorIcon />);
+                
                 }
                 if (!values.eDate) {
                   errors.eDate = "This field is required";
-                  setEndIcon(<ErrorIcon />);
+                  
                 }
                 if (!values.exclude) {
                   errors.exclude = "This field is required";
-                  setExcludeIcon(<ErrorIcon />);
+                  
                 }
                 return errors;
               }}
               onSubmit={async (values) => {
                 console.log(values);
-                setNameIcon(<></>);
-                setEndIcon(<></>);
-                setStartIcon(<></>);
+                
+                
               }}
             >
               {({
@@ -163,7 +158,7 @@ const DefineSchedule = () => {
                       <AppCard minHeight={220} boxShadow="0" color=" #f2f2f2">
                         <AppTextInput
                           icon={<AbcIcon />}
-                          endIcon={nameIcon}
+                          
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.name}
@@ -171,6 +166,9 @@ const DefineSchedule = () => {
                           label="Name"
                           sx={{ height: 35, marginBottom: 2 }}
                           errorText={errors.name && touched.name && errors.name}
+                          
+                        
+
                         />
 
                         <Box sx={{ my: 3 }} textAlign="center">
@@ -183,12 +181,12 @@ const DefineSchedule = () => {
                             onBlur={handleBlur}
                             value={values.sDate}
                             height={35}
-                            color="#e6e6e6"
+                            color="#808080"
                             sx={{ width: "50%" }}
                             errorText={
                               errors.sDate && touched.sDate && errors.sDate
                             }
-                            iconEnd={startIcon}
+                           
                           />
                         </Box>
                         <Box textAlign="center">
@@ -201,12 +199,12 @@ const DefineSchedule = () => {
                             value={values.eDate}
                             name="eDate"
                             height={35}
-                            color="#e6e6e6"
+                            color="#808080"
                             sx={{ width: "50%" }}
                             errorText={
                               errors.eDate && touched.eDate && errors.eDate
                             }
-                            iconEnd={endIcon}
+                            
                           />
                         </Box>
                       </AppCard>
@@ -227,8 +225,6 @@ const DefineSchedule = () => {
                         <AppTextInput
                           label="Excluded dates"
                           fullWidth
-                          // error={errors.exclude}
-                          // helperText={excludeText}
                           onChange={handleChange}
                           onBlur={handleBlur}
                           value={values.exclude}
@@ -237,7 +233,7 @@ const DefineSchedule = () => {
                             errors.exclude && touched.exclude && errors.exclude
                           }
                           rows="5"
-                          endIcon={excludeIcon}
+                          
                         />
                       </AppCard>
                     </Grid>

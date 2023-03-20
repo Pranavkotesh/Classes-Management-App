@@ -1,20 +1,17 @@
 import * as React from "react";
-// import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { FormHelperText } from "@mui/material";
-// import { IconButton } from "@mui/material";
-// import SchoolIcon from "@mui/icons-material/School";
-// import { Grid } from "@mui/material";
+import ErrorIcon from "@mui/icons-material/Error";
+
 
 export default function BasicSelect({
   bgColor,
   width,
   height,
   icon,
-  iconEnd,
   name,
   placeholder,
   label,
@@ -40,7 +37,6 @@ export default function BasicSelect({
         name={name}
         placeholder={placeholder}
         onBlur={onBlur}
-        // label={label}
         value={value}
         onChange={onChange}
         size="small"
@@ -48,15 +44,8 @@ export default function BasicSelect({
         sx={{
           width: width || "auto",
           height: height || "auto",
-          // color: "white",
-          // fontSize: 14,
           backgroundColor: bgColor || "",
           paddingLeft: icon ? "24px" : "",
-          
-          // border: bgColor ? `1px solid ${bgColor}` : "",
-          // // marginRight: { marginR },
-          // marginLeft: -1,
-          // textAlign: "center",
         }}
       >
         {menuItems.map((item) => (
@@ -73,7 +62,7 @@ export default function BasicSelect({
       )}
       {icon && (
         <div style={{ position: "absolute", color:"#e60000", right:10, top: 5 }}>
-          {iconEnd}
+          {errorText?<ErrorIcon/>:""}
         </div>
       )}
     </FormControl>

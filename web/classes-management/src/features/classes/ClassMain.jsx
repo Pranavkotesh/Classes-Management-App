@@ -45,7 +45,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              paddingLeft:{xs:0,sm:0,md:5},
+                              paddingLeft: { xs: 0, sm: 0, md: 5 },
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -57,7 +57,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                             
+
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -69,7 +69,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              
+
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -81,7 +81,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                              
+
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -93,7 +93,7 @@ const ClassMain = () => {
                           <Typography
                             sx={{
                               fontSize: 10,
-                            
+
                               fontWeight: "bold",
                               color: "#bfbfbf",
                             }}
@@ -102,9 +102,7 @@ const ClassMain = () => {
                           </Typography>
                         </Grid>
                       </Grid>
-                      <AppTextInput
-                      rows={4}
-                      />
+                      <AppTextInput rows={4} />
                       <Button
                         variant="oulined"
                         sx={{

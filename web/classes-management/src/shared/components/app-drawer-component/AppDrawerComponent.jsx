@@ -24,12 +24,12 @@ const itemsList = [
   {
     text: "Create Teachers",
     icon: <CreateIcon />,
-    route: "mainpage",
+    route: "createteachers",
   },
   {
     text: "Classes Summary",
     icon: <DvrIcon />,
-    route: "dashboard",
+    route: "classessummary",
   },
   {
     text: "Teachers",
