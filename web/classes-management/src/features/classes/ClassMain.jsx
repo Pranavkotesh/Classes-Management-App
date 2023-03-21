@@ -6,6 +6,14 @@ import BoxElement from "../../shared/components/app-box-component/AppBoxComponen
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import AppButton from "../../shared/components/app-button/AppButton";
 
+const Heading = ({ heading }) => {
+  return (
+    <Typography variant="subtitle2" color="#bfbfbf" sx={{fontSize:11}}>
+      {heading}
+    </Typography>
+  );
+};
+
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
@@ -42,70 +50,26 @@ const ClassMain = () => {
                         sx={{ display: { xs: "none", sm: "flex" } }}
                       >
                         <Grid item xs={2}>
-                          <Typography
-                            sx={{
-                              fontSize: 10,
-                              paddingLeft: { xs: 0, sm: 0, md: 5 },
-                              fontWeight: "bold",
-                              color: "#bfbfbf",
-                            }}
-                          >
-                            NAME
-                          </Typography>
+                          
+                          <Heading heading='NAME'/>
                         </Grid>
                         <Grid item xs={2}>
-                          <Typography
-                            sx={{
-                              fontSize: 10,
-
-                              fontWeight: "bold",
-                              color: "#bfbfbf",
-                            }}
-                          >
-                            SCHEDULE
-                          </Typography>
+                          <Heading heading="SCHEDULE"/>
                         </Grid>
                         <Grid item xs={2}>
-                          <Typography
-                            sx={{
-                              fontSize: 10,
-
-                              fontWeight: "bold",
-                              color: "#bfbfbf",
-                            }}
-                          >
-                            CAPACITY
-                          </Typography>
+                        <Heading heading="CAPACITY"/>
                         </Grid>
                         <Grid item xs={3}>
-                          <Typography
-                            sx={{
-                              fontSize: 10,
-
-                              fontWeight: "bold",
-                              color: "#bfbfbf",
-                            }}
-                          >
-                            REGISTERED/(PAID)
-                          </Typography>
+                        <Heading heading="REGISTERED/(PAID)"/>
                         </Grid>
                         <Grid item xs={1}>
-                          <Typography
-                            sx={{
-                              fontSize: 10,
-
-                              fontWeight: "bold",
-                              color: "#bfbfbf",
-                            }}
-                          >
-                            STATUS
-                          </Typography>
+                          <Heading heading="STATUS"/>
                         </Grid>
                       </Grid>
                       <AppTextInput rows={4} />
                       <Grid item xs={1}>
                       <AppButton
-                      btnText='notes'/></Grid>
+                      btnText='notes:'/></Grid>
                       
                     </AppCard>
                   </Grid>
