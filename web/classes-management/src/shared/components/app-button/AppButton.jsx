@@ -6,6 +6,7 @@ function AppButton({
   variant,
   type,
   onClick,
+  color,
   className,
   startIcon,
   ...rest
@@ -16,8 +17,8 @@ function AppButton({
       type={type}
       onClick={onClick}
       fullWidth
-      variant="contained"
-      color="primary"
+      variant={variant||"contained"}
+      color={color||"primary"}
       className={className}
       {...rest}
     >

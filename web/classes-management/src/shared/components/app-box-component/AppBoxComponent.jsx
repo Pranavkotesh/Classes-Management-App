@@ -1,9 +1,12 @@
 import HomeIcon from "@mui/icons-material/Home";
 import Box from "@mui/material/Box";
-import { Button, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
 
 function BoxElement({ elementOne, elementTwo,elementThree}) {
+  const classes=useStyles()
   return (
     <Box
       sx={{
@@ -24,41 +27,39 @@ function BoxElement({ elementOne, elementTwo,elementThree}) {
       </IconButton>
       <Typography
         display="inline"
-        sx={{
-          fontSize: 33,
-          marginLeft: 0,
-          marginRight: 1,
-          color: "#a6a6a6",
-        }}
+        className={classes.typography}
       >
         .
       </Typography>
-      <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementOne}</Button>
+      <Typography display="inline" className={classes.typographyText}>{elementOne}</Typography>
+      {/* <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementOne}</Button> */}
       <Typography
         display="inline"
-        sx={{
-          fontSize: 33,
-          marginLeft: 1,
-          marginRight: 1,
-          color: "#a6a6a6",
-        }}
+        className={classes.typography}
       >
         .
       </Typography>
-      <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementTwo}</Button>
+      <Typography display="inline" className={classes.typographyText}>{elementTwo}</Typography>
       <Typography
         display="inline"
-        sx={{
-          fontSize: 33,
-          marginLeft: 1,
-          marginRight: 1,
-          color: "#a6a6a6",
-        }}
+        className={classes.typography}
       >
         .
       </Typography>
-      <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementThree}</Button>
+      <Typography display="inline" className={classes.typographyText}>{elementThree}</Typography>
     </Box>
   );
 }
 export default BoxElement;
+
+const useStyles = makeStyles(()=>({
+typographyText:{
+  fontSize:12,
+  color:"#a6a6a6",
+},
+typography:{
+  fontSize:33,
+  color:"#a6a6a6",
+  mx:2
+}
+}))
