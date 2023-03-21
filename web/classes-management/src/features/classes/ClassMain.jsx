@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Grid, Typography } from "@mui/material";
 import AppCard from "../../shared/components/app-card/AppCard";
-import Button from "@mui/material/Button";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
+import AppButton from "../../shared/components/app-button/AppButton";
 
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -103,24 +103,10 @@ const ClassMain = () => {
                         </Grid>
                       </Grid>
                       <AppTextInput rows={4} />
-                      <Button
-                        variant="oulined"
-                        sx={{
-                          backgroundColor: "#1aa3ff",
-                          marginLeft: 1,
-                          marginTop: 2,
-                          minWidth: 45,
-                          color: "white",
-                          paddingTop: "5px",
-                          paddingLeft: "5px",
-                          paddingRight: "5px",
-                          textAlign: "center",
-                          fontSize: 8,
-                          ":hover": { bgcolor: "black", color: "white" },
-                        }}
-                      >
-                        Notes :
-                      </Button>
+                      <Grid item xs={1}>
+                      <AppButton
+                      btnText='notes'/></Grid>
+                      
                     </AppCard>
                   </Grid>
                   <Grid item xs={12}>
