@@ -23,7 +23,7 @@ const RoutesMain = () => {
           path="/"
           element={
             checkSessionExists() ? (
-              <Navigate to={"dashboard"} replace />
+              <Navigate to={"classessummary"} replace />
             ) : (
               <LoginPage />
             )
