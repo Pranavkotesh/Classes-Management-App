@@ -18,17 +18,18 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import WcIcon from "@mui/icons-material/Wc";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
+import Data from "../../shared/components/app-constants/DataConstant";
 
-const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
-const gender = ["Male", "Female", "Other"];
-const state = [
-  "Telangana",
-  "Andra Pradesh",
-  "Tamil Nadu",
-  "Kerala",
-  "karnataka",
-];
-const date = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
+// const gender = ["Male", "Female", "Other"];
+// const state = [
+//   "Telangana",
+//   "Andra Pradesh",
+//   "Tamil Nadu",
+//   "Kerala",
+//   "karnataka",
+// ];
+// const date = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const CreateTeachersMain = () => {
   const [teachers, setTeachers] = React.useState("");
@@ -122,7 +123,7 @@ const CreateTeachersMain = () => {
                   <BasicSelect
                     label="Select"
                     icon={<AccessibilityIcon />}
-                    menuItems={teacher}
+                    menuItems={Data}
                     value={teachers}
                     onChange={handleChange}
                     height={35}
@@ -253,7 +254,7 @@ const CreateTeachersMain = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="Select Gender"
-                          menuItems={gender}
+                          menuItems={Data}
                           icon={<WcIcon />}
                           color="#808080"
                           value={values.gender}
@@ -270,7 +271,7 @@ const CreateTeachersMain = () => {
                           icon={<EventIcon />}
                           placeholder="Click to Select "
                           color="#808080"
-                          menuItems={date}
+                          menuItems={Data}
                           onBlur={handleBlur}
                           value={values.dOb}
                           errorText={errors.dOb && touched.dOb && errors.dOb}
@@ -364,7 +365,7 @@ const CreateTeachersMain = () => {
                           placeholder="Select state..."
                           onBlur={handleBlur}
                           value={values.state}
-                          menuItems={state}
+                          menuItems={Data}
                           icon={<HomeIcon />}
                           color="#808080"
                           errorText={

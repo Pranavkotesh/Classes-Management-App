@@ -2,7 +2,7 @@ import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppCard from "../../shared/components/app-card/AppCard";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import { Divider, Grid, IconButton, Typography } from "@mui/material";
-
+import Data from "../../shared/components/app-constants/DataConstant";
 import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
 import * as React from "react";
@@ -14,7 +14,7 @@ import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import { Formik } from "formik";
 import AppButton from "../../shared/components/app-button/AppButton";
 
-const schedule = [1, 2, 3, 4];
+
 
 const DefineSchedule = () => {
   const [date, setDate] = React.useState("");
@@ -90,7 +90,7 @@ const DefineSchedule = () => {
                     <BasicSelect
                       label="Select"
                       icon={<EventIcon />}
-                      menuItems={schedule}
+                      menuItems={Data}
                       value={date}
                       onChange={handleChange0}
                       height={35}
@@ -171,7 +171,7 @@ const DefineSchedule = () => {
                           <BasicSelect
                             label="Start Date"
                             icon={<EventIcon />}
-                            menuItems={schedule}
+                            menuItems={Data}
                             name="sDate"
                             onChange={handleChange}
                             placeholder="Click to select"
@@ -189,7 +189,7 @@ const DefineSchedule = () => {
                           <BasicSelect
                             label="End Date"
                             icon={<EventIcon />}
-                            menuItems={schedule}
+                            menuItems={Data}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             placeholder="Click to select"

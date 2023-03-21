@@ -14,9 +14,8 @@ import MiniDrawer from "../app-drawer-component/AppDrawerComponent";
 import { useTheme, makeStyles, createStyles } from "@mui/styles";
 import { THEME } from "../../../styles";
 import { Event, School } from "@mui/icons-material";
+import Data from "../app-constants/DataConstant";
 
-const schools = ["abc", "def", "ghi"];
-const years = ["2015", "2016", "2017", "2018"];
 const openDrawerWidth = 240;
 const closeDrawerWidth = 72;
 
@@ -110,7 +109,7 @@ function AppMainBar({
                   label="Select Year"
                   bgColor="#1aa3ff"
                   icon={<Event />}
-                  menuItems={years}
+                  menuItems={Data}
                   value={selectedYear}
                   onChange={onYearChange}
                   width={180}
@@ -120,7 +119,7 @@ function AppMainBar({
                   label="Select School"
                   bgColor="#33ff99"
                   icon={<School />}
-                  menuItems={schools}
+                  menuItems={Data}
                   value={selectedSchool}
                   onChange={onSchoolChange}
                   width={180}

@@ -17,7 +17,7 @@ function AppButton({
       type={type}
       onClick={onClick}
       fullWidth
-      variant={variant||"contained"}
+      variant={variant || "contained"}
       color={"primary"}
       className={className}
       {...rest}

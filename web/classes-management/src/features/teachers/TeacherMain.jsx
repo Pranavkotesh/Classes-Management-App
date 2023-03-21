@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
@@ -8,22 +8,10 @@ import BoxElement from "../../shared/components/app-box-component/AppBoxComponen
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
+import Data from "../../shared/components/app-constants/DataConstant";
 
-const CLASS_ARRAY = [
-  { value: 1, label: "I" },
-  { value: 2, label: "II" },
-  { value: 3, label: "III" },
-  { value: 4, label: "IV" },
-  { value: 5, label: "V" },
-  { value: 6, label: "VI" },
-  { value: 7, label: "VII" },
-  { value: 8, label: "VIII" },
-  { value: 9, label: "IX" },
-  { value: 10, label: "X" },
-];
-
-const names =["NAME","DOB","RESIDENCE","STATUS"]
-const names2=["CLASS","SCHEDULE","ROLE","CLASS STATUS"]
+const names = ["NAME", "DOB", "RESIDENCE", "STATUS"];
+const names2 = ["CLASS", "SCHEDULE", "ROLE", "CLASS STATUS"];
 const TeacherMain = () => {
   const [searchObj, setSearchObj] = useState({
     class: "",
@@ -50,20 +38,19 @@ const TeacherMain = () => {
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
       <Grid container spacing={2}>
-        <BoxElement elementOne='Management'
-          elementTwo='Teachers'/>
+        <BoxElement elementOne="Management" elementTwo="Teachers" />
         <Grid item xs={12}>
           <AppCard padding="0 32px 16px 32px">
             <Grid container spacing={4} alignItems="center">
-              <Grid item xs={12} sm={5} md={5} lg={5} sx={{marginTop:3}}>
+              <Grid item xs={12} sm={5} md={5} lg={5} sx={{ marginTop: 3 }}>
                 <BasicSelect
                   name="class"
                   label="Get Teachers by Class"
                   onChange={handleSearchObjChange}
                   value={searchObj.class}
-                  menuItems={CLASS_ARRAY}
-                  icon={<LocalLibraryIcon/>}
-                  color='#808080'
+                  menuItems={Data}
+                  icon={<LocalLibraryIcon />}
+                  color="#808080"
                 />
               </Grid>
               <Grid item xs={12} sm={2} md={2} lg={2}>
@@ -93,10 +80,11 @@ const TeacherMain = () => {
                 <Grid item xs={12}>
                   <AppCard title="About">
                     <Grid container spacing={1} style={{ paddingTop: 16 }}>
-                      <AppTable titles={names}
-                      minHeight='10vh'
-                      color='#bfbfbf'
-                      borderBody="2px solid rgba(217,217,217)"
+                      <AppTable
+                        titles={names}
+                        minHeight="10vh"
+                        color="#bfbfbf"
+                        borderBody="2px solid rgba(217,217,217)"
                       />
                       <Grid item xs={1}>
                         <AppButton btnText="Notes:" />
@@ -107,12 +95,12 @@ const TeacherMain = () => {
                 <Grid item xs={12}>
                   <AppCard title="Classes Assigned">
                     <Grid container spacing={1} style={{ paddingTop: 16 }}>
-                      <AppTable titles={names2}
-                      minHeight='0vh'
-                      color='#bfbfbf'
-                      borderBody='white'
+                      <AppTable
+                        titles={names2}
+                        minHeight="0vh"
+                        color="#bfbfbf"
+                        borderBody="white"
                       />
-                  
                     </Grid>
                   </AppCard>
                 </Grid>

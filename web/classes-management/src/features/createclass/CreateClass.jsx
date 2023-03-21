@@ -17,17 +17,18 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
 import { makeStyles } from "@mui/styles";
+import Data from "../../shared/components/app-constants/DataConstant";
 
-const class1 = ["Class1", "Class2", "Class3", "Class4"];
-const course = ["MPC", "BIPC", "MEC"];
-const location = [
-  "Telangana",
-  "Andra Pradesh",
-  "Tamil Nadu",
-  "Kerala",
-  "karnataka",
-];
-const schedule = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const class1 = ["Class1", "Class2", "Class3", "Class4"];
+// const course = ["MPC", "BIPC", "MEC"];
+// const location = [
+//   "Telangana",
+//   "Andra Pradesh",
+//   "Tamil Nadu",
+//   "Kerala",
+//   "karnataka",
+// ];
+// const schedule = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const CreateClass = () => {
   const editing = useStyles();
@@ -95,7 +96,7 @@ const CreateClass = () => {
                   <BasicSelect
                     label="Select"
                     icon={<AccessibilityIcon />}
-                    menuItems={class1}
+                    menuItems={Data}
                     value={classes}
                     onChange={handleChange}
                     height={35}
@@ -191,7 +192,7 @@ const CreateClass = () => {
                           placeholder="Select Schedule"
                           icon={<EventIcon />}
                           color="#808080"
-                          menuItems={schedule}
+                          menuItems={Data}
                           onBlur={handleBlur}
                           value={values.schedule}
                           errorText={
@@ -209,7 +210,7 @@ const CreateClass = () => {
                           onChange={handleChange}
                           placeholder="Select Course"
                           onBlur={handleBlur}
-                          menuItems={course}
+                          menuItems={Data}
                           icon={<MenuBookIcon />}
                           color="#808080"
                           value={values.course}
@@ -227,7 +228,7 @@ const CreateClass = () => {
                           onBlur={handleBlur}
                           value={values.location}
                           placeholder="Select Location "
-                          menuItems={location}
+                          menuItems={Data}
                           icon={<LocationOnIcon />}
                           color="#808080"
                           errorText={
