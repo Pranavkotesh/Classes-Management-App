@@ -32,7 +32,6 @@ function BoxElement({ elementOne, elementTwo,elementThree}) {
         .
       </Typography>
       <Typography display="inline" className={classes.typographyText}>{elementOne}</Typography>
-      {/* <Button sx={{ fontSize: 12, color: "#a6a6a6" }}>{elementOne}</Button> */}
       <Typography
         display="inline"
         className={classes.typography}

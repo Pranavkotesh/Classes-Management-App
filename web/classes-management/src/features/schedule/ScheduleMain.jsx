@@ -244,7 +244,7 @@ const DefineSchedule = () => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item xs={1}>
+                      <Grid item xs={5} sm={2} md={2} lg={1} >
                         <AppButton
                           btnText="Create"
                           type='submit'

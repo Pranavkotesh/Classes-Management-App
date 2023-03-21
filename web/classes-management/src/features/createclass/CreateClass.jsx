@@ -16,6 +16,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
+import { makeStyles } from "@mui/styles";
 
 const class1 = ["Class1", "Class2", "Class3", "Class4"];
 const course = ["MPC", "BIPC", "MEC"];
@@ -29,6 +30,7 @@ const location = [
 const schedule = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const CreateClass = () => {
+  const editing = useStyles();
   const [classes, setClasses] = React.useState("");
   const handleChange = (e) => {
     setClasses(e.target.value);
@@ -297,7 +299,7 @@ const CreateClass = () => {
 
                       <AppTextInput
                         name="classTimings"
-                        label="Address Line 1"
+                        label="Class Timings"
                         onChange={handleChange}
                         placeholder='use format [{"day":"Monday","startTime":"10AM","endTime":"11AM"}]'
                         onBlur={handleBlur}
@@ -335,10 +337,11 @@ const CreateClass = () => {
                           alignItems="center"
                           justifyContent="center"
                         >
-                          <Grid item xs={1}>
+                          <Grid item xs={5} sm={2} md={2} lg={1} >
                             <AppButton
                               btnText="Create"
                               type='submit'
+                              className={editing.button}
                               startIcon={<ArrowCircleRightOutlinedIcon />}
                             />
                           </Grid>
@@ -356,3 +359,9 @@ const CreateClass = () => {
   );
 };
 export default CreateClass;
+
+const useStyles=makeStyles(()=>({
+  button:{
+    font:10
+  }
+}))
