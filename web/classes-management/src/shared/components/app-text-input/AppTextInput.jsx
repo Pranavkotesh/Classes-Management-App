@@ -14,6 +14,7 @@ function AppTextInput({
   label,
   error,
   icon,
+  multiline,
   errorText,
   helperText,
  endIcon,
@@ -34,7 +35,7 @@ function AppTextInput({
         helperText={errorText||helperText}
         value={value}
         disabled={rest.disabled}
-        multiline
+        multiline ={multiline||rows?true:false}
         rows={rows||1}
         {...rest}
         InputProps={{
