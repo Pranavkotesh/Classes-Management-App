@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
-import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import AppButton from "../../shared/components/app-button/AppButton";
+import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 
-const Heading = ({ heading }) => {
-  return (
-    <Typography variant="subtitle2" color="#bfbfbf" sx={{fontSize:11}}>
-      {heading}
-    </Typography>
-  );
-};
+
+const names =["NAME","SCHEDULE","CAPACITY","REGISTERED / (PAID)","STATUS"]
 
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -47,26 +42,15 @@ const ClassMain = () => {
                       <Grid
                         container
                         spacing={0}
-                        sx={{ display: { xs: "none", sm: "flex" } }}
+                        
                       >
-                        <Grid item xs={2}>
-                          
-                          <Heading heading='NAME'/>
-                        </Grid>
-                        <Grid item xs={2}>
-                          <Heading heading="SCHEDULE"/>
-                        </Grid>
-                        <Grid item xs={2}>
-                        <Heading heading="CAPACITY"/>
-                        </Grid>
-                        <Grid item xs={3}>
-                        <Heading heading="REGISTERED/(PAID)"/>
-                        </Grid>
-                        <Grid item xs={1}>
-                          <Heading heading="STATUS"/>
-                        </Grid>
+                        <AppTable titles={names}
+                        minHeight='10vh'
+                        color='#bfbfbf'
+                        borderBody="2px solid rgba(217,217,217)"
+                        />
+                    
                       </Grid>
-                      <AppTextInput rows={4} />
                       <Grid item xs={1}>
                       <AppButton
                       btnText='notes:'/></Grid>

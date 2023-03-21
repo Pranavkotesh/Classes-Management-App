@@ -1,14 +1,11 @@
 import React from "react";
-import { Divider, Grid, TableBody, TableContainer, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import AppCard from "../../shared/components/app-card/AppCard";
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableCell from '@mui/material/TableCell';
 
+import AppTable from "../../shared/components/app-table-component/AppTableComponent";
+const names=["Class Name","Age Eligibility","Schedule Dates","Schedule Times","Capacity/Registered(Paid)","Teachers"]
 
 const ClassesSummary = () => {
   return (
@@ -80,25 +77,10 @@ const ClassesSummary = () => {
             <Grid item xs={12} sx={{ marginTop: { xs: 0, sm: 4 } }}>
               <AppCard title="Classes" minHeight={270}>
                 <Grid item={10}>
-                  <TableContainer component={Paper} sx={{boxShadow:0,border: "2px solid rgba(217,217,217)",mt:2,mb:4}}>
-                    <Table >
-                      <TableHead >
-                        <TableRow>
-                          <TableCell>Class Name</TableCell>
-                          <TableCell>Age Eligibility</TableCell>
-                          <TableCell>Schedule Dates</TableCell>
-                          <TableCell>Schedule Times</TableCell>
-                          <TableCell>Capacity/Registered(paid)</TableCell>
-                          <TableCell>Teachers</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        <TableCell>
-                        <Grid item xs={12} sx={{minHeight:170}}></Grid>
-                        </TableCell>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
+                  <AppTable titles={names}
+                  border="2px solid rgba(217,217,217)"
+                  />
+                  
                   
                 </Grid>
               </AppCard>

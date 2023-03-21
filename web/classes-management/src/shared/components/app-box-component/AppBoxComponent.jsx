@@ -1,64 +1,54 @@
 import HomeIcon from "@mui/icons-material/Home";
-import Box from "@mui/material/Box";
 import { IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import Grid from "@mui/material/Grid";
 
 
 function BoxElement({ elementOne, elementTwo,elementThree}) {
   const classes=useStyles()
   return (
-    <Box
-      sx={{
-        backgroundColor: "#e6e6e6",
-        marginLeft: "2vh",
-      }}
-    >
+    <Grid container spacing={1}>
+      <Grid item xs={0} sx={{marginLeft:3}}>
       <IconButton>
-        <HomeIcon
-          sx={{
-            backgroundColor: "#a6a6a6",
-            borderRadius: "50%",
-            padding: "1px",
-            color: "white",
-            fontSize: 18,
-          }}
+      <HomeIcon
+          className={classes.icon}
+          fontSize='18'
         />
       </IconButton>
-      <Typography
-        display="inline"
-        className={classes.typography}
-      >
-        .
-      </Typography>
-      <Typography display="inline" className={classes.typographyText}>{elementOne}</Typography>
-      <Typography
-        display="inline"
-        className={classes.typography}
-      >
-        .
-      </Typography>
-      <Typography display="inline" className={classes.typographyText}>{elementTwo}</Typography>
-      <Typography
-        display="inline"
-        className={classes.typography}
-      >
-        .
-      </Typography>
-      <Typography display="inline" className={classes.typographyText}>{elementThree}</Typography>
-    </Box>
+      </Grid>
+      <Grid item xs={0}><Typography className={classes.typography}>.</Typography></Grid>
+      <Grid item xs={0} ><Typography  className={classes.typographyText}>{elementOne}</Typography></Grid>
+      <Grid item xs={0}><Typography className={classes.typography}>.</Typography></Grid>
+      <Grid item xs={0} ><Typography className={classes.typographyText}>{elementTwo}</Typography></Grid>
+      <Grid item xs={0}><Typography className={classes.typography}>.</Typography></Grid>
+      <Grid item xs={0} ><Typography className={classes.typographyText}>{elementThree}</Typography></Grid>
+      
+      
+      
+    </Grid>
+
   );
 }
 export default BoxElement;
 
 const useStyles = makeStyles(()=>({
+  icon:{
+    backgroundColor: "#a6a6a6",
+            borderRadius: "50%",
+            padding: "1px",
+            color: "white",
+            fontSize:18
+            
+  },
 typographyText:{
+  paddingTop:4,
   fontSize:12,
-  color:"#a6a6a6",
+  color:"#a6a6a6"
 },
 typography:{
   fontSize:33,
   color:"#a6a6a6",
-  mx:2
+  
 }
 }))

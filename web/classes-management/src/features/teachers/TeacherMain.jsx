@@ -7,6 +7,7 @@ import AppButton from "../../shared/components/app-button/AppButton";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 
 const CLASS_ARRAY = [
   { value: 1, label: "I" },
@@ -21,14 +22,8 @@ const CLASS_ARRAY = [
   { value: 10, label: "X" },
 ];
 
-const Heading = ({ heading }) => {
-  return (
-    <Typography variant="subtitle2" color="lightgrey">
-      {heading}
-    </Typography>
-  );
-};
-
+const names =["NAME","DOB","RESIDENCE","STATUS"]
+const names2=["CLASS","SCHEDULE","ROLE","CLASS STATUS"]
 const TeacherMain = () => {
   const [searchObj, setSearchObj] = useState({
     class: "",
@@ -36,7 +31,7 @@ const TeacherMain = () => {
   });
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
-  const [notes, setNotes] = useState("");
+  // const [notes, setNotes] = useState("");
 
   const handleSearchObjChange = (event) => {
     const { name, value } = event.target;
@@ -98,28 +93,11 @@ const TeacherMain = () => {
                 <Grid item xs={12}>
                   <AppCard title="About">
                     <Grid container spacing={1} style={{ paddingTop: 16 }}>
-                      <Grid item xs={3}>
-                        <Heading heading="NAME" />
-                      </Grid>
-                      <Grid item xs={3}>
-                        <Heading heading="DOB" />
-                      </Grid>
-                      <Grid item xs={3}>
-                        <Heading heading="RESIDENCE" />
-                      </Grid>
-                      <Grid item xs={3}>
-                        <Heading heading="STATUS" />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <AppTextInput
-                          name="notes"
-                          label=""
-                          onChange={(event) => setNotes(event.target.value)}
-                          value={notes}
-                          multiline
-                          minRows={3}
-                        />
-                      </Grid>
+                      <AppTable titles={names}
+                      minHeight='10vh'
+                      color='#bfbfbf'
+                      borderBody="2px solid rgba(217,217,217)"
+                      />
                       <Grid item xs={1}>
                         <AppButton btnText="Notes:" />
                       </Grid>
@@ -129,18 +107,12 @@ const TeacherMain = () => {
                 <Grid item xs={12}>
                   <AppCard title="Classes Assigned">
                     <Grid container spacing={1} style={{ paddingTop: 16 }}>
-                      <Grid item xs={3}>
-                        <Heading heading="CLASS" />
-                      </Grid>
-                      <Grid item xs={3}>
-                        <Heading heading="SCHEDULE" />
-                      </Grid>
-                      <Grid item xs={3}>
-                        <Heading heading="ROLL" />
-                      </Grid>
-                      <Grid item xs={3}>
-                        <Heading heading="CLASS STATUS" />
-                      </Grid>
+                      <AppTable titles={names2}
+                      minHeight='0vh'
+                      color='#bfbfbf'
+                      borderBody='white'
+                      />
+                  
                     </Grid>
                   </AppCard>
                 </Grid>
