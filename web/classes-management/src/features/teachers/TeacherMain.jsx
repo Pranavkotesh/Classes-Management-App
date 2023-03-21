@@ -60,7 +60,7 @@ const TeacherMain = () => {
         <Grid item xs={12}>
           <AppCard padding="0 32px 16px 32px">
             <Grid container spacing={4} alignItems="center">
-              <Grid item xs={12} sm={5} md={5} lg={5}>
+              <Grid item xs={12} sm={5} md={5} lg={5} sx={{marginTop:3}}>
                 <BasicSelect
                   name="class"
                   label="Get Teachers by Class"
