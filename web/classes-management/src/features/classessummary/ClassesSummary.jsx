@@ -3,7 +3,6 @@ import { Divider, Grid, Typography } from "@mui/material";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import AppCard from "../../shared/components/app-card/AppCard";
-
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 const names=["Class Name","Age Eligibility","Schedule Dates","Schedule Times","Capacity/Registered(Paid)","Teachers"]
 
@@ -33,7 +32,7 @@ const ClassesSummary = () => {
                       height="50"
                     />
                   </Grid>
-                  <Grid xs={2}>
+                  <Grid item xs={2}>
                     <Typography
                       sx={{
                         fontSize: { xs: 16, sm: 18 },
