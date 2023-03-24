@@ -4,11 +4,11 @@ import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Grid from "@mui/material/Grid";
 
-function BoxElement({ elementOne, elementTwo, elementThree }) {
+function BoxElement({ elementOne, elementTwo, elementThree,marginTop }) {
   const classes = useStyles();
   return (
-    <Grid container spacing={1}>
-      <Grid item xs={0} sx={{ marginLeft: 3 }}>
+    <Grid container spacing={1} sx={{marginTop:marginTop }}>
+      <Grid item xs={0} sx={{ marginLeft: 3}}>
         <IconButton>
           <HomeIcon className={classes.icon} fontSize="18" />
         </IconButton>

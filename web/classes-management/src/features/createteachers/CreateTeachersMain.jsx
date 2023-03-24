@@ -42,7 +42,7 @@ const CreateTeachersMain = () => {
         <Grid item xs={12}>
           <AppCard minHeight={690}>
             <Grid container spacing={0}>
-              <Grid item xs={12} sm={12} md={5}>
+              <Grid item xs={12} sm={12} md={12} lg={5}>
                 <Box textAlign="center">
                   <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
                     Create a new Teacher
@@ -71,7 +71,7 @@ const CreateTeachersMain = () => {
                         mx: {
                           xs: "1%",
                           sm: "1%",
-                          md: "1%",
+                          md: "4%",
                           lg: "1%",
                           xl: "2%",
                         },
@@ -99,8 +99,8 @@ const CreateTeachersMain = () => {
                 sx={{
                   borderWidth: 1,
                   color: "#black",
-                  mx: { md: "4.5%", lg: "5.6%", xl: "6.2%" },
-                  display: { xs: "none", sm: "none", md: "flex" },
+                  mx: { md: "6%", lg: "5%"},
+                  display: { xs: "none", sm: "none", md: "none",lg:"flex" },
                 }}
               >
                 OR
@@ -110,8 +110,9 @@ const CreateTeachersMain = () => {
                 item
                 xs={12}
                 sm={12}
-                md={5}
-                sx={{ marginTop: { xs: 2, sm: 2, md: 0 } }}
+                md={12}
+                lg={5}
+                sx={{ marginTop: { xs: 2, sm: 2, md:4,lg:0}}}
               >
                 <Box textAlign="center">
                   <Typography
@@ -218,7 +219,7 @@ const CreateTeachersMain = () => {
                     alignItems="center"
                     sx={{ marginTop: 3, backgroundColor: "#f2f2f2" }}
                   >
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2}}}>
                       <AppTextInput
                         name="firstName"
                         label="First Name"
@@ -244,7 +245,7 @@ const CreateTeachersMain = () => {
                         errorText={
                           errors.lastName && touched.lastName && errors.lastName
                         }
-                        sx={{ marginBottom: 2 }}
+                        sx={{ marginBottom: 1 }}
                       />
                       <Box>
                         <Typography>Gender</Typography>
@@ -311,9 +312,9 @@ const CreateTeachersMain = () => {
                       orientation="vertical"
                       variant="fullWidth"
                       flexItem
-                      sx={{ borderWidth: 1, mx: "7.8%" }}
+                      sx={{ borderWidth: 1, mx: "6%" }}
                     ></Divider>
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={5} sx={{padding:3,marginTop:2}}>
                       <AppTextInput
                         name="secondaryNo"
                         label="Secondary number"
@@ -355,7 +356,7 @@ const CreateTeachersMain = () => {
                         icon={<ApartmentIcon />}
                         value={values.city}
                         errorText={errors.city && touched.city && errors.city}
-                        sx={{ marginBottom: 2.5 }}
+                        sx={{ marginBottom: 1 }}
                       />
                       <Box>
                         <Typography>State</Typography>

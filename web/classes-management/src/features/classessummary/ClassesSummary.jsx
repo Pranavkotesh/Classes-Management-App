@@ -10,7 +10,7 @@ const ClassesSummary = () => {
   return (
     <AppLayout title="Classes Summary">
       <Grid container spacing={2}>
-        <BoxElement elementOne="Reports" elementTwo="Classes Summary" />
+        <BoxElement elementOne="Reports" elementTwo="Classes Summary" marginTop='3vh'/>
         <Grid item xs={12}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
@@ -92,3 +92,5 @@ const ClassesSummary = () => {
 };
 
 export default ClassesSummary;
+
+

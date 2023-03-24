@@ -182,7 +182,7 @@ const CreateClass = () => {
                     alignItems="center"
                     sx={{ marginTop: 3, backgroundColor: "#f2f2f2" }}
                   >
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2.8}}}>
                       <Box>
                         <Typography>Schedule</Typography>
                         <BasicSelect
@@ -280,7 +280,7 @@ const CreateClass = () => {
                       orientation="vertical"
                       variant="fullWidth"
                       flexItem
-                      sx={{ borderWidth: 1, mx: "7.8%" }}
+                      sx={{ borderWidth: 1, mx: "6%" }}
                     ></Divider>
                     <Grid item xs={12} sm={5}>
                       <AppTextInput
