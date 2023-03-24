@@ -6,8 +6,7 @@ import BoxElement from "../../shared/components/app-box-component/AppBoxComponen
 import AppButton from "../../shared/components/app-button/AppButton";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 
-
-const names =["NAME","SCHEDULE","CAPACITY","REGISTERED / (PAID)","STATUS"]
+const names = ["NAME", "SCHEDULE", "CAPACITY", "REGISTERED / (PAID)", "STATUS"];
 
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -39,22 +38,17 @@ const ClassMain = () => {
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
                     <AppCard title="ABOUT" minHeight={170}>
-                      <Grid
-                        container
-                        spacing={0}
-                        
-                      >
-                        <AppTable titles={names}
-                        minHeight='10vh'
-                        color='#bfbfbf'
-                        borderBody="2px solid rgba(217,217,217)"
+                      <Grid container spacing={0}>
+                        <AppTable
+                          titles={names}
+                          minHeight="10vh"
+                          color="#bfbfbf"
+                          borderBody="2px solid rgba(217,217,217)"
                         />
-                    
                       </Grid>
                       <Grid item xs={1}>
-                      <AppButton
-                      btnText='notes:'/></Grid>
-                      
+                        <AppButton btnText="notes:" />
+                      </Grid>
                     </AppCard>
                   </Grid>
                   <Grid item xs={12}>

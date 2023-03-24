@@ -30,6 +30,8 @@ const DefineSchedule = () => {
           elementOne="Admin"
           elementTwo="Setup & Maintenance"
           elementThree="Define Schedules"
+          xs='none'
+          sm='flex'
         />
         <Grid item xs={12}>
           <AppCard title="Create / Update Schedule" minHeight={640}>
@@ -150,7 +152,7 @@ const DefineSchedule = () => {
                       xs={12}
                       md={5}
                       sx={{
-                        marginLeft: "4%",
+                        marginLeft:{xs:0,md:"4%"},
                         marginBottom: { xs: 1, sm: 1, md: 0 },
                       }}
                     >
