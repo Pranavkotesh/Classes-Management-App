@@ -2,7 +2,7 @@ import AppLayout from "../../shared/components/app-layout/AppLayout";
 import AppCard from "../../shared/components/app-card/AppCard";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import { Divider, Grid, IconButton, Typography } from "@mui/material";
-import Data from "../../shared/components/app-constants/DataConstant";
+import { dateVal } from "../../shared/components/app-constants/DataConstant";
 import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
 import * as React from "react";
@@ -13,6 +13,7 @@ import AbcIcon from "@mui/icons-material/Abc";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import { Formik } from "formik";
 import AppButton from "../../shared/components/app-button/AppButton";
+import DateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 
 
@@ -89,7 +90,7 @@ const DefineSchedule = () => {
                     Select Schedule to Update
                   </Typography>
                   <Box textAlign="center">
-                    <BasicSelect
+                    {/* <BasicSelect
                       label="Select"
                       icon={<EventIcon />}
                       menuItems={Data}
@@ -98,21 +99,22 @@ const DefineSchedule = () => {
                       height={35}
                       color="#808080"
                       sx={{ width: "50%" }}
-                    />
+                    /> */}
+                    <DateSelector label="Select"/>
                   </Box>
                 </AppCard>
               </Grid>
             </Grid>
 
             <Formik
-              initialValues={{ name: "", sDate: "", eDate: "", exclude: "" }}
+              initialValues={{ name: "", sDate:"", eDate: "", exclude: "" }}
               initialTouched={{
                 name: false,
                 sDate: false,
                 eDate: false,
                 exclude: false,
               }}
-              validate={(values, touched) => {
+              validate={(values) => {
                 let errors = {};
 
                 if (!values.name) {
@@ -145,7 +147,7 @@ const DefineSchedule = () => {
                   <Grid
                     container
                     spacing={0}
-                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2" }}
+                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2",px:2}}
                   >
                     <Grid
                       item
@@ -170,7 +172,7 @@ const DefineSchedule = () => {
                         />
 
                         <Box sx={{ my: 3 }} textAlign="center">
-                          <BasicSelect
+                          {/* <BasicSelect
                             label="Start Date"
                             icon={<EventIcon />}
                             menuItems={Data}
@@ -185,13 +187,22 @@ const DefineSchedule = () => {
                             errorText={
                               errors.sDate && touched.sDate && errors.sDate
                             }
+                          /> */}
+                          <DateSelector
+                          label="Start Date"
+                          value={values.sDate}
+                          name="sDate"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          errorText={errors.sDate && touched.sDate && errors.sDate}
                           />
+                          
                         </Box>
                         <Box textAlign="center">
                           <BasicSelect
                             label="End Date"
                             icon={<EventIcon />}
-                            menuItems={Data}
+                            menuItems={dateVal}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             placeholder="Click to select"

@@ -8,7 +8,7 @@ import BoxElement from "../../shared/components/app-box-component/AppBoxComponen
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
-import Data from "../../shared/components/app-constants/DataConstant";
+import { teacherArr } from "../../shared/components/app-constants/DataConstant";
 
 const names = ["NAME", "DOB", "RESIDENCE", "STATUS"];
 const names2 = ["CLASS", "SCHEDULE", "ROLE", "CLASS STATUS"];
@@ -48,7 +48,7 @@ const TeacherMain = () => {
                   label="Get Teachers by Class"
                   onChange={handleSearchObjChange}
                   value={searchObj.class}
-                  menuItems={Data}
+                  menuItems={teacherArr}
                   icon={<LocalLibraryIcon />}
                   color="#808080"
                 />

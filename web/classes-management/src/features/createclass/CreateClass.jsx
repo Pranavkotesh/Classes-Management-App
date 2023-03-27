@@ -17,18 +17,9 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
 import { makeStyles } from "@mui/styles";
-import Data from "../../shared/components/app-constants/DataConstant";
+import {courseArr,classArr,locationArr, dateVal} from "../../shared/components/app-constants/DataConstant";
 
-// const class1 = ["Class1", "Class2", "Class3", "Class4"];
-// const course = ["MPC", "BIPC", "MEC"];
-// const location = [
-//   "Telangana",
-//   "Andra Pradesh",
-//   "Tamil Nadu",
-//   "Kerala",
-//   "karnataka",
-// ];
-// const schedule = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 
 const CreateClass = () => {
   const editing = useStyles();
@@ -72,7 +63,7 @@ const CreateClass = () => {
                 sx={{
                   borderWidth: 1,
                   color: "#black",
-                  mx: { md: "4.5%", lg: "5.6%", xl: "6.2%" },
+                  mx: { md: "4.5%", lg: "5.6%", xl: "6%" },
                   display: { xs: "none", sm: "none", md: "flex" },
                 }}
               >
@@ -96,7 +87,7 @@ const CreateClass = () => {
                   <BasicSelect
                     label="Select"
                     icon={<AccessibilityIcon />}
-                    menuItems={Data}
+                    menuItems={classArr}
                     value={classes}
                     onChange={handleChange}
                     height={35}
@@ -180,7 +171,7 @@ const CreateClass = () => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2" }}
+                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2",px:2}}
                   >
                     <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2.8}}}>
                       <Box>
@@ -192,7 +183,7 @@ const CreateClass = () => {
                           placeholder="Select Schedule"
                           icon={<EventIcon />}
                           color="#808080"
-                          menuItems={Data}
+                          menuItems={dateVal}
                           onBlur={handleBlur}
                           value={values.schedule}
                           errorText={
@@ -210,7 +201,7 @@ const CreateClass = () => {
                           onChange={handleChange}
                           placeholder="Select Course"
                           onBlur={handleBlur}
-                          menuItems={Data}
+                          menuItems={courseArr}
                           icon={<MenuBookIcon />}
                           color="#808080"
                           value={values.course}
@@ -228,7 +219,7 @@ const CreateClass = () => {
                           onBlur={handleBlur}
                           value={values.location}
                           placeholder="Select Location "
-                          menuItems={Data}
+                          menuItems={locationArr}
                           icon={<LocationOnIcon />}
                           color="#808080"
                           errorText={
@@ -330,8 +321,9 @@ const CreateClass = () => {
                       />
                     </Grid>
 
-                    <Grid item xs={12}>
-                      <Box textAlign="center" sx={{ marginRight: { lg: 2 } }}>
+                    
+                  </Grid>
+                  <Box textAlign="center" sx={{ marginRight: { lg: 2 },marginTop:2 }}>
                         <Grid
                           container
                           spacing={0}
@@ -348,8 +340,6 @@ const CreateClass = () => {
                           </Grid>
                         </Grid>
                       </Box>
-                    </Grid>
-                  </Grid>
                 </form>
               )}
             </Formik>

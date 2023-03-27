@@ -18,7 +18,7 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import WcIcon from "@mui/icons-material/Wc";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
-import Data from "../../shared/components/app-constants/DataConstant";
+import {teacherArr,genderArr,stateArr,dateVal} from "../../shared/components/app-constants/DataConstant";
 
 // const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
 // const gender = ["Male", "Female", "Other"];
@@ -124,7 +124,7 @@ const CreateTeachersMain = () => {
                   <BasicSelect
                     label="Select"
                     icon={<AccessibilityIcon />}
-                    menuItems={Data}
+                    menuItems={teacherArr}
                     value={teachers}
                     onChange={handleChange}
                     height={35}
@@ -217,7 +217,7 @@ const CreateTeachersMain = () => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2" }}
+                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2",px:2 }}
                   >
                     <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2}}}>
                       <AppTextInput
@@ -255,7 +255,7 @@ const CreateTeachersMain = () => {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="Select Gender"
-                          menuItems={Data}
+                          menuItems={genderArr}
                           icon={<WcIcon />}
                           color="#808080"
                           value={values.gender}
@@ -272,7 +272,7 @@ const CreateTeachersMain = () => {
                           icon={<EventIcon />}
                           placeholder="Click to Select "
                           color="#808080"
-                          menuItems={Data}
+                          menuItems={dateVal}
                           onBlur={handleBlur}
                           value={values.dOb}
                           errorText={errors.dOb && touched.dOb && errors.dOb}
@@ -314,7 +314,7 @@ const CreateTeachersMain = () => {
                       flexItem
                       sx={{ borderWidth: 1, mx: "6%" }}
                     ></Divider>
-                    <Grid item xs={12} sm={5} sx={{padding:3,marginTop:2}}>
+                    <Grid item xs={12} sm={5} sx={{marginTop:2}}>
                       <AppTextInput
                         name="secondaryNo"
                         label="Secondary number"
@@ -366,7 +366,7 @@ const CreateTeachersMain = () => {
                           placeholder="Select state..."
                           onBlur={handleBlur}
                           value={values.state}
-                          menuItems={Data}
+                          menuItems={stateArr}
                           icon={<HomeIcon />}
                           color="#808080"
                           errorText={
@@ -385,11 +385,13 @@ const CreateTeachersMain = () => {
                         errorText={
                           errors.zipCode && touched.zipCode && errors.zipCode
                         }
+                        sx={{marginBottom:2}}
                       />
                     </Grid>
 
-                    <Grid item xs={12}>
-                      <Box textAlign="center" sx={{ marginRight: { lg: 2 } }}>
+                    
+                  </Grid>
+                  <Box textAlign="center" sx={{ marginRight: { lg: 2 },marginTop:2 }}>
                         <Grid
                           container
                           spacing={0}
@@ -405,8 +407,6 @@ const CreateTeachersMain = () => {
                           </Grid>
                         </Grid>
                       </Box>
-                    </Grid>
-                  </Grid>
                 </form>
               )}
             </Formik>
