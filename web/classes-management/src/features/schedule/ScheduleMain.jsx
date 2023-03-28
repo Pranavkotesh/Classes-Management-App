@@ -8,21 +8,20 @@ import Box from "@mui/material/Box";
 import * as React from "react";
 import EventIcon from "@mui/icons-material/Event";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
-import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import AbcIcon from "@mui/icons-material/Abc";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import { Formik } from "formik";
 import AppButton from "../../shared/components/app-button/AppButton";
-import DateSelector from "../../shared/components/app-date-select/AppDateSelect";
+import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 
 
 const DefineSchedule = () => {
-  const [date, setDate] = React.useState("");
+  // const [date, setDate] = React.useState("");
 
-  const handleChange0 = (event) => {
-    setDate(event.target.value);
-  };
+  // const handleChange0 = (event) => {
+  //   setDate(event.target.value);
+  // };
 
   return (
     <AppLayout title="Define Schedule">
@@ -100,14 +99,14 @@ const DefineSchedule = () => {
                       color="#808080"
                       sx={{ width: "50%" }}
                     /> */}
-                    <DateSelector label="Select"/>
+                    <AppDateSelector label="Select"/>
                   </Box>
                 </AppCard>
               </Grid>
             </Grid>
 
             <Formik
-              initialValues={{ name: "", sDate:"", eDate: "", exclude: "" }}
+              initialValues={{ name: "", sDate:null, eDate:null, exclude: "" }}
               initialTouched={{
                 name: false,
                 sDate: false,
@@ -140,6 +139,7 @@ const DefineSchedule = () => {
                 errors,
                 touched,
                 handleChange,
+                setFieldValue,
                 handleBlur,
                 handleSubmit,
               }) => (
@@ -167,7 +167,7 @@ const DefineSchedule = () => {
                           value={values.name}
                           name="name"
                           label="Name"
-                          sx={{ height: 35, marginBottom: 2 }}
+                          sx={{ height: 35, marginBottom: 1 }}
                           errorText={errors.name && touched.name && errors.name}
                         />
 
@@ -188,18 +188,29 @@ const DefineSchedule = () => {
                               errors.sDate && touched.sDate && errors.sDate
                             }
                           /> */}
-                          <DateSelector
+                          <AppDateSelector
                           label="Start Date"
-                          value={values.sDate}
+                          value={values.sDate} 
                           name="sDate"
-                          onChange={handleChange}
+                          onChange={(value)=>{
+                            setFieldValue("sDate",value,true)
+                          }}
                           onBlur={handleBlur}
                           errorText={errors.sDate && touched.sDate && errors.sDate}
                           />
                           
                         </Box>
                         <Box textAlign="center">
-                          <BasicSelect
+                        <AppDateSelector
+                          label="End Date"
+                          value={values.eDate} 
+                          name="eDate"
+                          onChange={(value)=>{
+                            setFieldValue("eDate",value,true)
+                          }}
+                          errorText={errors.eDate && touched.eDate && errors.eDate}
+                          />
+                          {/* <BasicSelect
                             label="End Date"
                             icon={<EventIcon />}
                             menuItems={dateVal}
@@ -214,7 +225,7 @@ const DefineSchedule = () => {
                             errorText={
                               errors.eDate && touched.eDate && errors.eDate
                             }
-                          />
+                          /> */}
                         </Box>
                       </AppCard>
                     </Grid>

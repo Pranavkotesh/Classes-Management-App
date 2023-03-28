@@ -19,6 +19,7 @@ import WcIcon from "@mui/icons-material/Wc";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
 import {teacherArr,genderArr,stateArr,dateVal} from "../../shared/components/app-constants/DataConstant";
+import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 // const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
 // const gender = ["Male", "Female", "Other"];
@@ -148,7 +149,7 @@ const CreateTeachersMain = () => {
                 firstName: "",
                 lastName: "",
                 gender: "",
-                dOb: "",
+                dOb:null,
                 primaryNo: "",
                 addressLine: "",
                 city: "",
@@ -210,7 +211,7 @@ const CreateTeachersMain = () => {
                 handleChange,
                 handleBlur,
                 handleSubmit,
-                isSubmitting,
+                setFieldValue,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <Grid
@@ -265,8 +266,18 @@ const CreateTeachersMain = () => {
                         />
                       </Box>
                       <Box>
-                        <Typography>Date Of Birth</Typography>
-                        <BasicSelect
+                        
+                        <AppDateSelector
+                          value={values.dOb} 
+                          label='Date of Birth'
+                          name="dOb"
+                          onChange={(value)=>{
+                            setFieldValue("dOb",value,true)
+                          }}
+                          
+                          errorText={errors.dOb && touched.dOb && errors.dOb}
+                          />
+                        {/* <BasicSelect
                           name="dOb"
                           onChange={handleChange}
                           icon={<EventIcon />}
@@ -276,7 +287,7 @@ const CreateTeachersMain = () => {
                           onBlur={handleBlur}
                           value={values.dOb}
                           errorText={errors.dOb && touched.dOb && errors.dOb}
-                        />
+                        /> */}
                       </Box>
 
                       <AppTextInput

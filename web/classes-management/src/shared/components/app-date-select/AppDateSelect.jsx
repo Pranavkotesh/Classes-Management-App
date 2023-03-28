@@ -1,67 +1,55 @@
-import * as React from 'react';
-import dayjs from 'dayjs';
-import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-import EventIcon from "@mui/icons-material/Event";
-import InputAdornment from "@mui/material/InputAdornment";
-import { makeStyles } from '@mui/styles';
-export default function DateSelector({label,onChange,onBlur,error,errorText,value,name, ...rest}) {
-//  const today=dayjs;
-//  const yesterday=dayjs().subtract(1,'day');
- const classes=useStyles()
-//  const [value, setValue] = React.useState(null);
-//  const [error,setError]=React.useState(false);
-//   const handleChange = (newValue) => {
-//     setValue(newValue);
-//   };
-//   const handleBlur=(newValue)=>{
-//     setValue(newValue);
-//   }
-//   function handleErr(){
-//     if (!value){
-//         setError(true);
-//     }else{
-//         setError(false);
-//     }
-//   }
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { FormControl, FormHelperText } from "@mui/material";
+import ErrorIcon from "@mui/icons-material/Error";
+export default function AppDateSelector({
+  label,
+  onChange,
+  onBlur,
+  error,
+  errorText,
+  value,
+  name,
+  icon,
+  ...rest
+}) {
+
+
+
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={2}>
-        
-        <MobileDatePicker
-          label={label}
-          name={name}
-          inputFormat="MM/DD/YYYY"
-          InputProps={{sx:{height:40}}}
-          emptyLabel="Select"
-          value={value}
-          onChange={onChange}
-          disablePast
-          renderInput={(params) =><TextField {...params} 
-          className={classes.textField}
-          onBlur={onBlur}
-          error={error||errorText?true:false}
-          helperText={errorText}
-          InputProps={{startAdornment:(
-            <InputAdornment position="start">
-                <EventIcon/>
-            </InputAdornment>
-          )}}
-          />}
-        />
-        
+        <FormControl >
+          <DatePicker
+            label={label}
+            name={name}
+            inputFormat="MM/DD/YYYY"
+            className={`${errorText?'date-error':''}`}
+            value={value}
+            onChange={onChange}
+           
+            
+            sx={{ 
+                '&.date-error':{
+                border:'0.3px solid rgba(255,0,0)',
+                
+                borderRadius:1
+            }}}
+          />
+          {errorText && (
+            <FormHelperText sx={{ color: "#cc0000" }}>
+              {errorText}
+            </FormHelperText>
+          )}
+          
+        </FormControl>
       </Stack>
     </LocalizationProvider>
   );
 }
 
-const useStyles=makeStyles(()=>({
-    textField:{
-        height:30,
-        px:10
-    }
-}))
+

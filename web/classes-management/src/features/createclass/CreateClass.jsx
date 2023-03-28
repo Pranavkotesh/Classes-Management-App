@@ -18,6 +18,7 @@ import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOu
 import AppButton from "../../shared/components/app-button/AppButton";
 import { makeStyles } from "@mui/styles";
 import {courseArr,classArr,locationArr, dateVal} from "../../shared/components/app-constants/DataConstant";
+import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 
 
@@ -111,7 +112,7 @@ const CreateClass = () => {
                 minAge: "",
                 maxAge: "",
                 course: "",
-                schedule: "",
+                schedule: null,
                 classCapacity: "",
                 classTimings: "",
                 location: "",
@@ -163,6 +164,7 @@ const CreateClass = () => {
                 errors,
                 touched,
                 handleChange,
+                setFieldValue,
                 handleBlur,
                 handleSubmit,
               }) => (
@@ -175,7 +177,18 @@ const CreateClass = () => {
                   >
                     <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2.8}}}>
                       <Box>
-                        <Typography>Schedule</Typography>
+                      <AppDateSelector
+                          label="Schedule"
+                          value={values.schedule} 
+                          name="schedule"
+                         
+                          onChange={(value)=>{
+                            setFieldValue("schedule",value,true)
+                          }}
+                          onBlur={handleBlur}
+                          errorText={errors.schedule && touched.schedule && errors.schedule}
+                          />
+                        {/* <Typography>Schedule</Typography>
                         <BasicSelect
                           name="schedule"
                           marginY="4%"
@@ -191,7 +204,7 @@ const CreateClass = () => {
                             touched.schedule &&
                             errors.schedule
                           }
-                        />
+                        /> */}
                       </Box>
                       <Box>
                         <Typography>Course</Typography>
