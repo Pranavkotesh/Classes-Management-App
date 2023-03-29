@@ -88,7 +88,7 @@ const DefineSchedule = () => {
                   >
                     Select Schedule to Update
                   </Typography>
-                  <Box textAlign="center">
+                  <Box >
                     {/* <BasicSelect
                       label="Select"
                       icon={<EventIcon />}
@@ -167,29 +167,13 @@ const DefineSchedule = () => {
                           value={values.name}
                           name="name"
                           label="Name"
-                          sx={{ height: 35, marginBottom: 1 }}
+                          sx={{ height: 35, marginBottom:2 }}
                           errorText={errors.name && touched.name && errors.name}
                         />
 
-                        <Box sx={{ my: 3 }} textAlign="center">
-                          {/* <BasicSelect
-                            label="Start Date"
-                            icon={<EventIcon />}
-                            menuItems={Data}
-                            name="sDate"
-                            onChange={handleChange}
-                            placeholder="Click to select"
-                            onBlur={handleBlur}
-                            value={values.sDate}
-                            height={35}
-                            color="#808080"
-                            sx={{ width: "50%" }}
-                            errorText={
-                              errors.sDate && touched.sDate && errors.sDate
-                            }
-                          /> */}
+                        <Box sx={{marginBottom:1}}>
                           <AppDateSelector
-                          label="Start Date"
+                          label='Start Date'
                           value={values.sDate} 
                           name="sDate"
                           onChange={(value)=>{
@@ -200,7 +184,7 @@ const DefineSchedule = () => {
                           />
                           
                         </Box>
-                        <Box textAlign="center">
+                        <Box>
                         <AppDateSelector
                           label="End Date"
                           value={values.eDate} 
@@ -208,6 +192,7 @@ const DefineSchedule = () => {
                           onChange={(value)=>{
                             setFieldValue("eDate",value,true)
                           }}
+                          onBlur={handleBlur}
                           errorText={errors.eDate && touched.eDate && errors.eDate}
                           />
                           {/* <BasicSelect

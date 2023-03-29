@@ -3,7 +3,7 @@ import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { FormControl, FormHelperText } from "@mui/material";
+import { FormControl, FormHelperText, Typography } from "@mui/material";
 import ErrorIcon from "@mui/icons-material/Error";
 export default function AppDateSelector({
   label,
@@ -11,6 +11,7 @@ export default function AppDateSelector({
   onBlur,
   error,
   errorText,
+  color,
   value,
   name,
   icon,
@@ -21,22 +22,23 @@ export default function AppDateSelector({
 
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider dateAdapter={AdapterDayjs} >
       <Stack spacing={2}>
-        <FormControl >
+        <FormControl>
+           <Typography sx={{color:color||'grey'}}>{label}</Typography>
           <DatePicker
-            label={label}
+            onBlur={onBlur}
+            slotProps={{textField:{size:'small',fullWidth:'true'},inputAdornment:{position:'start'}}}
             name={name}
             inputFormat="MM/DD/YYYY"
-            className={`${errorText?'date-error':''}`}
+            className={`${errorText?'date-error':'date-picker'}`}
+            
             value={value}
             onChange={onChange}
-           
-            
-            sx={{ 
+            sx={{
+                '&.date-picker':{flexDirection:'row-reverse'},
                 '&.date-error':{
                 border:'0.3px solid rgba(255,0,0)',
-                
                 borderRadius:1
             }}}
           />
@@ -46,6 +48,11 @@ export default function AppDateSelector({
             </FormHelperText>
           )}
           
+          {icon && (
+        <div style={{ position: "absolute", color:"#e60000", right:10, top: 5 }}>
+          {errorText?<ErrorIcon/>:""}
+        </div>
+      )}
         </FormControl>
       </Stack>
     </LocalizationProvider>

@@ -269,25 +269,14 @@ const CreateTeachersMain = () => {
                         
                         <AppDateSelector
                           value={values.dOb} 
-                          label='Date of Birth'
+                         label='Date Of Birth'
                           name="dOb"
                           onChange={(value)=>{
                             setFieldValue("dOb",value,true)
                           }}
-                          
+                          onBlur={handleBlur}
                           errorText={errors.dOb && touched.dOb && errors.dOb}
                           />
-                        {/* <BasicSelect
-                          name="dOb"
-                          onChange={handleChange}
-                          icon={<EventIcon />}
-                          placeholder="Click to Select "
-                          color="#808080"
-                          menuItems={dateVal}
-                          onBlur={handleBlur}
-                          value={values.dOb}
-                          errorText={errors.dOb && touched.dOb && errors.dOb}
-                        /> */}
                       </Box>
 
                       <AppTextInput

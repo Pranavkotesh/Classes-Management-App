@@ -181,7 +181,6 @@ const CreateClass = () => {
                           label="Schedule"
                           value={values.schedule} 
                           name="schedule"
-                         
                           onChange={(value)=>{
                             setFieldValue("schedule",value,true)
                           }}
