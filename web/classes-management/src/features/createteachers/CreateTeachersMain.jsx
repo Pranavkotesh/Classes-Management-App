@@ -7,7 +7,6 @@ import { Box } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
-import EventIcon from "@mui/icons-material/Event";
 import * as React from "react";
 import { AbcRounded } from "@mui/icons-material";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -18,7 +17,7 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import WcIcon from "@mui/icons-material/Wc";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
-import {teacherArr,genderArr,stateArr,dateVal} from "../../shared/components/app-constants/DataConstant";
+import {teacherArr,genderArr,stateArr} from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 // const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];

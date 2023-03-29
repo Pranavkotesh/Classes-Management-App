@@ -7,7 +7,6 @@ import { Box } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
 import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
-import EventIcon from "@mui/icons-material/Event";
 import * as React from "react";
 import LabelIcon from "@mui/icons-material/Label";
 import AccessibilityIcon from "@mui/icons-material/Accessibility";
@@ -17,7 +16,7 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
 import { makeStyles } from "@mui/styles";
-import {courseArr,classArr,locationArr, dateVal} from "../../shared/components/app-constants/DataConstant";
+import {courseArr,classArr,locationArr} from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 
