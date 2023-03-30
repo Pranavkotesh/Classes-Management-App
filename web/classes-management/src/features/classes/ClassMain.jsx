@@ -5,8 +5,9 @@ import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import AppButton from "../../shared/components/app-button/AppButton";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
+import { classAbout } from "../../shared/components/app-headings/AppHeadings";
 
-const names = ["NAME", "SCHEDULE", "CAPACITY", "REGISTERED / (PAID)", "STATUS"];
+// const names = ["NAME", "SCHEDULE", "CAPACITY", "REGISTERED / (PAID)", "STATUS"];
 
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");
@@ -40,7 +41,7 @@ const ClassMain = () => {
                     <AppCard title="ABOUT" minHeight={170}>
                       <Grid container spacing={0}>
                         <AppTable
-                          titles={names}
+                          titles={classAbout}
                           minHeight="10vh"
                           color="#bfbfbf"
                           borderBody="2px solid rgba(217,217,217)"

@@ -17,7 +17,11 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import WcIcon from "@mui/icons-material/Wc";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
-import {teacherArr,genderArr,stateArr} from "../../shared/components/app-constants/DataConstant";
+import {
+  teacherArr,
+  genderArr,
+  stateArr,
+} from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 // const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
@@ -99,8 +103,8 @@ const CreateTeachersMain = () => {
                 sx={{
                   borderWidth: 1,
                   color: "#black",
-                  mx: { md: "6%", lg: "5%"},
-                  display: { xs: "none", sm: "none", md: "none",lg:"flex" },
+                  mx: { md: "6%", lg: "5%" },
+                  display: { xs: "none", sm: "none", md: "none", lg: "flex" },
                 }}
               >
                 OR
@@ -112,7 +116,7 @@ const CreateTeachersMain = () => {
                 sm={12}
                 md={12}
                 lg={5}
-                sx={{ marginTop: { xs: 2, sm: 2, md:4,lg:0}}}
+                sx={{ marginTop: { xs: 2, sm: 2, md: 4, lg: 0 } }}
               >
                 <Box textAlign="center">
                   <Typography
@@ -148,7 +152,7 @@ const CreateTeachersMain = () => {
                 firstName: "",
                 lastName: "",
                 gender: "",
-                dOb:null,
+                dOb: null,
                 primaryNo: "",
                 addressLine: "",
                 city: "",
@@ -211,15 +215,21 @@ const CreateTeachersMain = () => {
                 handleBlur,
                 handleSubmit,
                 setFieldValue,
+                setFieldTouched,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <Grid
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2",px:2 }}
+                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2", px: 2 }}
                   >
-                    <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2}}}>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={5}
+                      sx={{ marginLeft: { xs: 0, sm: 2 } }}
+                    >
                       <AppTextInput
                         name="firstName"
                         label="First Name"
@@ -265,17 +275,23 @@ const CreateTeachersMain = () => {
                         />
                       </Box>
                       <Box>
-                        
                         <AppDateSelector
-                          value={values.dOb} 
-                         label='Date Of Birth'
+                          value={values.dOb}
+                          label="Date Of Birth"
                           name="dOb"
-                          onChange={(value)=>{
-                            setFieldValue("dOb",value,true)
+                          onChange={(value) => {
+                            setFieldValue("dOb", value, true);
                           }}
-                          onBlur={handleBlur}
-                          errorText={errors.dOb && touched.dOb && errors.dOb}
-                          />
+                          onTouched={() => {
+                            setFieldTouched("dOb", true, true);
+                          }}
+                          errorText={
+                            errors.dOb &&
+                            !values.dOb &&
+                            touched.dOb &&
+                            errors.dOb
+                          }
+                        />
                       </Box>
 
                       <AppTextInput
@@ -313,7 +329,7 @@ const CreateTeachersMain = () => {
                       flexItem
                       sx={{ borderWidth: 1, mx: "6%" }}
                     ></Divider>
-                    <Grid item xs={12} sm={5} sx={{marginTop:2}}>
+                    <Grid item xs={12} sm={5} sx={{ marginTop: 2 }}>
                       <AppTextInput
                         name="secondaryNo"
                         label="Secondary number"
@@ -384,28 +400,29 @@ const CreateTeachersMain = () => {
                         errorText={
                           errors.zipCode && touched.zipCode && errors.zipCode
                         }
-                        sx={{marginBottom:2}}
+                        sx={{ marginBottom: 2 }}
                       />
                     </Grid>
-
-                    
                   </Grid>
-                  <Box textAlign="center" sx={{ marginRight: { lg: 2 },marginTop:2 }}>
-                        <Grid
-                          container
-                          spacing={0}
-                          alignItems="center"
-                          justifyContent="center"
-                        >
-                          <Grid item xs={5} sm={2} md={2} lg={1} >
-                            <AppButton
-                              btnText="Create"
-                              type='submit'
-                              startIcon={<ArrowCircleRightOutlinedIcon />}
-                            />
-                          </Grid>
-                        </Grid>
-                      </Box>
+                  <Box
+                    textAlign="center"
+                    sx={{ marginRight: { lg: 2 }, marginTop: 2 }}
+                  >
+                    <Grid
+                      container
+                      spacing={0}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Grid item xs={5} sm={2} md={2} lg={1}>
+                        <AppButton
+                          btnText="Create"
+                          type="submit"
+                          startIcon={<ArrowCircleRightOutlinedIcon />}
+                        />
+                      </Grid>
+                    </Grid>
+                  </Box>
                 </form>
               )}
             </Formik>

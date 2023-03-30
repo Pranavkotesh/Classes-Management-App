@@ -9,9 +9,10 @@ import BasicSelect from "../../shared/components/app-select-box/AppSelectInput";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { teacherArr } from "../../shared/components/app-constants/DataConstant";
+import { teachersAbout, teachersAssigned } from "../../shared/components/app-headings/AppHeadings";
 
-const names = ["NAME", "DOB", "RESIDENCE", "STATUS"];
-const names2 = ["CLASS", "SCHEDULE", "ROLE", "CLASS STATUS"];
+// const names = ["NAME", "DOB", "RESIDENCE", "STATUS"];
+// const names2 = ["CLASS", "SCHEDULE", "ROLE", "CLASS STATUS"];
 const TeacherMain = () => {
   const [searchObj, setSearchObj] = useState({
     class: "",
@@ -81,7 +82,7 @@ const TeacherMain = () => {
                   <AppCard title="About">
                     <Grid container spacing={1} style={{ paddingTop: 16 }}>
                       <AppTable
-                        titles={names}
+                        titles={teachersAbout}
                         minHeight="10vh"
                         color="#bfbfbf"
                         borderBody="2px solid rgba(217,217,217)"
@@ -96,7 +97,7 @@ const TeacherMain = () => {
                   <AppCard title="Classes Assigned">
                     <Grid container spacing={1} style={{ paddingTop: 16 }}>
                       <AppTable
-                        titles={names2}
+                        titles={teachersAssigned}
                         minHeight="0vh"
                         color="#bfbfbf"
                         borderBody="white"

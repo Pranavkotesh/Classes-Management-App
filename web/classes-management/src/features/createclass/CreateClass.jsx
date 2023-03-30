@@ -16,10 +16,12 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import AppButton from "../../shared/components/app-button/AppButton";
 import { makeStyles } from "@mui/styles";
-import {courseArr,classArr,locationArr} from "../../shared/components/app-constants/DataConstant";
+import {
+  courseArr,
+  classArr,
+  locationArr,
+} from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
-
-
 
 const CreateClass = () => {
   const editing = useStyles();
@@ -166,43 +168,39 @@ const CreateClass = () => {
                 setFieldValue,
                 handleBlur,
                 handleSubmit,
+                setFieldTouched,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <Grid
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2",px:2}}
+                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2", px: 2 }}
                   >
-                    <Grid item xs={12} sm={5} sx={{marginLeft:{xs:0,sm:2.8}}}>
-                      <Box>
-                      <AppDateSelector
+                    <Grid
+                      item
+                      xs={12}
+                      sm={5}
+                      sx={{ marginLeft: { xs: 0, sm: 2.8 } }}
+                    >
+                      <Box sx={{marginBottom:1}}>
+                        <AppDateSelector
                           label="Schedule"
-                          value={values.schedule} 
-                          name="schedule"
-                          onChange={(value)=>{
-                            setFieldValue("schedule",value,true)
-                          }}
-                          onBlur={handleBlur}
-                          errorText={errors.schedule && touched.schedule && errors.schedule}
-                          />
-                        {/* <Typography>Schedule</Typography>
-                        <BasicSelect
-                          name="schedule"
-                          marginY="4%"
-                          onChange={handleChange}
-                          placeholder="Select Schedule"
-                          icon={<EventIcon />}
-                          color="#808080"
-                          menuItems={dateVal}
-                          onBlur={handleBlur}
                           value={values.schedule}
+                          name="schedule"
+                          onChange={(value) => {
+                            setFieldValue("schedule", value, true);
+                          }}
+                          onTouched={() => {
+                            setFieldTouched("schedule", true, true);
+                          }}
                           errorText={
                             errors.schedule &&
+                            !values.schedule &&
                             touched.schedule &&
                             errors.schedule
                           }
-                        /> */}
+                        />
                       </Box>
                       <Box>
                         <Typography>Course</Typography>
@@ -331,26 +329,27 @@ const CreateClass = () => {
                         sx={{ marginBottom: 2.5 }}
                       />
                     </Grid>
-
-                    
                   </Grid>
-                  <Box textAlign="center" sx={{ marginRight: { lg: 2 },marginTop:2 }}>
-                        <Grid
-                          container
-                          spacing={0}
-                          alignItems="center"
-                          justifyContent="center"
-                        >
-                          <Grid item xs={5} sm={2} md={2} lg={1} >
-                            <AppButton
-                              btnText="Create"
-                              type='submit'
-                              className={editing.button}
-                              startIcon={<ArrowCircleRightOutlinedIcon />}
-                            />
-                          </Grid>
-                        </Grid>
-                      </Box>
+                  <Box
+                    textAlign="center"
+                    sx={{ marginRight: { lg: 2 }, marginTop: 2 }}
+                  >
+                    <Grid
+                      container
+                      spacing={0}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Grid item xs={5} sm={2} md={2} lg={1}>
+                        <AppButton
+                          btnText="Create"
+                          type="submit"
+                          className={editing.button}
+                          startIcon={<ArrowCircleRightOutlinedIcon />}
+                        />
+                      </Grid>
+                    </Grid>
+                  </Box>
                 </form>
               )}
             </Formik>
@@ -362,8 +361,8 @@ const CreateClass = () => {
 };
 export default CreateClass;
 
-const useStyles=makeStyles(()=>({
-  button:{
-    font:10
-  }
-}))
+const useStyles = makeStyles(() => ({
+  button: {
+    font: 10,
+  },
+}));

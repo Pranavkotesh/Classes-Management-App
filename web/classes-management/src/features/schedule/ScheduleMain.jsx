@@ -12,8 +12,6 @@ import { Formik } from "formik";
 import AppButton from "../../shared/components/app-button/AppButton";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
-
-
 const DefineSchedule = () => {
   // const [date, setDate] = React.useState("");
 
@@ -28,8 +26,8 @@ const DefineSchedule = () => {
           elementOne="Admin"
           elementTwo="Setup & Maintenance"
           elementThree="Define Schedules"
-          xs='none'
-          sm='flex'
+          xs="none"
+          sm="flex"
         />
         <Grid item xs={12}>
           <AppCard title="Create / Update Schedule" minHeight={640}>
@@ -86,25 +84,19 @@ const DefineSchedule = () => {
                   >
                     Select Schedule to Update
                   </Typography>
-                  <Box >
-                    {/* <BasicSelect
-                      label="Select"
-                      icon={<EventIcon />}
-                      menuItems={Data}
-                      value={date}
-                      onChange={handleChange0}
-                      height={35}
-                      color="#808080"
-                      sx={{ width: "50%" }}
-                    /> */}
-                    <AppDateSelector label="Select"/>
-                  </Box>
+
+                  <AppDateSelector label="Select" />
                 </AppCard>
               </Grid>
             </Grid>
 
             <Formik
-              initialValues={{ name: "", sDate:null, eDate:null, exclude: "" }}
+              initialValues={{
+                name: "",
+                sDate: null,
+                eDate: null,
+                exclude: "",
+              }}
               initialTouched={{
                 name: false,
                 sDate: false,
@@ -140,19 +132,20 @@ const DefineSchedule = () => {
                 setFieldValue,
                 handleBlur,
                 handleSubmit,
+                setFieldTouched,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <Grid
                     container
                     spacing={0}
-                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2",px:2}}
+                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2", px: 2 }}
                   >
                     <Grid
                       item
                       xs={12}
                       md={5}
                       sx={{
-                        marginLeft:{xs:0,md:"4%"},
+                        marginLeft: { xs: 0, md: "4%" },
                         marginBottom: { xs: 1, sm: 1, md: 0 },
                       }}
                     >
@@ -165,51 +158,47 @@ const DefineSchedule = () => {
                           value={values.name}
                           name="name"
                           label="Name"
-                          sx={{ height: 35, marginBottom:2 }}
+                          sx={{ height: 35, marginBottom: 2 }}
                           errorText={errors.name && touched.name && errors.name}
                         />
 
-                        <Box sx={{marginBottom:1}}>
+                        <Box sx={{ marginBottom: 1 }}>
                           <AppDateSelector
-                          label='Start Date'
-                          value={values.sDate} 
-                          name="sDate"
-                          onChange={(value)=>{
-                            setFieldValue("sDate",value,true)
-                          }}
-                          onBlur={handleBlur}
-                          errorText={errors.sDate && touched.sDate && errors.sDate}
+                            label="Start Date"
+                            value={values.sDate}
+                            name="sDate"
+                            onChange={(value) => {
+                              setFieldValue("sDate", value, true);
+                            }}
+                            onTouched={() => {
+                              setFieldTouched("sDate", true, true);
+                            }}
+                            errorText={
+                              errors.sDate &&
+                              !values.sDate &&
+                              touched.sDate &&
+                              errors.sDate
+                            }
                           />
-                          
                         </Box>
-                        <Box>
+
                         <AppDateSelector
                           label="End Date"
-                          value={values.eDate} 
+                          value={values.eDate}
                           name="eDate"
-                          onChange={(value)=>{
-                            setFieldValue("eDate",value,true)
+                          onChange={(value) => {
+                            setFieldValue("eDate", value, true);
                           }}
-                          onBlur={handleBlur}
-                          errorText={errors.eDate && touched.eDate && errors.eDate}
-                          />
-                          {/* <BasicSelect
-                            label="End Date"
-                            icon={<EventIcon />}
-                            menuItems={dateVal}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            placeholder="Click to select"
-                            value={values.eDate}
-                            name="eDate"
-                            height={35}
-                            color="#808080"
-                            sx={{ width: "50%" }}
-                            errorText={
-                              errors.eDate && touched.eDate && errors.eDate
-                            }
-                          /> */}
-                        </Box>
+                          onTouched={() => {
+                            setFieldTouched("eDate", true, true);
+                          }}
+                          errorText={
+                            errors.eDate &&
+                            !values.eDate &&
+                            touched.eDate &&
+                            errors.eDate
+                          }
+                        />
                       </AppCard>
                     </Grid>
                     <Divider
@@ -251,10 +240,10 @@ const DefineSchedule = () => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item xs={5} sm={2} md={2} lg={1} >
+                      <Grid item xs={5} sm={2} md={2} lg={1}>
                         <AppButton
                           btnText="Create"
-                          type='submit'
+                          type="submit"
                           startIcon={<ArrowCircleRightOutlinedIcon />}
                         />
                       </Grid>

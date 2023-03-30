@@ -61,7 +61,7 @@ export default function BasicSelect({
         </div>
       )}
       {icon && (
-        <div style={{ position: "absolute", color:"#e60000", right:10, top: 5 }}>
+        <div style={{ position: "absolute", color:"#e60000", right:13, top: 7 }}>
           {errorText?<ErrorIcon/>:""}
         </div>
       )}

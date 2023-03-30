@@ -4,7 +4,9 @@ import AppLayout from "../../shared/components/app-layout/AppLayout";
 import BoxElement from "../../shared/components/app-box-component/AppBoxComponent";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
-const names=["Class Name","Age Eligibility","Schedule Dates","Schedule Times","Capacity/Registered(Paid)","Teachers"]
+import { classesSummary } from "../../shared/components/app-headings/AppHeadings";
+
+// const names=["Class Name","Age Eligibility","Schedule Dates","Schedule Times","Capacity/Registered(Paid)","Teachers"]
 
 const ClassesSummary = () => {
   return (
@@ -76,7 +78,7 @@ const ClassesSummary = () => {
             <Grid item xs={12} sx={{ marginTop: { xs: 0, sm: 4 } }}>
               <AppCard title="Classes" minHeight={270}>
                 <Grid item={10}>
-                  <AppTable titles={names}
+                  <AppTable titles={classesSummary}
                   border="2px solid rgba(217,217,217)"
                   />
                   

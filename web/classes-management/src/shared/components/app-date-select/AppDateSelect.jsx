@@ -2,22 +2,18 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { FormControl, FormHelperText, Grid, Typography } from "@mui/material";
-// import Box from "@mui/material/Box";
 import ErrorIcon from "@mui/icons-material/Error";
-import { Box } from "@mui/system";
+import { DesktopDatePicker } from "@mui/x-date-pickers";
 export default function AppDateSelector({
   label,
   onChange,
   onBlur,
-  error,
+  onTouched,
   errorText,
   color,
   value,
   name,
-  icon,
-  ...rest
 }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -26,12 +22,13 @@ export default function AppDateSelector({
           <Typography sx={{ color: color || "grey" }}>{label}</Typography>
           <Grid container spacing={0} direction="row">
             <Grid item xs={12} position="relative">
-              <DatePicker
+              <DesktopDatePicker
                 onBlur={onBlur}
                 slotProps={{
                   textField: { size: "small", fullWidth: true },
                   inputAdornment: { position: "start" },
                 }}
+                onClose={onTouched}
                 name={name}
                 inputFormat="MM/DD/YYYY"
                 className={`${errorText ? "date-error" : "date-picker"}`}
@@ -47,20 +44,26 @@ export default function AppDateSelector({
                 }}
               />
             </Grid>
-            <Grid container spacing={0} position="absolute">
-              <Grid item xs={11.2}></Grid>
-              <Grid item xs={0.8}>
-                <Box>
-                  <ErrorIcon
-                    className={`${errorText ? "icon-error" : "icon-non-error"}`}
-                    sx={{
-                      color: "#e60000",
-                      marginTop: 1,
-                      "&.icon-error": { display: "flex" },
-                      "&.icon-non-error": { display: "none" },
-                    }}
-                  />
-                </Box>
+            <Grid
+              container
+              spacing={0}
+              position="absolute"
+              sx={{ marginLeft: 4 }}
+            >
+              <Grid
+                item
+                xs={11}
+                sx={{ display: "flex", justifyContent: "flex-end" }}
+              >
+                <ErrorIcon
+                  className={`${errorText ? "icon-error" : "icon-non-error"}`}
+                  sx={{
+                    color: "#e60000",
+                    marginTop: 1,
+                    "&.icon-error": { display: "flex" },
+                    "&.icon-non-error": { display: "none" },
+                  }}
+                />
               </Grid>
             </Grid>
           </Grid>
