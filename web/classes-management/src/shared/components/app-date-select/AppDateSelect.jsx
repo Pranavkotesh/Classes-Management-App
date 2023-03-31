@@ -48,11 +48,11 @@ export default function AppDateSelector({
               container
               spacing={0}
               position="absolute"
-              sx={{ marginLeft: 4 }}
+              sx={{ marginLeft:'10%' }}
             >
               <Grid
                 item
-                xs={11}
+                xs={10} lg={10.5}
                 sx={{ display: "flex", justifyContent: "flex-end" }}
               >
                 <ErrorIcon
