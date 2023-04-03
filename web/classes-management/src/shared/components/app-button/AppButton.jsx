@@ -20,6 +20,7 @@ function AppButton({
       variant={variant || "contained"}
       color={"primary"}
       className={className}
+     
       {...rest}
     >
       {btnText}

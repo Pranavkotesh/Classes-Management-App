@@ -13,15 +13,11 @@ import AppButton from "../../shared/components/app-button/AppButton";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
 const DefineSchedule = () => {
-  // const [date, setDate] = React.useState("");
 
-  // const handleChange0 = (event) => {
-  //   setDate(event.target.value);
-  // };
 
   return (
     <AppLayout title="Define Schedule">
-      <Grid container spacing={2}>
+      <Grid container spacing={2} >
         <BoxElement
           elementOne="Admin"
           elementTwo="Setup & Maintenance"
@@ -30,7 +26,7 @@ const DefineSchedule = () => {
           sm="flex"
         />
         <Grid item xs={12}>
-          <AppCard title="Create / Update Schedule" minHeight={640}>
+          <AppCard title="Create / Update Schedule" minHeight={640} padding='0px'>
             <Divider orientation="horizontal" sx={{ marginTop: 1 }}></Divider>
             <Grid container spacing={0} sx={{ marginTop: 2 }}>
               <Grid
@@ -138,7 +134,8 @@ const DefineSchedule = () => {
                   <Grid
                     container
                     spacing={0}
-                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2", px: 2 }}
+                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2", px:0 ,
+                  '&.MuiPaper-root':{padding:0}}}
                   >
                     <Grid
                       item
@@ -147,6 +144,7 @@ const DefineSchedule = () => {
                       sx={{
                         marginLeft: { xs: 0, md: "4%" },
                         marginBottom: { xs: 1, sm: 1, md: 0 },
+                      
                       }}
                     >
                       <AppCard minHeight={220} boxShadow="0" color=" #f2f2f2">
@@ -240,7 +238,7 @@ const DefineSchedule = () => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item xs={5} sm={2} md={2} lg={1}>
+                      <Grid item xs={5} sm={2.5} md={2} lg={1.5} xl={1.2} >
                         <AppButton
                           btnText="Create"
                           type="submit"

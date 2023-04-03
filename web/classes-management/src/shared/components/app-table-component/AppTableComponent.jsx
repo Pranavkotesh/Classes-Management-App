@@ -3,7 +3,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
-import { TableContainer, TableBody, Grid } from "@mui/material";
+import { TableContainer, TableBody } from "@mui/material";
 function AppTable({ titles, minHeight, color, border, borderBody }) {
   return (
     <TableContainer

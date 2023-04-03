@@ -6,4 +6,5 @@ const stateArr=["Telangana","Andra Pradesh","Karnataka","Tamil Nadu","Kerala"]
 const classArr=["Class 1","Class 2","Class 3","Class 4","Class 5",]
 const schoolArr=["School 1","School 2","School 3","School 4","School 5","School 6"]
 const dateVal=[1,2,3,4,5]
-export  {teacherArr,courseArr,locationArr,genderArr,stateArr,classArr,dateVal,schoolArr};
+const years=['2015','2016','2017','2018','2019','2020','2021','2022','2023']
+export  {teacherArr,courseArr,locationArr,genderArr,stateArr,classArr,dateVal,schoolArr,years};

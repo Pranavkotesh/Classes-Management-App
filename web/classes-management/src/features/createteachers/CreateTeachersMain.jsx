@@ -24,17 +24,6 @@ import {
 } from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
-// const teacher = ["teacher1", "teacher2", "teacher3", "teacher4"];
-// const gender = ["Male", "Female", "Other"];
-// const state = [
-//   "Telangana",
-//   "Andra Pradesh",
-//   "Tamil Nadu",
-//   "Kerala",
-//   "karnataka",
-// ];
-// const date = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const CreateTeachersMain = () => {
   const [teachers, setTeachers] = React.useState("");
   const handleChange = (e) => {
@@ -44,8 +33,8 @@ const CreateTeachersMain = () => {
     <AppLayout title="Create Teachers">
       <Grid container spacing={0}>
         <Grid item xs={12}>
-          <AppCard minHeight={690}>
-            <Grid container spacing={0}>
+          <AppCard minHeight={690} padding='0px'>
+            <Grid container spacing={0} sx={{paddingTop:2}}>
               <Grid item xs={12} sm={12} md={12} lg={5}>
                 <Box textAlign="center">
                   <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
@@ -89,6 +78,7 @@ const CreateTeachersMain = () => {
                         <AppTextInput
                           placeholder="e.g. Search by mail id"
                           type="search"
+                          sx={{px:2}}
                         />
                       </Box>
                     </Grid>
@@ -118,7 +108,7 @@ const CreateTeachersMain = () => {
                 lg={5}
                 sx={{ marginTop: { xs: 2, sm: 2, md: 4, lg: 0 } }}
               >
-                <Box textAlign="center">
+                <Box textAlign="center" sx={{px:2}}>
                   <Typography
                     sx={{ fontSize: 18, fontWeight: "bold", marginBottom: 3 }}
                   >
@@ -228,7 +218,7 @@ const CreateTeachersMain = () => {
                       item
                       xs={12}
                       sm={5}
-                      sx={{ marginLeft: { xs: 0, sm: 2 } }}
+                      sx={{ marginLeft: { xs: 0, sm: 2 }}}
                     >
                       <AppTextInput
                         name="firstName"
@@ -312,6 +302,7 @@ const CreateTeachersMain = () => {
                         label="Primary Number"
                         onChange={handleChange}
                         placeholder="Enter primary ph#"
+                        type='number'
                         onBlur={handleBlur}
                         icon={<PhoneIcon />}
                         value={values.primaryNo}
@@ -344,6 +335,7 @@ const CreateTeachersMain = () => {
                         label="Address Line 1"
                         onChange={handleChange}
                         placeholder="Enter address line 1..."
+                        type='number'
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.addressLine}
@@ -414,7 +406,7 @@ const CreateTeachersMain = () => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item xs={5} sm={2} md={2} lg={1}>
+                      <Grid item xs={5} sm={2.5} md={2} lg={1.5} xl={1.2} sx={{marginBottom:3}}>
                         <AppButton
                           btnText="Create"
                           type="submit"
