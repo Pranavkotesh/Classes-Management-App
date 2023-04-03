@@ -7,7 +7,6 @@ import AppButton from "../../shared/components/app-button/AppButton";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { classAbout } from "../../shared/components/app-headings/AppHeadings";
 
-// const names = ["NAME", "SCHEDULE", "CAPACITY", "REGISTERED / (PAID)", "STATUS"];
 
 const ClassMain = () => {
   const [selectedYear, setSelectedYear] = useState("");

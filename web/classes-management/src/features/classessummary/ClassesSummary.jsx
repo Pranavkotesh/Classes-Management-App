@@ -6,7 +6,6 @@ import AppCard from "../../shared/components/app-card/AppCard";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { classesSummary } from "../../shared/components/app-headings/AppHeadings";
 
-// const names=["Class Name","Age Eligibility","Schedule Dates","Schedule Times","Capacity/Registered(Paid)","Teachers"]
 
 const ClassesSummary = () => {
   return (

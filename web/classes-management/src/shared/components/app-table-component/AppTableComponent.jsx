@@ -4,7 +4,7 @@ import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 import { TableContainer, TableBody } from "@mui/material";
-function AppTable({ titles, minHeight, color, border, borderBody }) {
+function AppTable({ titles, color, border, borderBody }) {
   return (
     <TableContainer
       component={Paper}
@@ -20,7 +20,7 @@ function AppTable({ titles, minHeight, color, border, borderBody }) {
         </TableHead>
         <TableBody sx={{ border: borderBody }}>
           <TableCell sx={{ border: 0 }}>
-            {/* <Grid item xs={12} sx={{ minHeight: minHeight || 130 }}></Grid> */}
+            
           </TableCell>
         </TableBody>
       </Table>
