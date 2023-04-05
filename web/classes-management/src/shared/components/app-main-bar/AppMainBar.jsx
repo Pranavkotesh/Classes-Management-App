@@ -90,7 +90,7 @@ function AppMainBar({
                 className={`${classes.menuButton} ${
                   open && classes.menuButtonHidden
                 }`}
-                sx={{color:'#3333cc'}}
+                sx={{color:'primary.openIcon'}}
               >
                 <SortIcon />
               </IconButton>
@@ -125,6 +125,7 @@ function AppMainBar({
                   onChange={onSchoolChange}
                   width={180}
                   height={35}
+                  
                 />
               </Box>
               <Box sx={{ paddingLeft: 2 }}>

@@ -212,7 +212,7 @@ const CreateClass = ({onClick}) => {
                           onBlur={handleBlur}
                           menuItems={courseArr}
                           icon={<MenuBookIcon />}
-                          color="#808080"
+                          color='primary.icon'
                           value={values.course}
                           errorText={
                             errors.course && touched.course && errors.course
@@ -230,7 +230,7 @@ const CreateClass = ({onClick}) => {
                           placeholder="Select Location "
                           menuItems={locationArr}
                           icon={<LocationOnIcon />}
-                          color="#808080"
+                          color='primary.icon'
                           errorText={
                             errors.location &&
                             touched.location &&

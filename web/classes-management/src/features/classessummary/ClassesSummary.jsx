@@ -83,7 +83,7 @@ const ClassesSummary = ({onClick}) => {
                   <AppTable
                     titles={classesSummary}
                     color='#bfbfbf'
-                    border="2px solid "
+                    border="2px solid rgb(217,217,217)"
                   />
                 </Grid>
               </AppCard>

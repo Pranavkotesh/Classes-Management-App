@@ -33,8 +33,9 @@ export const THEME = createTheme({
     primary: {
       500: "#6666ff",
       add: "#6666ff",
-      icon:'#fff',
-      switchMode:'white'
+      // iconColor:'#fff',
+      switchMode:'white',
+      openIcon:'#4747d1'
     },
     secondary: {
       main: "#8c8c8c",
@@ -81,8 +82,9 @@ export const lTHEME = createTheme({
     primary: {
       500: "#3f51b5",
       add: "#6666ff",
-      icon:'#808080',
-      switchMode:'#ffcc00'
+      // iconColor:'#808080',
+      switchMode:'#ffcc00',
+      openIcon:'#3333cc'
     },
     secondary: {
       main: "#009de1",
