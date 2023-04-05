@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import RoutesMain from "./shared/RoutesMain";
 import { THEME } from "./styles";
 import "./index.css";
+import * as React from 'react';
 
 function App() {
   return (

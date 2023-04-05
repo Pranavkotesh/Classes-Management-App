@@ -19,7 +19,7 @@ export default function AppDateSelector({
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={2}>
         <FormControl>
-          <Typography sx={{ color: color || "grey" }}>{label}</Typography>
+          <Typography >{label}</Typography>
           <Grid container spacing={0} direction="row">
             <Grid item xs={12} position="relative">
               <DesktopDatePicker
@@ -68,7 +68,7 @@ export default function AppDateSelector({
             </Grid>
           </Grid>
           {errorText && (
-            <FormHelperText sx={{ color: "#cc0000" }}>
+            <FormHelperText sx={{ color: "#ff0000" }}>
               {errorText}
             </FormHelperText>
           )}

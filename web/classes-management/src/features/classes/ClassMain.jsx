@@ -25,7 +25,7 @@ const ClassMain = () => {
           container
           spacing={2}
           sx={{
-            backgroundColor: "#e6e6e6",
+            backgroundColor: "background.default",
           }}
         >
           <BoxElement elementOne="Management" elementTwo="classes" />

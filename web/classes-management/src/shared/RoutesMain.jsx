@@ -87,7 +87,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
     height: "100vh",
     overflow: "auto",
-    backgroundColor: "#f5f5f5",
+    backgroundColor:"background.default",
     paddingTop: 64,
   },
 }));

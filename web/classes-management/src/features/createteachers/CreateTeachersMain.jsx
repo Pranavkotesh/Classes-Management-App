@@ -33,8 +33,8 @@ const CreateTeachersMain = () => {
     <AppLayout title="Create Teachers">
       <Grid container spacing={0}>
         <Grid item xs={12}>
-          <AppCard minHeight={690} padding='0px'>
-            <Grid container spacing={0} sx={{paddingTop:2}}>
+          <AppCard minHeight={690} padding="0px">
+            <Grid container spacing={0} sx={{ paddingTop: 2 }}>
               <Grid item xs={12} sm={12} md={12} lg={5}>
                 <Box textAlign="center">
                   <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
@@ -46,10 +46,10 @@ const CreateTeachersMain = () => {
                         <IconButton>
                           <AddIcon
                             sx={{
-                              backgroundColor: "#ccccff",
+                              backgroundColor: "background.button",
                               fontSize: 15,
                               borderRadius: 6,
-                              color: "#6666ff",
+                              color: "primary.add",
                               width: 50,
                               height: 50,
                             }}
@@ -78,7 +78,7 @@ const CreateTeachersMain = () => {
                         <AppTextInput
                           placeholder="e.g. Search by mail id"
                           type="search"
-                          sx={{px:2}}
+                          sx={{ px: 2 }}
                         />
                       </Box>
                     </Grid>
@@ -108,7 +108,7 @@ const CreateTeachersMain = () => {
                 lg={5}
                 sx={{ marginTop: { xs: 2, sm: 2, md: 4, lg: 0 } }}
               >
-                <Box textAlign="center" sx={{px:2}}>
+                <Box textAlign="center" sx={{ px: 2 }}>
                   <Typography
                     sx={{ fontSize: 18, fontWeight: "bold", marginBottom: 3 }}
                   >
@@ -212,13 +212,13 @@ const CreateTeachersMain = () => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2", px: 2 }}
+                    sx={{ marginTop: 3, backgroundColor: "background.grid", px: 2 }}
                   >
                     <Grid
                       item
                       xs={12}
                       sm={5}
-                      sx={{ marginLeft: { xs: 0, sm: 2 }}}
+                      sx={{ marginLeft: { xs: 0, sm: 2 } }}
                     >
                       <AppTextInput
                         name="firstName"
@@ -257,7 +257,7 @@ const CreateTeachersMain = () => {
                           placeholder="Select Gender"
                           menuItems={genderArr}
                           icon={<WcIcon />}
-                          color="#808080"
+                          color="primary.icon"
                           value={values.gender}
                           errorText={
                             errors.gender && touched.gender && errors.gender
@@ -302,7 +302,7 @@ const CreateTeachersMain = () => {
                         label="Primary Number"
                         onChange={handleChange}
                         placeholder="Enter primary ph#"
-                        type='number'
+                        type="number"
                         onBlur={handleBlur}
                         icon={<PhoneIcon />}
                         value={values.primaryNo}
@@ -335,7 +335,7 @@ const CreateTeachersMain = () => {
                         label="Address Line 1"
                         onChange={handleChange}
                         placeholder="Enter address line 1..."
-                        type='number'
+                        type="number"
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.addressLine}
@@ -375,7 +375,7 @@ const CreateTeachersMain = () => {
                           value={values.state}
                           menuItems={stateArr}
                           icon={<HomeIcon />}
-                          color="#808080"
+                          color="primary.icon"
                           errorText={
                             errors.state && touched.state && errors.state
                           }
@@ -406,7 +406,15 @@ const CreateTeachersMain = () => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item xs={5} sm={2.5} md={2} lg={1.5} xl={1.2} sx={{marginBottom:3}}>
+                      <Grid
+                        item
+                        xs={5}
+                        sm={2.5}
+                        md={2}
+                        lg={1.5}
+                        xl={1.2}
+                        sx={{ marginBottom: 3 }}
+                      >
                         <AppButton
                           btnText="Create"
                           type="submit"

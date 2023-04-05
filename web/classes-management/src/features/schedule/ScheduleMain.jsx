@@ -46,10 +46,10 @@ const DefineSchedule = () => {
                     <IconButton>
                       <AddIcon
                         sx={{
-                          backgroundColor: "#ccccff",
+                          backgroundColor: "background.button",
                           fontSize: 15,
                           borderRadius: 6,
-                          color: "#6666ff",
+                          color: "primary.add",
                           width: 50,
                           height: 50,
                         }}
@@ -65,7 +65,7 @@ const DefineSchedule = () => {
                 textAlign="left"
                 sx={{
                   borderWidth: 1,
-                  color: "black",
+                  
                   mx: { md: "1.5%", lg: "2%", xl: "2.5%" },
                   display: { xs: "none", sm: "none", md: "flex" },
                 }}
@@ -134,7 +134,7 @@ const DefineSchedule = () => {
                   <Grid
                     container
                     spacing={0}
-                    sx={{ marginTop: 5, backgroundColor: " #f2f2f2", px:0 ,
+                    sx={{ marginTop: 5, backgroundColor: "background.grid", px:0 ,
                   '&.MuiPaper-root':{padding:0}}}
                   >
                     <Grid
@@ -147,7 +147,7 @@ const DefineSchedule = () => {
                       
                       }}
                     >
-                      <AppCard minHeight={220} boxShadow="0" color=" #f2f2f2">
+                      <AppCard minHeight={220} boxShadow="0" color="background.schedule">
                         <AppTextInput
                           icon={<AbcIcon />}
                           placeholder="Enter Schedule name"
@@ -211,7 +211,7 @@ const DefineSchedule = () => {
                       }}
                     ></Divider>
                     <Grid item xs={12} md={5}>
-                      <AppCard minHeight={220} boxShadow="0" color="#f2f2f2">
+                      <AppCard minHeight={220} boxShadow="0" color="background.schedule">
                         <AppTextInput
                           label="Excluded dates"
                           fullWidth

@@ -8,7 +8,7 @@ function AppTable({ titles, color, border, borderBody }) {
   return (
     <TableContainer
       component={Paper}
-      sx={{ boxShadow: 0, border: border, mt: 2, mb: 4 }}
+      sx={{ boxShadow: 0, border: border, mt: 2, mb: 4 ,backgroundColor:'background.card'}}
     >
       <Table>
         <TableHead>
@@ -19,9 +19,7 @@ function AppTable({ titles, color, border, borderBody }) {
           </TableRow>
         </TableHead>
         <TableBody sx={{ border: borderBody }}>
-          <TableCell sx={{ border: 0 }}>
-            
-          </TableCell>
+          <TableCell sx={{ border: 0 }}></TableCell>
         </TableBody>
       </Table>
     </TableContainer>

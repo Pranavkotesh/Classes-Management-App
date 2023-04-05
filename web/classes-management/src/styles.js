@@ -28,12 +28,42 @@ export const THEME = createTheme({
     },
   },
   palette: {
+    // mode: "light",
+    // primary: {
+    //   500: "#3f51b5",
+    //   add: "#6666ff",
+    //   icon:'#808080',
+    //   switchMode:'#ffcc00'
+    // },
+    // secondary: {
+    //   main: "#009de1",
+    //   contrastText: "#fff",
+    // },
+    // background: {
+    //   default: "#e6e6e6",
+    //   card: "white",
+    //   button: "#ccccff",
+    //   grid: "#f2f2f2",
+    //   schedule:'#f2f2f2'
+      
+    // },
+
+    mode: "dark",
     primary: {
-      500: "#3f51b5",
+      500: "#6666ff",
+      add: "#6666ff",
+      icon:'#fff',
+      switchMode:'white'
     },
     secondary: {
-      main: "#009de1",
-      contrastText: "#fff",
+      main: "#8c8c8c",
+    },
+    background: {
+      default: "#000000",
+      card: "#333333",
+      button: "#ccccff",
+      grid: "#333333",
+      schedule:'#262626'
     },
   },
 });

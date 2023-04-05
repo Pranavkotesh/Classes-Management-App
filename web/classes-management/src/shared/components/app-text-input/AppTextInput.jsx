@@ -23,7 +23,7 @@ function AppTextInput({
   return (
     
     <FormControl fullWidth margin="normal">
-      {label && <Typography style={{ color: "grey" }}>{label}</Typography>}
+      {label && <Typography >{label}</Typography>}
       <TextField
         size="small"
         name={name}

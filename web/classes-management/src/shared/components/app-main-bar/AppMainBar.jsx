@@ -37,6 +37,7 @@ function AppMainBar({
   onYearChange,
   selectedYear,
   selectedSchool,
+  onClick,
 }) {
   // custom hooks
   const width = useWidth();
@@ -75,7 +76,7 @@ function AppMainBar({
             color="default"
             position="fixed"
             className={`${classes.commonAppBarClass} ${getAppBarClassName()}`}
-            sx={{backgroundColor:'#e6e6e6'}}
+            sx={{backgroundColor:'background.default',borderColor:'background.default'}}
           >
             <Toolbar
               disableGutters={!open}
@@ -128,13 +129,14 @@ function AppMainBar({
               </Box>
               <Box sx={{ paddingLeft: 2 }}>
                 <IconButton
+                onClick={onClick}
                   sx={{
-                    color: "#ffcc00",
+                    color: "primary.switchMode",
                   }}
                 >
                   <LightModeIcon />
                 </IconButton>
-                <IconButton>
+                <IconButton >
                   <ExitToAppOutlinedIcon
                     sx={{
                       color: THEME.palette.primary.main,

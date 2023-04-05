@@ -6,12 +6,15 @@ import AppCard from "../../shared/components/app-card/AppCard";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { classesSummary } from "../../shared/components/app-headings/AppHeadings";
 
-
 const ClassesSummary = () => {
   return (
     <AppLayout title="Classes Summary">
       <Grid container spacing={2}>
-        <BoxElement elementOne="Reports" elementTwo="Classes Summary" marginTop='3vh'/>
+        <BoxElement
+          elementOne="Reports"
+          elementTwo="Classes Summary"
+          marginTop="3vh"
+        />
         <Grid item xs={12}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
@@ -22,8 +25,8 @@ const ClassesSummary = () => {
                     xs={1}
                     sx={{
                       display: { xs: "none", sm: "flex" },
-                      marginTop: { sm: 4, md: 1,lg:0 },
-                      marginRight:{xs:0,sm:1,md:2,lg:0}
+                      marginTop: { sm: 4, md: 1, lg: 0 },
+                      marginRight: { xs: 0, sm: 1, md: 2, lg: 0 },
                     }}
                   >
                     <img
@@ -62,7 +65,7 @@ const ClassesSummary = () => {
                     sx={{
                       borderWidth: 1,
                       marginRight: "5vh",
-                      marginLeft: { xs: 6, sm: 6, md: 2,lg:0 },
+                      marginLeft: { xs: 6, sm: 6, md: 2, lg: 0 },
                     }}
                   />
 
@@ -77,11 +80,11 @@ const ClassesSummary = () => {
             <Grid item xs={12} sx={{ marginTop: { xs: 0, sm: 4 } }}>
               <AppCard title="Classes" minHeight={270}>
                 <Grid item={10}>
-                  <AppTable titles={classesSummary}
-                  border="2px solid rgba(217,217,217)"
+                  <AppTable
+                    titles={classesSummary}
+                    color='#bfbfbf'
+                    border="2px solid "
                   />
-                  
-                  
                 </Grid>
               </AppCard>
             </Grid>
@@ -93,5 +96,3 @@ const ClassesSummary = () => {
 };
 
 export default ClassesSummary;
-
-

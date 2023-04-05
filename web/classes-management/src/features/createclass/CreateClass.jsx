@@ -33,8 +33,8 @@ const CreateClass = () => {
     <AppLayout title="Create class">
       <Grid container spacing={0}>
         <Grid item xs={12}>
-          <AppCard minHeight={690} padding='0px'>
-            <Grid container spacing={0} sx={{paddingTop:2}}>
+          <AppCard minHeight={690} padding="0px">
+            <Grid container spacing={0} sx={{ paddingTop: 2 }}>
               <Grid item xs={12} sm={12} md={5}>
                 <Box textAlign="center">
                   <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
@@ -45,10 +45,10 @@ const CreateClass = () => {
                     <IconButton>
                       <AddIcon
                         sx={{
-                          backgroundColor: "#ccccff",
+                          backgroundColor: "background.button",
                           fontSize: 15,
                           borderRadius: 6,
-                          color: "#6666ff",
+                          color: "primary.add",
                           width: 50,
                           height: 50,
                         }}
@@ -79,7 +79,7 @@ const CreateClass = () => {
                 md={5}
                 sx={{ marginTop: { xs: 2, sm: 2, md: 0 } }}
               >
-                <Box textAlign="center" sx={{px:2}}>
+                <Box textAlign="center" sx={{ px: 2 }}>
                   <Typography
                     sx={{ fontSize: 18, fontWeight: "bold", marginBottom: 3 }}
                   >
@@ -175,7 +175,7 @@ const CreateClass = () => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "#f2f2f2", px: 2}}
+                    sx={{ marginTop: 3, backgroundColor: "background.grid", px: 2 }}
                   >
                     <Grid
                       item
@@ -183,7 +183,7 @@ const CreateClass = () => {
                       sm={5}
                       sx={{ marginLeft: { xs: 0, sm: 2.8 } }}
                     >
-                      <Box sx={{marginBottom:1}}>
+                      <Box sx={{ marginBottom: 1 }}>
                         <AppDateSelector
                           label="Schedule"
                           value={values.schedule}
@@ -241,7 +241,7 @@ const CreateClass = () => {
                       <AppTextInput
                         name="fee"
                         label="Fee/Discounts"
-                        type='number'
+                        type="number"
                         onChange={handleChange}
                         placeholder="Add a Fee/Discount "
                         icon={<LabelIcon />}
@@ -254,7 +254,7 @@ const CreateClass = () => {
                         label="Min Age"
                         icon={<FormatListNumberedIcon />}
                         placeholder="Enter min age eligibility.. "
-                        type='number'
+                        type="number"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.minAge}
@@ -269,7 +269,7 @@ const CreateClass = () => {
                         label="Max Age"
                         onChange={handleChange}
                         placeholder="Enter max age eligibility.. "
-                        type='number'
+                        type="number"
                         onBlur={handleBlur}
                         icon={<FormatListNumberedIcon />}
                         value={values.maxAge}
@@ -291,7 +291,7 @@ const CreateClass = () => {
                         label="Class Capacity"
                         onChange={handleChange}
                         placeholder="Enter max allowed enrollemnts.. "
-                        type='number'
+                        type="number"
                         onBlur={handleBlur}
                         icon={<FormatListNumberedIcon />}
                         value={values.classCapacity}
@@ -344,7 +344,15 @@ const CreateClass = () => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item xs={5} sm={2.5} md={2} lg={1.5} xl={1.2} sx={{marginBottom:3}}>
+                      <Grid
+                        item
+                        xs={5}
+                        sm={2.5}
+                        md={2}
+                        lg={1.5}
+                        xl={1.2}
+                        sx={{ marginBottom: 3 }}
+                      >
                         <AppButton
                           btnText="Create"
                           type="submit"
