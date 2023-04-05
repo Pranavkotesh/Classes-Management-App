@@ -12,11 +12,11 @@ import { Formik } from "formik";
 import AppButton from "../../shared/components/app-button/AppButton";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
-const DefineSchedule = () => {
+const DefineSchedule = ({onClick}) => {
 
 
   return (
-    <AppLayout title="Define Schedule">
+    <AppLayout title="Define Schedule" onClick={onClick}>
       <Grid container spacing={2} >
         <BoxElement
           elementOne="Admin"

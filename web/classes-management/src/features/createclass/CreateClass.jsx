@@ -23,14 +23,14 @@ import {
 } from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
-const CreateClass = () => {
+const CreateClass = ({onClick}) => {
   const editing = useStyles();
   const [classes, setClasses] = React.useState("");
   const handleChange = (e) => {
     setClasses(e.target.value);
   };
   return (
-    <AppLayout title="Create class">
+    <AppLayout title="Create class" onClick={onClick}>
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <AppCard minHeight={690} padding="0px">

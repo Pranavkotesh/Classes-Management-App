@@ -8,7 +8,7 @@ import AppTable from "../../shared/components/app-table-component/AppTableCompon
 import { classAbout } from "../../shared/components/app-headings/AppHeadings";
 
 
-const ClassMain = () => {
+const ClassMain = ({onClick}) => {
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
 
@@ -16,6 +16,7 @@ const ClassMain = () => {
     <AppLayout
       title="Classes"
       selectedSchool={selectedSchool}
+      onClick={onClick}
       selectedYear={selectedYear}
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}
       onYearChange={(event) => setSelectedYear(event.target.value)}

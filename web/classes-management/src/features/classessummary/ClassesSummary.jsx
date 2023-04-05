@@ -6,9 +6,9 @@ import AppCard from "../../shared/components/app-card/AppCard";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { classesSummary } from "../../shared/components/app-headings/AppHeadings";
 
-const ClassesSummary = () => {
+const ClassesSummary = ({onClick}) => {
   return (
-    <AppLayout title="Classes Summary">
+    <AppLayout title="Classes Summary" onClick={onClick}>
       <Grid container spacing={2}>
         <BoxElement
           elementOne="Reports"

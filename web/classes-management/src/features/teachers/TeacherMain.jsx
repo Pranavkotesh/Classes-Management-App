@@ -11,16 +11,15 @@ import AppTable from "../../shared/components/app-table-component/AppTableCompon
 import { teacherArr } from "../../shared/components/app-constants/DataConstant";
 import { teachersAbout, teachersAssigned } from "../../shared/components/app-headings/AppHeadings";
 
-// const names = ["NAME", "DOB", "RESIDENCE", "STATUS"];
-// const names2 = ["CLASS", "SCHEDULE", "ROLE", "CLASS STATUS"];
-const TeacherMain = () => {
+
+const TeacherMain = ({onClick}) => {
   const [searchObj, setSearchObj] = useState({
     class: "",
     search: "",
   });
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
-  // const [notes, setNotes] = useState("");
+
 
   const handleSearchObjChange = (event) => {
     const { name, value } = event.target;
@@ -33,6 +32,7 @@ const TeacherMain = () => {
   return (
     <AppLayout
       title="Teachers"
+      onClick={onClick}
       selectedSchool={selectedSchool}
       selectedYear={selectedYear}
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}

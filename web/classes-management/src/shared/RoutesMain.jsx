@@ -9,7 +9,7 @@ import DefineSchedule from "../features/schedule/ScheduleMain";
 import CreateClass from "../features/createclass/CreateClass";
 import CreateTeachersMain from "../features/createteachers/CreateTeachersMain";
 import ClassesSummary from "../features/classessummary/ClassesSummary";
-const RoutesMain = () => {
+const RoutesMain = ({onClick}) => {
   const classes = useStyles();
   const checkSessionExists = () => {
     //add logic to check the session. adding false for now
@@ -33,7 +33,7 @@ const RoutesMain = () => {
           path="createteachers"
           element={
             <PrivateRoute>
-              <CreateTeachersMain />
+              <CreateTeachersMain onClick={onClick} />
             </PrivateRoute>
           }
         />
@@ -41,7 +41,7 @@ const RoutesMain = () => {
           path="classessummary"
           element={
             <PrivateRoute>
-              <ClassesSummary />
+              <ClassesSummary onClick={onClick} />
             </PrivateRoute>
           }
         />
@@ -49,7 +49,7 @@ const RoutesMain = () => {
           path="classes"
           element={
             <PrivateRoute>
-              <ClassMain />
+              <ClassMain onClick={onClick}/>
             </PrivateRoute>
           }
         />
@@ -57,7 +57,7 @@ const RoutesMain = () => {
           path="teachers"
           element={
             <PrivateRoute>
-              <TeacherMain />
+              <TeacherMain onClick={onClick}/>
             </PrivateRoute>
           }
         />
@@ -65,7 +65,7 @@ const RoutesMain = () => {
           path="schedule"
           element={
             <PrivateRoute>
-              <DefineSchedule />
+              <DefineSchedule onClick={onClick}/>
             </PrivateRoute>
           }
         />
@@ -73,7 +73,7 @@ const RoutesMain = () => {
           path="createclass"
           element={
             <PrivateRoute>
-              <CreateClass />
+              <CreateClass onClick={onClick}/>
             </PrivateRoute>
           }
         />
