@@ -35,7 +35,7 @@ export const THEME = createTheme({
       add: "#6666ff",
       
       switchMode:'white',
-      openIcon:'#4747d1'
+      openIcon:'white'
     },
     secondary: {
       main: "#8c8c8c",
