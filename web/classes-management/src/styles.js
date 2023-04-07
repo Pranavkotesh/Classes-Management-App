@@ -33,7 +33,7 @@ export const THEME = createTheme({
     primary: {
       500: "#6666ff",
       add: "#6666ff",
-      // iconColor:'#fff',
+      
       switchMode:'white',
       openIcon:'#4747d1'
     },
