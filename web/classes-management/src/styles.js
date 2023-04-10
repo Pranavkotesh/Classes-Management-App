@@ -29,7 +29,6 @@ export const THEME = createTheme({
     },
   },
   palette: {
-
     mode: "dark",
     primary: {
       500: "#6666ff",

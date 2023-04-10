@@ -121,6 +121,7 @@ const CreateClass = ({onClick}) => {
               }}
               validate={(values) => {
                 let errors = {};
+                
                 if (!values.fee) {
                   errors.fee = "This field is required";
                 }
@@ -181,7 +182,7 @@ const CreateClass = ({onClick}) => {
                       item
                       xs={12}
                       sm={5}
-                      sx={{ marginLeft: { xs: 0, sm: 2.8 } }}
+                      sx={{ marginLeft: { xs: 0, sm: 2.8 },marginBottom:2 }}
                     >
                       <Box sx={{ marginBottom: 1 }}>
                         <AppDateSelector
@@ -206,7 +207,7 @@ const CreateClass = ({onClick}) => {
                         <Typography>Course</Typography>
                         <BasicSelect
                           name="course"
-                          marginY="4%"
+                          marginY="2%"
                           onChange={handleChange}
                           placeholder="Select Course"
                           onBlur={handleBlur}

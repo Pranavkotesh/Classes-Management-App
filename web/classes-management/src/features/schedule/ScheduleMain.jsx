@@ -101,7 +101,9 @@ const DefineSchedule = ({onClick}) => {
               }}
               validate={(values) => {
                 let errors = {};
-
+                if(/^\d+$/.test(values.name)){
+                  errors.name='Please enter valid characters'
+                }
                 if (!values.name) {
                   errors.name = "This field is required";
                 }
@@ -147,7 +149,7 @@ const DefineSchedule = ({onClick}) => {
                       
                       }}
                     >
-                      <AppCard minHeight={220} boxShadow="0" color="background.schedule">
+                      <Grid xs={11} item sx={{backgroundColor:"background.grid",marginBottom:4}}>
                         <AppTextInput
                           icon={<AbcIcon />}
                           placeholder="Enter Schedule name"
@@ -196,8 +198,9 @@ const DefineSchedule = ({onClick}) => {
                             touched.eDate &&
                             errors.eDate
                           }
+                          
                         />
-                      </AppCard>
+                      </Grid>
                     </Grid>
                     <Divider
                       orientation="vertical"
@@ -211,7 +214,7 @@ const DefineSchedule = ({onClick}) => {
                       }}
                     ></Divider>
                     <Grid item xs={12} md={5}>
-                      <AppCard minHeight={220} boxShadow="0" color="background.schedule">
+                      <Grid item xs={11} sx={{backgroundColor:"background.grid"}}>
                         <AppTextInput
                           label="Excluded dates"
                           fullWidth
@@ -225,7 +228,7 @@ const DefineSchedule = ({onClick}) => {
                           }
                           rows="5"
                         />
-                      </AppCard>
+                      </Grid>
                     </Grid>
                   </Grid>
                   <Box

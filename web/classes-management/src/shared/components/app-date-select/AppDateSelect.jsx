@@ -11,7 +11,7 @@ export default function AppDateSelector({
   onBlur,
   onTouched,
   errorText,
-  color,
+  
   value,
   name,
 }) {
@@ -25,7 +25,7 @@ export default function AppDateSelector({
               <DesktopDatePicker
                 onBlur={onBlur}
                 slotProps={{
-                  textField: { size: "small", fullWidth: true,disabled:true},
+                  textField: { size: "small", fullWidth: true},
                   inputAdornment: { position: "start" },
                 }}
                 onClose={onTouched}
@@ -41,7 +41,7 @@ export default function AppDateSelector({
                   "&.date-error": {
                     border: "0.3px solid rgba(255,0,0)",
                     borderRadius: 1,
-                    backgroundColor:'background.card'
+                    backgroundColor:'background.grid'
                   },
                 }}
               />
@@ -70,7 +70,7 @@ export default function AppDateSelector({
             </Grid>
           </Grid>
           {errorText && (
-            <FormHelperText sx={{ color: "#ff0000",backgroundColor:'background.card' }}>
+            <FormHelperText sx={{ color: "#e60000",backgroundColor:'background.grid' }}>
               {errorText}
             </FormHelperText>
           )}

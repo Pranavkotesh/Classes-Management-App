@@ -153,6 +153,12 @@ const CreateTeachersMain = ({ onClick }) => {
               }}
               validate={(values) => {
                 let errors = {};
+                if(/^\d+$/.test(values.firstName)){
+                  errors.firstName='Please enter valid characters'
+                }
+                if(/^\d+$/.test(values.lastName)){
+                  errors.lastName='Please enter valid characters'
+                }
                 if (!values.email) {
                   errors.email = "This field is required";
                 }
@@ -340,7 +346,7 @@ const CreateTeachersMain = ({ onClick }) => {
                         label="Address Line 1"
                         onChange={handleChange}
                         placeholder="Enter address line 1..."
-                        type="number"
+                      
                         icon={<AbcRounded />}
                         onBlur={handleBlur}
                         value={values.addressLine}
