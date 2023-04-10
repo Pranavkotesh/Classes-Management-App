@@ -70,7 +70,7 @@ export default function AppDateSelector({
             </Grid>
           </Grid>
           {errorText && (
-            <FormHelperText sx={{ color: "#e60000",backgroundColor:'background.grid' }}>
+            <FormHelperText sx={{ color: "#cc0000",backgroundColor:'background.grid' }}>
               {errorText}
             </FormHelperText>
           )}
