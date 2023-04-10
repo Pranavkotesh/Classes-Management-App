@@ -25,7 +25,7 @@ export default function AppDateSelector({
               <DesktopDatePicker
                 onBlur={onBlur}
                 slotProps={{
-                  textField: { size: "small", fullWidth: true},
+                  textField: { size: "small", fullWidth: true,disabled:true},
                   inputAdornment: { position: "start" },
                 }}
                 onClose={onTouched}
