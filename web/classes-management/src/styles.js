@@ -21,6 +21,7 @@ export const THEME = createTheme({
     MuiTextField: {
       variant: "outlined",
       size: "small",
+    
     },
     MuiFormControl: {
       variant: "outlined",
@@ -33,7 +34,6 @@ export const THEME = createTheme({
     primary: {
       500: "#6666ff",
       add: "#6666ff",
-      
       switchMode:'white',
       openIcon:'white'
     },
@@ -82,7 +82,6 @@ export const lTHEME = createTheme({
     primary: {
       500: "#3f51b5",
       add: "#6666ff",
-      // iconColor:'#808080',
       switchMode:'#ffcc00',
       openIcon:'#3333cc'
     },

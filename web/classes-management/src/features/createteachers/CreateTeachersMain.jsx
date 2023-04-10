@@ -24,7 +24,7 @@ import {
 } from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
-const CreateTeachersMain = ({onClick}) => {
+const CreateTeachersMain = ({ onClick }) => {
   const [teachers, setTeachers] = React.useState("");
   const handleChange = (e) => {
     setTeachers(e.target.value);
@@ -212,7 +212,11 @@ const CreateTeachersMain = ({onClick}) => {
                     container
                     spacing={1}
                     alignItems="center"
-                    sx={{ marginTop: 3, backgroundColor: "background.grid", px: 2 }}
+                    sx={{
+                      marginTop: 3,
+                      backgroundColor: "background.grid",
+                      px: 2,
+                    }}
                   >
                     <Grid
                       item
@@ -245,7 +249,8 @@ const CreateTeachersMain = ({onClick}) => {
                         errorText={
                           errors.lastName && touched.lastName && errors.lastName
                         }
-                        sx={{ marginBottom: 1 }}
+                        mBottom='1'
+                        // sx={{ marginBottom: 1 }}
                       />
                       <Box>
                         <Typography>Gender</Typography>

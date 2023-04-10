@@ -261,7 +261,7 @@ const CreateClass = ({onClick}) => {
                         errorText={
                           errors.minAge && touched.minAge && errors.minAge
                         }
-                        sx={{ marginBottom: 2 }}
+                        // sx={{ marginBottom: 2 }}
                       />
 
                       <AppTextInput
@@ -330,7 +330,8 @@ const CreateClass = ({onClick}) => {
                           touched.excludeDates &&
                           errors.excludeDates
                         }
-                        sx={{ marginBottom: 2.5 }}
+                        mBottom='2.5'
+                        // sx={{ marginBottom: 2.5 }}
                       />
                     </Grid>
                   </Grid>
