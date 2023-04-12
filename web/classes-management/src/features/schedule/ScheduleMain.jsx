@@ -26,7 +26,7 @@ const DefineSchedule = ({onClick}) => {
           sm="flex"
         />
         <Grid item xs={12}>
-          <AppCard title="Create / Update Schedule" minHeight={640} padding='0px'>
+          <AppCard title="Create / Update Schedule" minHeight={640} padding='15px 15px'>
             <Divider orientation="horizontal" sx={{ marginTop: 1 }}></Divider>
             <Grid container spacing={0} sx={{ marginTop: 2 }}>
               <Grid
@@ -144,7 +144,7 @@ const DefineSchedule = ({onClick}) => {
                       xs={12}
                       md={5}
                       sx={{
-                        marginLeft: { xs: 0, md: "4%" },
+                        marginLeft: { xs: '2.5%', md: "4%" },
                         marginBottom: { xs: 1, sm: 1, md: 0 },
                       
                       }}
@@ -214,7 +214,7 @@ const DefineSchedule = ({onClick}) => {
                       }}
                     ></Divider>
                     <Grid item xs={12} md={5}>
-                      <Grid item xs={11} sx={{backgroundColor:"background.grid"}}>
+                      <Grid item xs={11} sx={{backgroundColor:"background.grid",marginLeft:{xs:'2.5%',md:'4%'}}}>
                         <AppTextInput
                           label="Excluded dates"
                           fullWidth

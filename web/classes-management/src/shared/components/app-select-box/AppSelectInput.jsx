@@ -54,7 +54,7 @@ export default function BasicSelect({
           </MenuItem>
         ))}
       </Select>
-      <FormHelperText sx={{color:'#cc0000',backgroundColor:'background.grid'}}>{errorText}</FormHelperText>
+      <FormHelperText sx={{color:'#e60000',backgroundColor:'background.grid'}}>{errorText}</FormHelperText>
       {icon && (
         <div style={{ position: "absolute", color: color ||"#fff", left: 13, top: 5 }}>
           {icon}

@@ -51,7 +51,7 @@ const TeacherMain = ({onClick}) => {
                   value={searchObj.class}
                   menuItems={teacherArr}
                   icon={<LocalLibraryIcon />}
-                  color="#808080"
+                  color="#bfbfbf"
                 />
               </Grid>
               <Grid item xs={12} sm={2} md={2} lg={2}>

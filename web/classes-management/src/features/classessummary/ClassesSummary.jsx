@@ -70,7 +70,7 @@ const ClassesSummary = ({onClick}) => {
                   />
 
                   <Grid item xs={1} md={2} sx={{ alignItems: "center" }}>
-                    <Typography sx={{ paddingTop: 2, color: "#999999" }}>
+                    <Typography sx={{ paddingTop: 2, color: "primary.typo" }}>
                       All classes under a school
                     </Typography>
                   </Grid>

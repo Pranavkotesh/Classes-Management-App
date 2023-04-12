@@ -90,7 +90,7 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
     <>
       <Box
         sx={{
-          backgroundColor: "#3333cc",
+          backgroundColor: "background.drawerBg",
           height: "100vh",
           position: "relative",
         }}

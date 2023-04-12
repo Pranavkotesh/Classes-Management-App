@@ -93,7 +93,7 @@ const CreateClass = ({onClick}) => {
                     value={classes}
                     onChange={handleChange}
                     height={35}
-                    color="#808080"
+                    color="#bfbfbf"
                   />
                 </Box>
               </Grid>

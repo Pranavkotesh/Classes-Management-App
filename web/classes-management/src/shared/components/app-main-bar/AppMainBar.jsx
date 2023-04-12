@@ -12,7 +12,6 @@ import BasicSelect from "../app-select-box/AppSelectInput";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import MiniDrawer from "../app-drawer-component/AppDrawerComponent";
 import { useTheme, makeStyles, createStyles } from "@mui/styles";
-import { THEME } from "../../../styles";
 import { Event, School } from "@mui/icons-material";
 import {schoolArr, years} from "../app-constants/DataConstant";
 
@@ -76,7 +75,7 @@ function AppMainBar({
             color="default"
             position="fixed"
             className={`${classes.commonAppBarClass} ${getAppBarClassName()}`}
-            sx={{backgroundColor:'background.default',borderColor:'background.default'}}
+            sx={{backgroundColor:'background.default',borderColor:'background.default',backgroundImage:'none'}}
           >
             <Toolbar
               disableGutters={!open}
@@ -140,7 +139,7 @@ function AppMainBar({
                 <IconButton >
                   <ExitToAppOutlinedIcon
                     sx={{
-                      color: THEME.palette.primary.main,
+                      color:'primary.exitButton',
                     }}
                   />
                 </IconButton>
@@ -177,6 +176,7 @@ const styles = makeStyles((theme) =>
   createStyles({
     root: {
       display: "flex",
+      
     },
     toolbar: {
       paddingRight: 16, // keep right padding when drawer closed
@@ -193,6 +193,7 @@ const styles = makeStyles((theme) =>
     commonAppBarClass: {
       boxShadow: "none !important",
       border: "1px solid #ddd",
+      
     },
     appBar: {
       marginLeft: closeDrawerWidth,

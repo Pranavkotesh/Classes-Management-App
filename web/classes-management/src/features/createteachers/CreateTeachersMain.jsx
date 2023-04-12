@@ -122,7 +122,7 @@ const CreateTeachersMain = ({ onClick }) => {
                     value={teachers}
                     onChange={handleChange}
                     height={35}
-                    color="#808080"
+                    color="#bfbfbf"
                   />
                 </Box>
               </Grid>
