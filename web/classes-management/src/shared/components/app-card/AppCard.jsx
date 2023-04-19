@@ -9,6 +9,8 @@ function AppCard({
   boxShadow,
   color,
   px,
+  my,
+  key
 }) {
   return (
     <Card
@@ -22,8 +24,8 @@ function AppCard({
         borderRadius: 2,
         boxShadow: boxShadow || 1,
         backgroundColor: color || 'background.card',
-        px: px,
-      }}
+        px: px
+      }} key={key}
     >
       <CardContent style={{ padding: 0 }}>
         {title && <Typography variant="button">{title}</Typography>}

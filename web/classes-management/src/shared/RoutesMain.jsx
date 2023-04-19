@@ -9,6 +9,7 @@ import DefineSchedule from "../features/schedule/ScheduleMain";
 import CreateClass from "../features/createclass/CreateClass";
 import CreateTeachersMain from "../features/createteachers/CreateTeachersMain";
 import ClassesSummary from "../features/classessummary/ClassesSummary";
+
 const RoutesMain = ({onClick}) => {
   const classes = useStyles();
   const checkSessionExists = () => {
@@ -37,6 +38,8 @@ const RoutesMain = ({onClick}) => {
             </PrivateRoute>
           }
         />
+        
+        
         <Route
           path="classessummary"
           element={
