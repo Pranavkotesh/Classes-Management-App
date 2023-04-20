@@ -14,6 +14,8 @@ import MiniDrawer from "../app-drawer-component/AppDrawerComponent";
 import { useTheme, makeStyles, createStyles } from "@mui/styles";
 import { Event, School } from "@mui/icons-material";
 import {schoolArr, years} from "../app-constants/DataConstant";
+import { ToggleContext } from "../../../App";
+import { useContext } from "react";
 
 const openDrawerWidth = 240;
 const closeDrawerWidth = 72;
@@ -35,11 +37,11 @@ function AppMainBar({
   onSchoolChange,
   onYearChange,
   selectedYear,
-  selectedSchool,
-  onClick,
+  selectedSchool
 }) {
   // custom hooks
   const width = useWidth();
+  const toggleMode=useContext(ToggleContext);
 
   const [open, setOpen] = React.useState(
     width === "xs" || width === "sm" ? false : true
@@ -129,7 +131,7 @@ function AppMainBar({
               </Box>
               <Box sx={{ paddingLeft: 2 }}>
                 <IconButton
-                onClick={onClick}
+                onClick={toggleMode}
                   sx={{
                     color: "primary.switchMode",
                   }}

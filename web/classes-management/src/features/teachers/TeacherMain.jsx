@@ -12,7 +12,7 @@ import { teacherArr } from "../../shared/components/app-constants/DataConstant";
 import { teachersAbout, teachersAssigned } from "../../shared/components/app-headings/AppHeadings";
 
 
-const TeacherMain = ({onClick}) => {
+const TeacherMain = () => {
   const [searchObj, setSearchObj] = useState({
     class: "",
     search: "",
@@ -32,7 +32,7 @@ const TeacherMain = ({onClick}) => {
   return (
     <AppLayout
       title="Teachers"
-      onClick={onClick}
+      
       selectedSchool={selectedSchool}
       selectedYear={selectedYear}
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}

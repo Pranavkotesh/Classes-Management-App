@@ -10,7 +10,7 @@ import CreateClass from "../features/createclass/CreateClass";
 import CreateTeachersMain from "../features/createteachers/CreateTeachersMain";
 import ClassesSummary from "../features/classessummary/ClassesSummary";
 
-const RoutesMain = ({onClick}) => {
+const RoutesMain = () => {
   const classes = useStyles();
   const checkSessionExists = () => {
     //add logic to check the session. adding false for now
@@ -34,7 +34,7 @@ const RoutesMain = ({onClick}) => {
           path="createteachers"
           element={
             <PrivateRoute>
-              <CreateTeachersMain onClick={onClick} />
+              <CreateTeachersMain />
             </PrivateRoute>
           }
         />
@@ -44,7 +44,7 @@ const RoutesMain = ({onClick}) => {
           path="classessummary"
           element={
             <PrivateRoute>
-              <ClassesSummary onClick={onClick} />
+              <ClassesSummary />
             </PrivateRoute>
           }
         />
@@ -52,7 +52,7 @@ const RoutesMain = ({onClick}) => {
           path="classes"
           element={
             <PrivateRoute>
-              <ClassMain onClick={onClick}/>
+              <ClassMain />
             </PrivateRoute>
           }
         />
@@ -60,7 +60,7 @@ const RoutesMain = ({onClick}) => {
           path="teachers"
           element={
             <PrivateRoute>
-              <TeacherMain onClick={onClick}/>
+              <TeacherMain />
             </PrivateRoute>
           }
         />
@@ -68,7 +68,7 @@ const RoutesMain = ({onClick}) => {
           path="schedule"
           element={
             <PrivateRoute>
-              <DefineSchedule onClick={onClick}/>
+              <DefineSchedule />
             </PrivateRoute>
           }
         />
@@ -76,7 +76,7 @@ const RoutesMain = ({onClick}) => {
           path="createclass"
           element={
             <PrivateRoute>
-              <CreateClass onClick={onClick}/>
+              <CreateClass />
             </PrivateRoute>
           }
         />

@@ -24,13 +24,13 @@ import {
 } from "../../shared/components/app-constants/DataConstant";
 import AppDateSelector from "../../shared/components/app-date-select/AppDateSelect";
 
-const CreateTeachersMain = ({ onClick }) => {
+const CreateTeachersMain = () => {
   const [teachers, setTeachers] = React.useState("");
   const handleChange = (e) => {
     setTeachers(e.target.value);
   };
   return (
-    <AppLayout title="Create Teachers" onClick={onClick}>
+    <AppLayout title="Create Teachers" >
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <AppCard minHeight={690} padding="0px">
