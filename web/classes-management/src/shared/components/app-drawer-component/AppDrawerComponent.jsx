@@ -52,7 +52,7 @@ const itemsList = [
   },
 
   {
-    text: "New Page",
+    text: "Products",
     icon: <CreateIcon />,
     route: "newpage",
   },
