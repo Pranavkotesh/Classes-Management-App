@@ -10,9 +10,11 @@ import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { teacherArr } from "../../shared/components/app-constants/DataConstant";
 import { teachersAbout, teachersAssigned } from "../../shared/components/app-headings/AppHeadings";
-
+import Box from "@mui/material/Box";
+import { NameChanger } from "../../App";
 
 const TeacherMain = () => {
+  const {name,changeName}=React.useContext(NameChanger)
   const [searchObj, setSearchObj] = useState({
     class: "",
     search: "",
@@ -38,6 +40,7 @@ const TeacherMain = () => {
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
+      <Typography>{name}</Typography>
       <Grid container spacing={2}>
         <BoxElement elementOne="Management" elementTwo="Teachers" />
         <Grid item xs={12}>
@@ -110,6 +113,9 @@ const TeacherMain = () => {
           </Grid>
         </Grid>
       </Grid>
+      <Box sx={{marginTop:2}}>
+        <AppButton btnText="Press here" onClick={changeName}/>
+        </Box>
     </AppLayout>
   );
 };

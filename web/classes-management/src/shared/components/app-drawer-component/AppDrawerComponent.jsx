@@ -50,6 +50,12 @@ const itemsList = [
     icon: <CreateIcon />,
     route: "createteachers",
   },
+
+  {
+    text: "New Page",
+    icon: <CreateIcon />,
+    route: "newpage",
+  },
   
 ];
 const itemsList2 = [

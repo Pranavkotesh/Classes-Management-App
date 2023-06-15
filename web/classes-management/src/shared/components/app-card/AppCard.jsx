@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardActions, CardContent, Typography } from "@mui/material";
 
 function AppCard({
   title,
@@ -9,7 +9,7 @@ function AppCard({
   boxShadow,
   color,
   px,
-  my,
+  actionChildren,
   key
 }) {
   return (
@@ -31,6 +31,7 @@ function AppCard({
         {title && <Typography variant="button">{title}</Typography>}
         {children}
       </CardContent>
+      <CardActions>{actionChildren}</CardActions>
     </Card>
   );
 }

@@ -9,16 +9,24 @@ import { createContext } from "react";
 
 
 export const ToggleContext = createContext();
+export const NameChanger = createContext();
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const [name,setName]=useState("Not pressed")
+
+  const changeName=()=>{
+    setName("Button Pressed");
+  }
 
   const toggleMode = () => {
     setIsDark(!isDark);
   };
 
   return (
+    
     <ToggleContext.Provider value={toggleMode}>
+      <NameChanger.Provider value={{changeName,name}}>
       <ThemeProvider theme={isDark ? THEME : lTHEME}>
         <div>
           <CssBaseline />
@@ -27,6 +35,7 @@ function App() {
           </BrowserRouter>
         </div>
       </ThemeProvider>
+      </NameChanger.Provider>
     </ToggleContext.Provider>
   );
 }

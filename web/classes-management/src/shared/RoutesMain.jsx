@@ -9,6 +9,8 @@ import DefineSchedule from "../features/schedule/ScheduleMain";
 import CreateClass from "../features/createclass/CreateClass";
 import CreateTeachersMain from "../features/createteachers/CreateTeachersMain";
 import ClassesSummary from "../features/classessummary/ClassesSummary";
+import NewPage from "../features/newpage/NewPage";
+
 
 const RoutesMain = () => {
   const classes = useStyles();
@@ -38,8 +40,7 @@ const RoutesMain = () => {
             </PrivateRoute>
           }
         />
-        
-        
+
         <Route
           path="classessummary"
           element={
@@ -80,6 +81,16 @@ const RoutesMain = () => {
             </PrivateRoute>
           }
         />
+
+        <Route
+          path="newpage"
+          element={
+            <PrivateRoute>
+              <NewPage />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="*" element={<App404Page />} />
       </Routes>
     </div>
@@ -90,7 +101,7 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
     height: "100vh",
     overflow: "auto",
-    backgroundColor:"background.default",
+    backgroundColor: "background.default",
     paddingTop: 64,
   },
 }));

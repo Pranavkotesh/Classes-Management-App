@@ -5,10 +5,15 @@ import BoxElement from "../../shared/components/app-box-component/AppBoxComponen
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppTable from "../../shared/components/app-table-component/AppTableComponent";
 import { classesSummary } from "../../shared/components/app-headings/AppHeadings";
+import { NameChanger } from "../../App";
+import AppButton from "../../shared/components/app-button/AppButton";
+import Box from "@mui/material/Box";
 
 const ClassesSummary = () => {
+  const {name,changeName}=React.useContext(NameChanger)
   return (
     <AppLayout title="Classes Summary" >
+      <Typography>{name}</Typography>
       <Grid container spacing={2}>
         <BoxElement
           elementOne="Reports"
@@ -91,6 +96,9 @@ const ClassesSummary = () => {
           </Grid>
         </Grid>
       </Grid>
+      <Box sx={{marginTop:2}}>
+        <AppButton btnText="Press here" onClick={changeName}/>
+        </Box>
     </AppLayout>
   );
 };
