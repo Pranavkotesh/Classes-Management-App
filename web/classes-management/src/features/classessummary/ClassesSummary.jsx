@@ -13,7 +13,7 @@ const ClassesSummary = () => {
   const {name,changeName}=React.useContext(NameChanger)
   return (
     <AppLayout title="Classes Summary" >
-      <Typography>{name}</Typography>
+      {/* <Typography>{name}</Typography> */}
       <Grid container spacing={2}>
         <BoxElement
           elementOne="Reports"

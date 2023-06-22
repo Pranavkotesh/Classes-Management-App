@@ -40,7 +40,7 @@ const TeacherMain = () => {
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
-      <Typography>{name}</Typography>
+      {/* <Typography>{name}</Typography> */}
       <Grid container spacing={2}>
         <BoxElement elementOne="Management" elementTwo="Teachers" />
         <Grid item xs={12}>

@@ -13,7 +13,7 @@ import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import GroupIcon from "@mui/icons-material/Group";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, Launch } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import AddBoxIcon from "@mui/icons-material/AddBox";
@@ -53,7 +53,7 @@ const itemsList = [
 
   {
     text: "Products",
-    icon: <CreateIcon />,
+    icon: <Launch />,
     route: "newpage",
   },
   

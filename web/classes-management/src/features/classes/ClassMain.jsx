@@ -24,7 +24,7 @@ const ClassMain = () => {
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
       <main>
-        <Typography>{name}</Typography>
+        {/* <Typography>{name}</Typography> */}
         <Grid
           container
           spacing={2}
