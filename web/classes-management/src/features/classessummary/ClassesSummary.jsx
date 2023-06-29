@@ -96,9 +96,9 @@ const ClassesSummary = () => {
           </Grid>
         </Grid>
       </Grid>
-      {/* <Box sx={{marginTop:2}}>
-        <AppButton btnText="Press here" onClick={changeName}/>
-        </Box> */}
+      <Box sx={{marginTop:2}}>
+        <AppButton btnText="Click" onClick={changeName}/>
+        </Box>
     </AppLayout>
   );
 };
