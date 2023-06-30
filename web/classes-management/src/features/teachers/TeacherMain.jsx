@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, IconButton, Typography } from "@mui/material";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
 import AppCard from "../../shared/components/app-card/AppCard";
 import AppLayout from "../../shared/components/app-layout/AppLayout";
@@ -11,17 +11,23 @@ import AppTable from "../../shared/components/app-table-component/AppTableCompon
 import { teacherArr } from "../../shared/components/app-constants/DataConstant";
 import { teachersAbout, teachersAssigned } from "../../shared/components/app-headings/AppHeadings";
 import Box from "@mui/material/Box";
-import { NameChanger } from "../../App";
-
+import ManageTeachers from "./ManageTeachers";
+import CustomDrawerComponent from "../../shared/components/customDrawer/CustomDrawer";
+import AddIcon from "@mui/icons-material/Add";
 const TeacherMain = () => {
-  const {name,changeName}=React.useContext(NameChanger)
+ 
   const [searchObj, setSearchObj] = useState({
     class: "",
     search: "",
   });
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("");
-
+  const [manageTeachers, setManageTeachers] = useState({
+    isOpen: false,
+    index: -1,
+    data: {},
+  });
+  const[teachersList,setTeachersList]=useState([]);
 
   const handleSearchObjChange = (event) => {
     const { name, value } = event.target;
@@ -29,6 +35,9 @@ const TeacherMain = () => {
       ...searchObj,
       [name]: value,
     });
+  };
+  const handleAdd = () => {
+    setManageTeachers({ isOpen: true, index: -1, data: undefined });
   };
 
   return (
@@ -40,7 +49,8 @@ const TeacherMain = () => {
       onSchoolChange={(event) => setSelectedSchool(event.target.value)}
       onYearChange={(event) => setSelectedYear(event.target.value)}
     >
-      {/* <Typography>{name}</Typography> */}
+      
+      <main>
       <Grid container spacing={2}>
         <BoxElement elementOne="Management" elementTwo="Teachers" />
         <Grid item xs={12}>
@@ -62,14 +72,36 @@ const TeacherMain = () => {
                   <Typography>OR</Typography>
                 </div>
               </Grid>
-              <Grid item xs={12} sm={5} md={5} lg={5}>
-                <AppTextInput
+              <Grid item xs={12} sm={5} md={5} lg={5} >
+             
+                <Box textAlign="center" marginTop='2%'>
+                  <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
+                    Create a new Teacher
+                  </Typography>
+
+                  <Box textAlign="center">
+                    <IconButton onClick={()=>handleAdd()}>
+                      <AddIcon
+                        sx={{
+                          backgroundColor: "background.button",
+                          fontSize: 15,
+                          borderRadius: 6,
+                          color: "primary.add",
+                          width: 50,
+                          height: 50,
+                        }}
+                      />
+                    </IconButton>
+                  </Box>
+                </Box>
+                
+                {/* <AppTextInput
                   name="search"
                   label="Search a Teacher"
                   placeholder="e.g. First Name / Last Name"
                   onChange={handleSearchObjChange}
                   value={searchObj.search}
-                />
+                /> */}
               </Grid>
             </Grid>
           </AppCard>
@@ -91,7 +123,7 @@ const TeacherMain = () => {
                         borderBody="2px solid rgba(217,217,217)"
                       />
                       <Grid item xs={1}>
-                        <AppButton btnText="Notes:" />
+                        <AppButton btnText="Edit"  onClick={()=>handleAdd()}/>
                       </Grid>
                     </Grid>
                   </AppCard>
@@ -113,10 +145,40 @@ const TeacherMain = () => {
           </Grid>
         </Grid>
       </Grid>
+      </main>
+      {manageTeachers.isOpen && (
+        <CustomDrawerComponent
+          title={manageTeachers.index !== -1 ? "Edit Teacher" : "Add Teacher"}
+          isOpen={true}
+          onClose={() => {
+            setManageTeachers({ index: -1, isOpen: false });
+          }}
+        >
+          <ManageTeachers
+            data={manageTeachers.data}
+            onClose={(data) => {
+              if (data) {
+                if (manageTeachers.index === -1) {
+                  setTeachersList([{ ...data }, ...teachersList]);
+                } else {
+                  const temp = [...teachersList];
+                  temp[manageTeachers.index] = data;
+                  setTeachersList(temp);
+                }
+              }
+              setManageTeachers({ index: -1, isOpen: false, data: {} });
+            }}
+          />
+        </CustomDrawerComponent>
+      )}
       <Box sx={{marginTop:2}}>
-        <AppButton btnText="Press here" onClick={changeName}/>
+        <AppButton btnText="Add Teacher" onClick={()=>handleAdd()}/>
         </Box>
+
+        
     </AppLayout>
+
+    
   );
 };
 

@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import CreateIcon from "@mui/icons-material/Create";
+import { Tooltip } from "@mui/material";
 
 const itemsList = [
   {
@@ -40,26 +41,24 @@ const itemsList = [
     icon: <ScheduleIcon />,
     route: "schedule",
   },
-  {
-    text: "Create Class",
-    icon: <AddBoxIcon />,
-    route: "createclass",
-  },
-  {
-    text: "Create Teachers",
-    icon: <CreateIcon />,
-    route: "createteachers",
-  },
+  // {
+  //   text: "Create Class",
+  //   icon: <AddBoxIcon />,
+  //   route: "createclass",
+  // },
+  // {
+  //   text: "Create Teachers",
+  //   icon: <CreateIcon />,
+  //   route: "createteachers",
+  // },
 
-  {
-    text: "Products",
-    icon: <Launch />,
-    route: "newpage",
-  },
-  
+  // {
+  //   text: "Products",
+  //   icon: <Launch />,
+  //   route: "newpage",
+  // },
 ];
 const itemsList2 = [
- 
   {
     text: "Settings",
     icon: <Settings />,
@@ -93,6 +92,20 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
     setSelectedTab(route);
     navigate(`/${route}`);
   };
+  // const handleDocumentClick = (event) => {
+  //   const drawer = document.getElementById("drawer");
+  //   if (drawer && !drawer.contains(event.target)) {
+  //     handleDrawerClose();
+  //   }
+  // };
+
+  // React.useEffect(() => {
+  //   document.addEventListener("click", handleDocumentClick);
+
+  //   return () => {
+  //     document.removeEventListener("click", handleDocumentClick);
+  //   };
+  // }, [handleDrawerClose]);
   return (
     <>
       <Box
@@ -123,6 +136,38 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
         <Divider sx={{ color: "#3333cc" }} />
         <List>
           {itemsList.map((item) => (
+            // <ListItem
+            //   key={item.text}
+            //   disablePadding
+            //   sx={{ display: "block", color: "white", fontSize: 12 }}
+            // >
+            //   <ListItemButton
+            //     sx={{
+            //       minHeight: 48,
+            //       justifyContent: open ? "initial" : "center",
+            //       px: 2.5,
+            //     }}
+            //     selected={selectedTab === item.route}
+            //     onClick={() => handleListItemClick(item.route)}
+            //   >
+
+            //     <ListItemIcon
+            //       sx={{
+            //         minWidth: 0,
+            //         marginRight: "32px",
+            //         mr: open ? 3 : "auto",
+            //         justifyContent: "center",
+            //         color: "white",
+            //       }}
+            //     >
+            //       {item.icon}
+            //     </ListItemIcon>
+            //     <ListItemText
+            //       primary={item.text}
+            //       sx={{ opacity: open ? 1 : 0 }}
+            //     />
+            //   </ListItemButton>
+            // </ListItem>
             <ListItem
               key={item.text}
               disablePadding
@@ -135,23 +180,27 @@ const MiniDrawer = ({ open, handleDrawerClose }) => {
                   px: 2.5,
                 }}
                 selected={selectedTab === item.route}
-                onClick={() => handleListItemClick(item.route)}
+                 onClick={() => handleListItemClick(item.route)}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    marginRight: "32px",
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                    color: "white",
-                  }}
-                >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
+                <Tooltip title={item.text} placement="right">
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      marginRight: "32px",
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                      color: "white",
+                    }}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                </Tooltip>
+                <Tooltip title={item.text} placement="right">
+                  <ListItemText
+                    primary={item.text}
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </Tooltip>
               </ListItemButton>
             </ListItem>
           ))}

@@ -82,14 +82,14 @@ const RoutesMain = () => {
           }
         />
 
-        <Route
+        {/* <Route
           path="newpage"
           element={
             <PrivateRoute>
               <NewPage />
             </PrivateRoute>
           }
-        />
+        /> */}
 
         <Route path="*" element={<App404Page />} />
       </Routes>
