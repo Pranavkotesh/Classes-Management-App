@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import { Formik } from "formik";
 import AppButton from "../../shared/components/app-button/AppButton";
 import AppTextInput from "../../shared/components/app-text-input/AppTextInput";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const classes = useStyles();
@@ -36,7 +36,7 @@ const LoginPage = () => {
           onSubmit={async (values, { setSubmitting }) => {
             console.log(values);
             setSubmitting(false);
-            navigate('/dashboard');
+            navigate("/classessummary");
           }}
         >
           {({
